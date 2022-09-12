@@ -1,0 +1,10 @@
+name = "stm32h7_43_53_dc"
+description = "Device configuration for stm32h7_43_53_dc micro-controllers"
+version = "0.1.0-dev"
+authors = ["a script"]
+maintainers = ["Fabien Chouteau <chouteau@adacore.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+[configuration.variables]
+Device = {type = "Enum", values = ["stm32h743agi6", "stm32h743aii6", "stm32h743bgt6", "stm32h743bit6", "stm32h743igk6", "stm32h743igt6", "stm32h743iik6", "stm32h743iit6", "stm32h743vgh6", "stm32h743vgt6", "stm32h743vih6", "stm32h743vit6", "stm32h743xgh6", "stm32h743xih6", "stm32h743zgt6", "stm32h743zit6", "stm32h753aii6", "stm32h753bit6", "stm32h753iik6", "stm32h753iit6", "stm32h753vih6", "stm32h753vit6", "stm32h753xih6", "stm32h753zit6"]}
+Boot_Memory = {type = "Enum", values = ["d2_sram2", "d2_sram3", "d2_sram1", "flash", "itcm", "dtcm", "d3_sram", "d1_sram", "backup"]}
+Stack_Size = {type = "Integer", first = 1, default = 1024}

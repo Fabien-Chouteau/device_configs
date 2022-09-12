@@ -1,0 +1,48 @@
+with "config/samg54_dc_config.gpr";
+abstract project samg54_dc is
+   for Target use "arm-elf";
+   for Runtime ("Ada") use "light-cortex-m4f";
+   package Device_Configuration is
+      Device_Name := samg54_dc_Config.Device;
+      for CPU_Name use "cortex-m4f";
+
+      for Interrupt ("0") use "SUPC";
+      for Interrupt ("1") use "RSTC";
+      for Interrupt ("2") use "RTC";
+      for Interrupt ("3") use "RTT";
+      for Interrupt ("4") use "WDT";
+      for Interrupt ("5") use "PMC";
+      for Interrupt ("6") use "EFC";
+      for Interrupt ("8") use "UART0";
+      for Interrupt ("9") use "UART1";
+      for Interrupt ("11") use "PIOA";
+      for Interrupt ("12") use "PIOB";
+      for Interrupt ("13") use "PDMIC0";
+      for Interrupt ("14") use "USART";
+      for Interrupt ("15") use "MEM2MEM";
+      for Interrupt ("16") use "I2SC0";
+      for Interrupt ("17") use "I2SC1";
+      for Interrupt ("18") use "PDMIC1";
+      for Interrupt ("19") use "TWI0";
+      for Interrupt ("20") use "TWI1";
+      for Interrupt ("21") use "SPI";
+      for Interrupt ("22") use "TWI2";
+      for Interrupt ("23") use "TC0";
+      for Interrupt ("24") use "TC1";
+      for Interrupt ("25") use "TC2";
+      for Interrupt ("26") use "TC3";
+      for Interrupt ("27") use "TC4";
+      for Interrupt ("28") use "TC5";
+      for Interrupt ("29") use "ADC";
+
+      Mem_List := ();
+      Mem_List := Mem_List & ("flash");
+      for Mem_Kind ("flash") use "ROM";
+      for Address  ("flash") use "0x00400000";
+      for Size     ("flash") use "524288";
+      for Memories use Mem_List;
+      for Boot_Memory use samg54_dc_Config.Boot_Memory;
+      for Main_Stack_Size use samg54_dc_Config.Stack_Size;
+
+   end Device_Configuration;
+end samg54_dc;

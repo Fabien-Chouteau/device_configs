@@ -1,0 +1,10 @@
+name = "stm32h7_a3_dc"
+description = "Device configuration for stm32h7_a3_dc micro-controllers"
+version = "0.1.0-dev"
+authors = ["a script"]
+maintainers = ["Fabien Chouteau <chouteau@adacore.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+[configuration.variables]
+Device = {type = "Enum", values = ["stm32h7a3agi6q", "stm32h7a3aii6q", "stm32h7a3igk6", "stm32h7a3igk6q", "stm32h7a3igt6", "stm32h7a3igt6q", "stm32h7a3iik6", "stm32h7a3iik6q", "stm32h7a3iit6", "stm32h7a3iit6q", "stm32h7a3lgh6q", "stm32h7a3lih6q", "stm32h7a3ngh6", "stm32h7a3nih6", "stm32h7a3qiy6q", "stm32h7a3rgt6", "stm32h7a3rit6", "stm32h7a3vgh6", "stm32h7a3vgh6q", "stm32h7a3vgt6", "stm32h7a3vgt6q", "stm32h7a3vih6", "stm32h7a3vih6q", "stm32h7a3vit6", "stm32h7a3vit6q", "stm32h7a3zgt6", "stm32h7a3zgt6q", "stm32h7a3zit6", "stm32h7a3zit6q"]}
+Boot_Memory = {type = "Enum", values = ["backup", "d2_sram1", "d1_sram3", "dtcm", "d1_sram1", "d2_sram2", "d3_sram", "flash", "itcm", "d1_sram2"]}
+Stack_Size = {type = "Integer", first = 1, default = 1024}

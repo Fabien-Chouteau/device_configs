@@ -1,0 +1,19 @@
+name = "example"
+description = "Shiny new project"
+version = "0.1.0-dev"
+
+authors = ["Fabien Chouteau"]
+maintainers = ["Fabien Chouteau <fabien.chouteau@gmail.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+
+executables = ["example"]
+[[depends-on]]
+nrf52810_dc = "*"
+gnat_arm_elf = ">=12"
+
+[[pins]]
+nrf52810_dc = { path = ".." }
+
+[configuration.values]
+nrf52810_dc.Device = "nrf52810-xxaa"
+nrf52810_dc.Boot_Memory = "flash"

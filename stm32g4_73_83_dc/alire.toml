@@ -1,0 +1,10 @@
+name = "stm32g4_73_83_dc"
+description = "Device configuration for stm32g4_73_83_dc micro-controllers"
+version = "0.1.0-dev"
+authors = ["a script"]
+maintainers = ["Fabien Chouteau <chouteau@adacore.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+[configuration.variables]
+Device = {type = "Enum", values = ["stm32g473cbt3", "stm32g473cbt6", "stm32g473cbt7", "stm32g473cbu3", "stm32g473cbu6", "stm32g473cbu7", "stm32g473cct3", "stm32g473cct6", "stm32g473cct7", "stm32g473ccu3", "stm32g473ccu6", "stm32g473ccu7", "stm32g473cet3", "stm32g473cet6", "stm32g473cet7", "stm32g473ceu3", "stm32g473ceu6", "stm32g473ceu7", "stm32g473mbt6", "stm32g473mct3", "stm32g473mct6", "stm32g473mct7", "stm32g473met3", "stm32g473met6", "stm32g473met7", "stm32g473mey3", "stm32g473mey6", "stm32g473mey7", "stm32g473pbi6", "stm32g473pci6", "stm32g473pei6", "stm32g473qbt6", "stm32g473qct6", "stm32g473qet6", "stm32g473rbt6", "stm32g473rct6", "stm32g473ret3", "stm32g473ret6", "stm32g473ret7", "stm32g473vbh3", "stm32g473vbh6", "stm32g473vbh7", "stm32g473vbt3", "stm32g473vbt6", "stm32g473vbt7", "stm32g473vch3", "stm32g473vch6", "stm32g473vch7", "stm32g473vct3", "stm32g473vct6", "stm32g473vct7", "stm32g473veh3", "stm32g473veh6", "stm32g473veh7", "stm32g473vet3", "stm32g473vet6", "stm32g473vet7", "stm32g483cet3", "stm32g483cet6", "stm32g483cet7", "stm32g483ceu3", "stm32g483ceu6", "stm32g483ceu7", "stm32g483met6", "stm32g483mey6", "stm32g483pei6", "stm32g483qet6", "stm32g483ret3", "stm32g483ret6", "stm32g483ret7", "stm32g483veh6", "stm32g483vet6"]}
+Boot_Memory = {type = "Enum", values = ["ccm", "sram2", "flash", "sram1"]}
+Stack_Size = {type = "Integer", first = 1, default = 1024}

@@ -1,0 +1,19 @@
+name = "example"
+description = "Shiny new project"
+version = "0.1.0-dev"
+
+authors = ["Fabien Chouteau"]
+maintainers = ["Fabien Chouteau <fabien.chouteau@gmail.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+
+executables = ["example"]
+[[depends-on]]
+saml21_dc = "*"
+gnat_arm_elf = ">=12"
+
+[[pins]]
+saml21_dc = { path = ".." }
+
+[configuration.values]
+saml21_dc.Device = "saml21e15b-an"
+saml21_dc.Boot_Memory = "flash"

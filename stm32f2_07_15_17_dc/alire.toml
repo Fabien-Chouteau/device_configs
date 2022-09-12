@@ -1,0 +1,10 @@
+name = "stm32f2_07_15_17_dc"
+description = "Device configuration for stm32f2_07_15_17_dc micro-controllers"
+version = "0.1.0-dev"
+authors = ["a script"]
+maintainers = ["Fabien Chouteau <chouteau@adacore.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+[configuration.variables]
+Device = {type = "Enum", values = ["stm32f207ich6", "stm32f207ict6", "stm32f207ieh6", "stm32f207iet6", "stm32f207ifh6", "stm32f207ift6", "stm32f207igh6", "stm32f207igh7", "stm32f207igt6", "stm32f207igt7", "stm32f207vct6", "stm32f207vct7", "stm32f207vet6", "stm32f207vft6", "stm32f207vgt6", "stm32f207vgt7", "stm32f207zct6", "stm32f207zct7", "stm32f207zet6", "stm32f207zft6", "stm32f207zgt6", "stm32f207zgt7", "stm32f215ret6", "stm32f215rgt6", "stm32f215vet6", "stm32f215vgt6", "stm32f215vgt7", "stm32f215zet6", "stm32f215zgt6", "stm32f215zgt7", "stm32f217ieh6", "stm32f217iet6", "stm32f217igh6", "stm32f217igh7", "stm32f217igt6", "stm32f217igt7", "stm32f217vet6", "stm32f217vgt6", "stm32f217zet6", "stm32f217zet7", "stm32f217zgt6"]}
+Boot_Memory = {type = "Enum", values = ["sram2", "flash", "sram1"]}
+Stack_Size = {type = "Integer", first = 1, default = 1024}

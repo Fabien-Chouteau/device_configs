@@ -1,0 +1,10 @@
+name = "stm32wb_30_50_dc"
+description = "Device configuration for stm32wb_30_50_dc micro-controllers"
+version = "0.1.0-dev"
+authors = ["a script"]
+maintainers = ["Fabien Chouteau <chouteau@adacore.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+[configuration.variables]
+Device = {type = "Enum", values = ["stm32wb30ceu6a", "stm32wb50cgu6"]}
+Boot_Memory = {type = "Enum", values = ["sram1", "sram2", "flash"]}
+Stack_Size = {type = "Integer", first = 1, default = 1024}

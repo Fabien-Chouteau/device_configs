@@ -1,0 +1,55 @@
+with "config/nrf52810_dc_config.gpr";
+abstract project nrf52810_dc is
+   for Target use "arm-elf";
+   for Runtime ("Ada") use "light-cortex-m4";
+   package Device_Configuration is
+      Device_Name := nrf52810_dc_Config.Device;
+      for CPU_Name use "cortex-m4";
+
+      for Interrupt ("0") use "POWER_CLOCK";
+      for Interrupt ("1") use "RADIO";
+      for Interrupt ("2") use "UARTE0_UART0";
+      for Interrupt ("3") use "TWIM0_TWIS0_TWI0";
+      for Interrupt ("4") use "SPIM0_SPIS0_SPI0";
+      for Interrupt ("6") use "GPIOTE";
+      for Interrupt ("7") use "SAADC";
+      for Interrupt ("8") use "TIMER0";
+      for Interrupt ("9") use "TIMER1";
+      for Interrupt ("10") use "TIMER2";
+      for Interrupt ("11") use "RTC0";
+      for Interrupt ("12") use "TEMP";
+      for Interrupt ("13") use "RNG";
+      for Interrupt ("14") use "ECB";
+      for Interrupt ("15") use "CCM_AAR";
+      for Interrupt ("16") use "WDT";
+      for Interrupt ("17") use "RTC1";
+      for Interrupt ("18") use "QDEC";
+      for Interrupt ("19") use "COMP";
+      for Interrupt ("20") use "SWI0_EGU0";
+      for Interrupt ("21") use "SWI1_EGU1";
+      for Interrupt ("22") use "SWI2";
+      for Interrupt ("23") use "SWI3";
+      for Interrupt ("24") use "SWI4";
+      for Interrupt ("25") use "SWI5";
+      for Interrupt ("28") use "PWM0";
+      for Interrupt ("29") use "PDM";
+
+      Mem_List := ();
+      Mem_List := Mem_List & ("flash");
+      for Mem_Kind ("flash") use "ROM";
+      for Address  ("flash") use "0x00000000";
+      for Size     ("flash") use "196608";
+      Mem_List := Mem_List & ("code_ram");
+      for Mem_Kind ("code_ram") use "RAM";
+      for Address  ("code_ram") use "0x800000";
+      for Size     ("code_ram") use "24576";
+      Mem_List := Mem_List & ("ram");
+      for Mem_Kind ("ram") use "RAM";
+      for Address  ("ram") use "0x20000000";
+      for Size     ("ram") use "24576";
+      for Memories use Mem_List;
+      for Boot_Memory use nrf52810_dc_Config.Boot_Memory;
+      for Main_Stack_Size use nrf52810_dc_Config.Stack_Size;
+
+   end Device_Configuration;
+end nrf52810_dc;

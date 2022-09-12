@@ -1,0 +1,10 @@
+name = "stm32l4_q5_dc"
+description = "Device configuration for stm32l4_q5_dc micro-controllers"
+version = "0.1.0-dev"
+authors = ["a script"]
+maintainers = ["Fabien Chouteau <chouteau@adacore.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+[configuration.variables]
+Device = {type = "Enum", values = ["stm32l4q5agi6", "stm32l4q5agi6p", "stm32l4q5cgt6", "stm32l4q5cgt6p", "stm32l4q5cgu6", "stm32l4q5cgu6p", "stm32l4q5qgi6", "stm32l4q5qgi6p", "stm32l4q5rgt3", "stm32l4q5rgt3p", "stm32l4q5rgt6", "stm32l4q5rgt6p", "stm32l4q5rgt7", "stm32l4q5rgt7p", "stm32l4q5vgt6", "stm32l4q5vgt6p", "stm32l4q5vgy6", "stm32l4q5vgy6p", "stm32l4q5zgt6", "stm32l4q5zgt6p"]}
+Boot_Memory = {type = "Enum", values = ["sram3", "flash", "sram1", "sram2"]}
+Stack_Size = {type = "Integer", first = 1, default = 1024}

@@ -1,0 +1,19 @@
+name = "example"
+description = "Shiny new project"
+version = "0.1.0-dev"
+
+authors = ["Fabien Chouteau"]
+maintainers = ["Fabien Chouteau <fabien.chouteau@gmail.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+
+executables = ["example"]
+[[depends-on]]
+samg55_dc = "*"
+gnat_arm_elf = ">=12"
+
+[[pins]]
+samg55_dc = { path = ".." }
+
+[configuration.values]
+samg55_dc.Device = "samg55g19a-uu"
+samg55_dc.Boot_Memory = "flash"

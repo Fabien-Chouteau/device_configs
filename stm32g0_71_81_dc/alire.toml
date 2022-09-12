@@ -1,0 +1,10 @@
+name = "stm32g0_71_81_dc"
+description = "Device configuration for stm32g0_71_81_dc micro-controllers"
+version = "0.1.0-dev"
+authors = ["a script"]
+maintainers = ["Fabien Chouteau <chouteau@adacore.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+[configuration.variables]
+Device = {type = "Enum", values = ["stm32g071c6t6", "stm32g071c6u3", "stm32g071c6u6", "stm32g071c6u7", "stm32g071c8t3", "stm32g071c8t6", "stm32g071c8t7", "stm32g071c8u3", "stm32g071c8u6", "stm32g071c8u7", "stm32g071cbt3", "stm32g071cbt6", "stm32g071cbt7", "stm32g071cbu3", "stm32g071cbu6", "stm32g071cbu7", "stm32g071eby6", "stm32g071g6u3", "stm32g071g6u6", "stm32g071g6u7", "stm32g071g8u6", "stm32g071g8u6n", "stm32g071gbu3", "stm32g071gbu3n", "stm32g071gbu6", "stm32g071gbu6n", "stm32g071gbu7", "stm32g071gbu7n", "stm32g071k6t6", "stm32g071k6u3", "stm32g071k6u6", "stm32g071k6u7", "stm32g071k8t3", "stm32g071k8t3n", "stm32g071k8t6", "stm32g071k8t6n", "stm32g071k8t7", "stm32g071k8t7n", "stm32g071k8u3", "stm32g071k8u3n", "stm32g071k8u6", "stm32g071k8u6n", "stm32g071k8u7", "stm32g071k8u7n", "stm32g071kbt3", "stm32g071kbt3n", "stm32g071kbt6", "stm32g071kbt6n", "stm32g071kbt7", "stm32g071kbt7n", "stm32g071kbu3", "stm32g071kbu3n", "stm32g071kbu6", "stm32g071kbu6n", "stm32g071kbu7", "stm32g071kbu7n", "stm32g071r6t6", "stm32g071r8t6", "stm32g071rbi3", "stm32g071rbi6", "stm32g071rbi7", "stm32g071rbt3", "stm32g071rbt6", "stm32g071rbt7", "stm32g081cbt6", "stm32g081cbu6", "stm32g081eby6", "stm32g081gbu6", "stm32g081gbu6n", "stm32g081kbt6", "stm32g081kbt6n", "stm32g081kbu6", "stm32g081kbu6n", "stm32g081rbi3", "stm32g081rbi6", "stm32g081rbi7", "stm32g081rbt3", "stm32g081rbt6", "stm32g081rbt7"]}
+Boot_Memory = {type = "Enum", values = ["sram1", "flash"]}
+Stack_Size = {type = "Integer", first = 1, default = 1024}

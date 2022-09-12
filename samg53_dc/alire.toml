@@ -1,0 +1,10 @@
+name = "samg53_dc"
+description = "Device configuration for samg53_dc micro-controllers"
+version = "0.1.0-dev"
+authors = ["a script"]
+maintainers = ["Fabien Chouteau <chouteau@adacore.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+[configuration.variables]
+Device = {type = "Enum", values = ["samg53g19-xx", "samg53n19-au"]}
+Boot_Memory = {type = "Enum", values = ["ram", "flash"]}
+Stack_Size = {type = "Integer", first = 1, default = 1024}

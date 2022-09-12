@@ -1,0 +1,371 @@
+with "config/samv70_dc_config.gpr";
+abstract project samv70_dc is
+   for Target use "arm-elf";
+   for Runtime ("Ada") use "light-cortex-m7f";
+   package Device_Configuration is
+      Device_Name := samv70_dc_Config.Device;
+      for CPU_Name use "cortex-m7f";
+
+      for Interrupt ("0") use "SUPC";
+      for Interrupt ("1") use "RSTC";
+      for Interrupt ("2") use "RTC";
+      for Interrupt ("3") use "RTT";
+      for Interrupt ("4") use "WDT";
+      for Interrupt ("5") use "PMC";
+      for Interrupt ("6") use "EFC";
+      for Interrupt ("7") use "UART0";
+      for Interrupt ("8") use "UART1";
+      for Interrupt ("10") use "PIOA";
+      for Interrupt ("11") use "PIOB";
+      for Interrupt ("13") use "USART0";
+      for Interrupt ("14") use "USART1";
+      for Interrupt ("16") use "PIOD";
+      for Interrupt ("19") use "TWIHS0";
+      for Interrupt ("20") use "TWIHS1";
+      for Interrupt ("22") use "SSC";
+      for Interrupt ("23") use "TC0";
+      for Interrupt ("24") use "TC1";
+      for Interrupt ("25") use "TC2";
+      for Interrupt ("26") use "TC3";
+      for Interrupt ("27") use "TC4";
+      for Interrupt ("28") use "TC5";
+      for Interrupt ("29") use "AFEC0";
+      for Interrupt ("30") use "DACC";
+      for Interrupt ("31") use "PWM0";
+      for Interrupt ("32") use "ICM";
+      for Interrupt ("33") use "ACC";
+      for Interrupt ("34") use "USBHS";
+      for Interrupt ("35") use "MCAN0_INT0";
+      for Interrupt ("36") use "MCAN0_INT1";
+      for Interrupt ("40") use "AFEC1";
+      for Interrupt ("43") use "QSPI";
+      for Interrupt ("44") use "UART2";
+      for Interrupt ("47") use "TC6";
+      for Interrupt ("48") use "TC7";
+      for Interrupt ("49") use "TC8";
+      for Interrupt ("50") use "TC9";
+      for Interrupt ("51") use "TC10";
+      for Interrupt ("52") use "TC11";
+      for Interrupt ("53") use "MLB";
+      for Interrupt ("56") use "AES";
+      for Interrupt ("57") use "TRNG";
+      for Interrupt ("58") use "XDMAC";
+      for Interrupt ("59") use "ISI";
+      for Interrupt ("60") use "PWM1";
+      for Interrupt ("61") use "FPU";
+      for Interrupt ("63") use "RSWDT";
+      for Interrupt ("64") use "CCW";
+      for Interrupt ("65") use "CCF";
+      for Interrupt ("68") use "IXC";
+      case Device_Name is
+         when "samv70q19a-aa" |
+              "samv70q19a-cb" |
+              "samv70q19b-aa" |
+              "samv70q19b-cb" |
+              "samv70q20a-aa" |
+              "samv70q20a-cb" |
+              "samv70q20b-aa" |
+              "samv70q20b-cb" =>
+            for Interrupt ("12") use "PIOC";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samv70n19a-aa" |
+              "samv70n19a-cb" |
+              "samv70n19b-aa" |
+              "samv70n19b-cb" |
+              "samv70n20a-aa" |
+              "samv70n20a-cb" |
+              "samv70n20b-aa" |
+              "samv70n20b-cb" |
+              "samv70q19a-aa" |
+              "samv70q19a-cb" |
+              "samv70q19b-aa" |
+              "samv70q19b-cb" |
+              "samv70q20a-aa" |
+              "samv70q20a-cb" |
+              "samv70q20b-aa" |
+              "samv70q20b-cb" =>
+            for Interrupt ("15") use "USART2";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samv70q19a-aa" |
+              "samv70q19a-cb" |
+              "samv70q19b-aa" |
+              "samv70q19b-cb" |
+              "samv70q20a-aa" |
+              "samv70q20a-cb" |
+              "samv70q20b-aa" |
+              "samv70q20b-cb" =>
+            for Interrupt ("17") use "PIOE";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samv70j19a-aa" |
+              "samv70j20a-aa" |
+              "samv70n19a-aa" |
+              "samv70n19a-cb" |
+              "samv70n20a-aa" |
+              "samv70n20a-cb" |
+              "samv70q19a-aa" |
+              "samv70q19a-cb" |
+              "samv70q20a-aa" |
+              "samv70q20a-cb" =>
+            for Interrupt ("18") use "HSMCI";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samv70n19b-aa" |
+              "samv70n19b-cb" |
+              "samv70n20b-aa" |
+              "samv70n20b-cb" |
+              "samv70q19b-aa" |
+              "samv70q19b-cb" |
+              "samv70q20b-aa" |
+              "samv70q20b-cb" =>
+            for Interrupt ("18") use "HSMCI";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samv70n19a-aa" |
+              "samv70n19a-cb" |
+              "samv70n19b-aa" |
+              "samv70n19b-cb" |
+              "samv70n20a-aa" |
+              "samv70n20a-cb" |
+              "samv70n20b-aa" |
+              "samv70n20b-cb" |
+              "samv70q19a-aa" |
+              "samv70q19a-cb" |
+              "samv70q19b-aa" |
+              "samv70q19b-cb" |
+              "samv70q20a-aa" |
+              "samv70q20a-cb" |
+              "samv70q20b-aa" |
+              "samv70q20b-cb" =>
+            for Interrupt ("21") use "SPI0";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samv70j19a-aa" |
+              "samv70q19a-aa" |
+              "samv70q19a-cb" =>
+            for Interrupt ("37") use "MCAN1_INT0";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samv70n20a-aa" |
+              "samv70n20a-cb" |
+              "samv70q20a-aa" |
+              "samv70q20a-cb" =>
+            for Interrupt ("37") use "MCAN1_INT0";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samv70n19b-aa" |
+              "samv70n19b-cb" |
+              "samv70n20b-aa" |
+              "samv70n20b-cb" |
+              "samv70q19b-aa" |
+              "samv70q19b-cb" |
+              "samv70q20b-aa" |
+              "samv70q20b-cb" =>
+            for Interrupt ("37") use "MCAN1_INT0";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samv70j19a-aa" |
+              "samv70q19a-aa" |
+              "samv70q19a-cb" =>
+            for Interrupt ("38") use "MCAN1_INT1";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samv70n20a-aa" |
+              "samv70n20a-cb" |
+              "samv70q20a-aa" |
+              "samv70q20a-cb" =>
+            for Interrupt ("38") use "MCAN1_INT1";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samv70n19b-aa" |
+              "samv70n19b-cb" |
+              "samv70n20b-aa" |
+              "samv70n20b-cb" |
+              "samv70q19b-aa" |
+              "samv70q19b-cb" |
+              "samv70q20b-aa" |
+              "samv70q20b-cb" =>
+            for Interrupt ("38") use "MCAN1_INT1";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samv70n19a-aa" |
+              "samv70n19a-cb" |
+              "samv70n19b-aa" |
+              "samv70n19b-cb" |
+              "samv70n20a-aa" |
+              "samv70n20a-cb" |
+              "samv70n20b-aa" |
+              "samv70n20b-cb" |
+              "samv70q19a-aa" |
+              "samv70q19a-cb" |
+              "samv70q19b-aa" |
+              "samv70q19b-cb" |
+              "samv70q20a-aa" |
+              "samv70q20a-cb" |
+              "samv70q20b-aa" |
+              "samv70q20b-cb" =>
+            for Interrupt ("41") use "TWIHS2";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samv70q19a-aa" |
+              "samv70q19a-cb" |
+              "samv70q19b-aa" |
+              "samv70q19b-cb" |
+              "samv70q20a-aa" |
+              "samv70q20a-cb" |
+              "samv70q20b-aa" |
+              "samv70q20b-cb" =>
+            for Interrupt ("42") use "SPI1";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samv70n19a-aa" |
+              "samv70n19a-cb" |
+              "samv70n19b-aa" |
+              "samv70n19b-cb" |
+              "samv70n20a-aa" |
+              "samv70n20a-cb" |
+              "samv70n20b-aa" |
+              "samv70n20b-cb" |
+              "samv70q19a-aa" |
+              "samv70q19a-cb" |
+              "samv70q19b-aa" |
+              "samv70q19b-cb" |
+              "samv70q20a-aa" |
+              "samv70q20a-cb" |
+              "samv70q20b-aa" |
+              "samv70q20b-cb" =>
+            for Interrupt ("45") use "UART3";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samv70n19a-aa" |
+              "samv70n19a-cb" |
+              "samv70n19b-aa" |
+              "samv70n19b-cb" |
+              "samv70n20a-aa" |
+              "samv70n20a-cb" |
+              "samv70n20b-aa" |
+              "samv70n20b-cb" |
+              "samv70q19a-aa" |
+              "samv70q19a-cb" |
+              "samv70q19b-aa" |
+              "samv70q19b-cb" |
+              "samv70q20a-aa" |
+              "samv70q20a-cb" |
+              "samv70q20b-aa" |
+              "samv70q20b-cb" =>
+            for Interrupt ("46") use "UART4";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samv70n19b-aa" |
+              "samv70n19b-cb" |
+              "samv70n20b-aa" |
+              "samv70n20b-cb" |
+              "samv70q19b-aa" |
+              "samv70q19b-cb" |
+              "samv70q20b-aa" |
+              "samv70q20b-cb" =>
+            for Interrupt ("69") use "I2SC0";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samv70q19b-aa" |
+              "samv70q19b-cb" |
+              "samv70q20b-aa" |
+              "samv70q20b-cb" =>
+            for Interrupt ("70") use "I2SC1";
+         when others => null;
+      end case;
+
+      Mem_List := ();
+      case Device_Name is
+         when "samv70j19a-aa" |
+              "samv70j19b-aa" |
+              "samv70n19a-aa" |
+              "samv70n19a-cb" |
+              "samv70n19b-aa" |
+              "samv70n19b-cb" |
+              "samv70q19a-aa" |
+              "samv70q19a-cb" |
+              "samv70q19b-aa" |
+              "samv70q19b-cb" =>
+            Mem_List := Mem_List & ("flash");
+            for Mem_Kind ("flash") use "ROM";
+            for Address  ("flash") use "0x00400000";
+            for Size     ("flash") use "524288";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samv70j20a-aa" |
+              "samv70j20b-aa" |
+              "samv70n20a-aa" |
+              "samv70n20a-cb" |
+              "samv70n20b-aa" |
+              "samv70n20b-cb" |
+              "samv70q20a-aa" |
+              "samv70q20a-cb" |
+              "samv70q20b-aa" |
+              "samv70q20b-cb" =>
+            Mem_List := Mem_List & ("flash");
+            for Mem_Kind ("flash") use "ROM";
+            for Address  ("flash") use "0x00400000";
+            for Size     ("flash") use "1048576";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samv70j19a-aa" |
+              "samv70j19b-aa" |
+              "samv70n19a-aa" |
+              "samv70n19a-cb" |
+              "samv70n19b-aa" |
+              "samv70n19b-cb" |
+              "samv70q19a-aa" |
+              "samv70q19a-cb" |
+              "samv70q19b-aa" |
+              "samv70q19b-cb" =>
+            Mem_List := Mem_List & ("ram");
+            for Mem_Kind ("ram") use "RAM";
+            for Address  ("ram") use "0x20400000";
+            for Size     ("ram") use "262144";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samv70j20a-aa" |
+              "samv70j20b-aa" |
+              "samv70n20a-aa" |
+              "samv70n20a-cb" |
+              "samv70n20b-aa" |
+              "samv70n20b-cb" |
+              "samv70q20a-aa" |
+              "samv70q20a-cb" |
+              "samv70q20b-aa" |
+              "samv70q20b-cb" =>
+            Mem_List := Mem_List & ("ram");
+            for Mem_Kind ("ram") use "RAM";
+            for Address  ("ram") use "0x20400000";
+            for Size     ("ram") use "393216";
+         when others => null;
+      end case;
+      for Memories use Mem_List;
+      for Boot_Memory use samv70_dc_Config.Boot_Memory;
+      for Main_Stack_Size use samv70_dc_Config.Stack_Size;
+
+   end Device_Configuration;
+end samv70_dc;

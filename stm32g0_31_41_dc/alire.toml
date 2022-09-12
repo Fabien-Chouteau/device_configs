@@ -1,0 +1,10 @@
+name = "stm32g0_31_41_dc"
+description = "Device configuration for stm32g0_31_41_dc micro-controllers"
+version = "0.1.0-dev"
+authors = ["a script"]
+maintainers = ["Fabien Chouteau <chouteau@adacore.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+[configuration.variables]
+Device = {type = "Enum", values = ["stm32g031c4t6", "stm32g031c4u6", "stm32g031c6t6", "stm32g031c6u6", "stm32g031c8t6", "stm32g031c8t7", "stm32g031c8u6", "stm32g031c8u7", "stm32g031f4p3", "stm32g031f4p6", "stm32g031f4p7", "stm32g031f6p6", "stm32g031f6p7", "stm32g031f8p6", "stm32g031g4u6", "stm32g031g6u3", "stm32g031g6u6", "stm32g031g6u7", "stm32g031g8u3", "stm32g031g8u6", "stm32g031g8u7", "stm32g031j4m6", "stm32g031j6m3", "stm32g031j6m6", "stm32g031j6m7", "stm32g031k4t3", "stm32g031k4t6", "stm32g031k4t7", "stm32g031k4u3", "stm32g031k4u6", "stm32g031k4u7", "stm32g031k6t6", "stm32g031k6u6", "stm32g031k8t3", "stm32g031k8t6", "stm32g031k8t7", "stm32g031k8u3", "stm32g031k8u6", "stm32g031k8u7", "stm32g031y8y6", "stm32g041c6t6", "stm32g041c6u6", "stm32g041c8t6", "stm32g041c8u6", "stm32g041f6p6", "stm32g041f8p6", "stm32g041g6u6", "stm32g041g8u6", "stm32g041j6m6", "stm32g041k6t6", "stm32g041k6u6", "stm32g041k8t6", "stm32g041k8u6", "stm32g041y8y6"]}
+Boot_Memory = {type = "Enum", values = ["sram1", "flash"]}
+Stack_Size = {type = "Integer", first = 1, default = 1024}

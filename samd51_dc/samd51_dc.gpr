@@ -1,0 +1,819 @@
+with "config/samd51_dc_config.gpr";
+abstract project samd51_dc is
+   for Target use "arm-elf";
+   for Runtime ("Ada") use "light-cortex-m4f";
+   package Device_Configuration is
+      Device_Name := samd51_dc_Config.Device;
+      for CPU_Name use "cortex-m4f";
+
+      for Interrupt ("0") use "PM";
+      for Interrupt ("1") use "MCLK";
+      for Interrupt ("2") use "OSCCTRL_XOSC0";
+      for Interrupt ("3") use "OSCCTRL_XOSC1";
+      for Interrupt ("4") use "OSCCTRL_DFLL";
+      for Interrupt ("5") use "OSCCTRL_DPLL0";
+      for Interrupt ("6") use "OSCCTRL_DPLL1";
+      for Interrupt ("7") use "OSC32KCTRL";
+      for Interrupt ("8") use "SUPC_OTHER";
+      for Interrupt ("9") use "SUPC_BODDET";
+      for Interrupt ("10") use "WDT";
+      for Interrupt ("11") use "RTC";
+      for Interrupt ("12") use "EIC_EXTINT_0";
+      for Interrupt ("13") use "EIC_EXTINT_1";
+      for Interrupt ("14") use "EIC_EXTINT_2";
+      for Interrupt ("15") use "EIC_EXTINT_3";
+      for Interrupt ("16") use "EIC_EXTINT_4";
+      for Interrupt ("17") use "EIC_EXTINT_5";
+      for Interrupt ("18") use "EIC_EXTINT_6";
+      for Interrupt ("19") use "EIC_EXTINT_7";
+      for Interrupt ("20") use "EIC_EXTINT_8";
+      for Interrupt ("21") use "EIC_EXTINT_9";
+      for Interrupt ("22") use "EIC_EXTINT_10";
+      for Interrupt ("23") use "EIC_EXTINT_11";
+      for Interrupt ("24") use "EIC_EXTINT_12";
+      for Interrupt ("25") use "EIC_EXTINT_13";
+      for Interrupt ("26") use "EIC_EXTINT_14";
+      for Interrupt ("27") use "EIC_EXTINT_15";
+      for Interrupt ("28") use "FREQM";
+      for Interrupt ("29") use "NVMCTRL_0";
+      for Interrupt ("30") use "NVMCTRL_1";
+      for Interrupt ("31") use "DMAC_0";
+      for Interrupt ("32") use "DMAC_1";
+      for Interrupt ("33") use "DMAC_2";
+      for Interrupt ("34") use "DMAC_3";
+      for Interrupt ("35") use "DMAC_OTHER";
+      for Interrupt ("36") use "EVSYS_0";
+      for Interrupt ("37") use "EVSYS_1";
+      for Interrupt ("38") use "EVSYS_2";
+      for Interrupt ("39") use "EVSYS_3";
+      for Interrupt ("40") use "EVSYS_OTHER";
+      for Interrupt ("41") use "PAC";
+      for Interrupt ("45") use "RAMECC";
+      for Interrupt ("46") use "SERCOM0_0";
+      for Interrupt ("47") use "SERCOM0_1";
+      for Interrupt ("48") use "SERCOM0_2";
+      for Interrupt ("49") use "SERCOM0_OTHER";
+      for Interrupt ("50") use "SERCOM1_0";
+      for Interrupt ("51") use "SERCOM1_1";
+      for Interrupt ("52") use "SERCOM1_2";
+      for Interrupt ("53") use "SERCOM1_OTHER";
+      for Interrupt ("54") use "SERCOM2_0";
+      for Interrupt ("55") use "SERCOM2_1";
+      for Interrupt ("56") use "SERCOM2_2";
+      for Interrupt ("57") use "SERCOM2_OTHER";
+      for Interrupt ("58") use "SERCOM3_0";
+      for Interrupt ("59") use "SERCOM3_1";
+      for Interrupt ("60") use "SERCOM3_2";
+      for Interrupt ("61") use "SERCOM3_OTHER";
+      for Interrupt ("62") use "SERCOM4_0";
+      for Interrupt ("63") use "SERCOM4_1";
+      for Interrupt ("64") use "SERCOM4_2";
+      for Interrupt ("65") use "SERCOM4_OTHER";
+      for Interrupt ("66") use "SERCOM5_0";
+      for Interrupt ("67") use "SERCOM5_1";
+      for Interrupt ("68") use "SERCOM5_2";
+      for Interrupt ("69") use "SERCOM5_OTHER";
+      for Interrupt ("80") use "USB_OTHER";
+      for Interrupt ("81") use "USB_SOF_HSOF";
+      for Interrupt ("82") use "USB_TRCPT0";
+      for Interrupt ("83") use "USB_TRCPT1";
+      for Interrupt ("85") use "TCC0_OTHER";
+      for Interrupt ("86") use "TCC0_MC0";
+      for Interrupt ("87") use "TCC0_MC1";
+      for Interrupt ("88") use "TCC0_MC2";
+      for Interrupt ("89") use "TCC0_MC3";
+      for Interrupt ("90") use "TCC0_MC4";
+      for Interrupt ("91") use "TCC0_MC5";
+      for Interrupt ("92") use "TCC1_OTHER";
+      for Interrupt ("93") use "TCC1_MC0";
+      for Interrupt ("94") use "TCC1_MC1";
+      for Interrupt ("95") use "TCC1_MC2";
+      for Interrupt ("96") use "TCC1_MC3";
+      for Interrupt ("97") use "TCC2_OTHER";
+      for Interrupt ("98") use "TCC2_MC0";
+      for Interrupt ("99") use "TCC2_MC1";
+      for Interrupt ("100") use "TCC2_MC2";
+      for Interrupt ("107") use "TC0";
+      for Interrupt ("108") use "TC1";
+      for Interrupt ("109") use "TC2";
+      for Interrupt ("110") use "TC3";
+      for Interrupt ("115") use "PDEC_OTHER";
+      for Interrupt ("116") use "PDEC_MC0";
+      for Interrupt ("117") use "PDEC_MC1";
+      for Interrupt ("118") use "ADC0_OTHER";
+      for Interrupt ("119") use "ADC0_RESRDY";
+      for Interrupt ("120") use "ADC1_OTHER";
+      for Interrupt ("121") use "ADC1_RESRDY";
+      for Interrupt ("122") use "AC";
+      for Interrupt ("123") use "DAC_OTHER";
+      for Interrupt ("124") use "DAC_EMPTY_0";
+      for Interrupt ("125") use "DAC_EMPTY_1";
+      for Interrupt ("126") use "DAC_RESRDY_0";
+      for Interrupt ("127") use "DAC_RESRDY_1";
+      for Interrupt ("129") use "PCC";
+      for Interrupt ("130") use "AES";
+      for Interrupt ("131") use "TRNG";
+      for Interrupt ("132") use "ICM";
+      for Interrupt ("133") use "PUKCC";
+      for Interrupt ("134") use "QSPI";
+      for Interrupt ("135") use "SDHC0";
+      case Device_Name is
+         when "samd51n19a-af" |
+              "samd51n19a-au" |
+              "samd51n19a-az" |
+              "samd51n20a-af" |
+              "samd51n20a-au" |
+              "samd51n20a-az" |
+              "samd51p19a-af" |
+              "samd51p19a-au" |
+              "samd51p19a-az" |
+              "samd51p19a-ct" |
+              "samd51p20a-af" |
+              "samd51p20a-au" |
+              "samd51p20a-az" |
+              "samd51p20a-ct" =>
+            for Interrupt ("70") use "SERCOM6_0";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samd51n19a-af" |
+              "samd51n19a-au" |
+              "samd51n19a-az" |
+              "samd51n20a-af" |
+              "samd51n20a-au" |
+              "samd51n20a-az" |
+              "samd51p19a-af" |
+              "samd51p19a-au" |
+              "samd51p19a-az" |
+              "samd51p19a-ct" |
+              "samd51p20a-af" |
+              "samd51p20a-au" |
+              "samd51p20a-az" |
+              "samd51p20a-ct" =>
+            for Interrupt ("71") use "SERCOM6_1";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samd51n19a-af" |
+              "samd51n19a-au" |
+              "samd51n19a-az" |
+              "samd51n20a-af" |
+              "samd51n20a-au" |
+              "samd51n20a-az" |
+              "samd51p19a-af" |
+              "samd51p19a-au" |
+              "samd51p19a-az" |
+              "samd51p19a-ct" |
+              "samd51p20a-af" |
+              "samd51p20a-au" |
+              "samd51p20a-az" |
+              "samd51p20a-ct" =>
+            for Interrupt ("72") use "SERCOM6_2";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samd51n19a-af" |
+              "samd51n19a-au" |
+              "samd51n19a-az" |
+              "samd51n20a-af" |
+              "samd51n20a-au" |
+              "samd51n20a-az" |
+              "samd51p19a-af" |
+              "samd51p19a-au" |
+              "samd51p19a-az" |
+              "samd51p19a-ct" |
+              "samd51p20a-af" |
+              "samd51p20a-au" |
+              "samd51p20a-az" |
+              "samd51p20a-ct" =>
+            for Interrupt ("73") use "SERCOM6_OTHER";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samd51n19a-af" |
+              "samd51n19a-au" |
+              "samd51n19a-az" |
+              "samd51n20a-af" |
+              "samd51n20a-au" |
+              "samd51n20a-az" |
+              "samd51p19a-af" |
+              "samd51p19a-au" |
+              "samd51p19a-az" |
+              "samd51p19a-ct" |
+              "samd51p20a-af" |
+              "samd51p20a-au" |
+              "samd51p20a-az" |
+              "samd51p20a-ct" =>
+            for Interrupt ("74") use "SERCOM7_0";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samd51n19a-af" |
+              "samd51n19a-au" |
+              "samd51n19a-az" |
+              "samd51n20a-af" |
+              "samd51n20a-au" |
+              "samd51n20a-az" |
+              "samd51p19a-af" |
+              "samd51p19a-au" |
+              "samd51p19a-az" |
+              "samd51p19a-ct" |
+              "samd51p20a-af" |
+              "samd51p20a-au" |
+              "samd51p20a-az" |
+              "samd51p20a-ct" =>
+            for Interrupt ("75") use "SERCOM7_1";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samd51n19a-af" |
+              "samd51n19a-au" |
+              "samd51n19a-az" |
+              "samd51n20a-af" |
+              "samd51n20a-au" |
+              "samd51n20a-az" |
+              "samd51p19a-af" |
+              "samd51p19a-au" |
+              "samd51p19a-az" |
+              "samd51p19a-ct" |
+              "samd51p20a-af" |
+              "samd51p20a-au" |
+              "samd51p20a-az" |
+              "samd51p20a-ct" =>
+            for Interrupt ("76") use "SERCOM7_2";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samd51n19a-af" |
+              "samd51n19a-au" |
+              "samd51n19a-az" |
+              "samd51n20a-af" |
+              "samd51n20a-au" |
+              "samd51n20a-az" |
+              "samd51p19a-af" |
+              "samd51p19a-au" |
+              "samd51p19a-az" |
+              "samd51p19a-ct" |
+              "samd51p20a-af" |
+              "samd51p20a-au" |
+              "samd51p20a-az" |
+              "samd51p20a-ct" =>
+            for Interrupt ("77") use "SERCOM7_OTHER";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samd51j18a-af" |
+              "samd51j18a-au" |
+              "samd51j18a-az" |
+              "samd51j18a-mf" |
+              "samd51j18a-mu" |
+              "samd51j18a-mz" |
+              "samd51j19a-af" |
+              "samd51j19a-au" |
+              "samd51j19a-az" |
+              "samd51j19a-mf" |
+              "samd51j19a-mu" |
+              "samd51j19a-mz" |
+              "samd51j19a-un" |
+              "samd51j19a-uu" |
+              "samd51j20a-af" |
+              "samd51j20a-au" |
+              "samd51j20a-az" |
+              "samd51j20a-mf" |
+              "samd51j20a-mu" |
+              "samd51j20a-mz" |
+              "samd51j20a-un" |
+              "samd51j20a-uu" |
+              "samd51n19a-af" |
+              "samd51n19a-au" |
+              "samd51n19a-az" |
+              "samd51n20a-af" |
+              "samd51n20a-au" |
+              "samd51n20a-az" |
+              "samd51p19a-af" |
+              "samd51p19a-au" |
+              "samd51p19a-az" |
+              "samd51p19a-ct" |
+              "samd51p20a-af" |
+              "samd51p20a-au" |
+              "samd51p20a-az" |
+              "samd51p20a-ct" =>
+            for Interrupt ("101") use "TCC3_OTHER";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samd51j18a-af" |
+              "samd51j18a-au" |
+              "samd51j18a-az" |
+              "samd51j18a-mf" |
+              "samd51j18a-mu" |
+              "samd51j18a-mz" |
+              "samd51j19a-af" |
+              "samd51j19a-au" |
+              "samd51j19a-az" |
+              "samd51j19a-mf" |
+              "samd51j19a-mu" |
+              "samd51j19a-mz" |
+              "samd51j19a-un" |
+              "samd51j19a-uu" |
+              "samd51j20a-af" |
+              "samd51j20a-au" |
+              "samd51j20a-az" |
+              "samd51j20a-mf" |
+              "samd51j20a-mu" |
+              "samd51j20a-mz" |
+              "samd51j20a-un" |
+              "samd51j20a-uu" |
+              "samd51n19a-af" |
+              "samd51n19a-au" |
+              "samd51n19a-az" |
+              "samd51n20a-af" |
+              "samd51n20a-au" |
+              "samd51n20a-az" |
+              "samd51p19a-af" |
+              "samd51p19a-au" |
+              "samd51p19a-az" |
+              "samd51p19a-ct" |
+              "samd51p20a-af" |
+              "samd51p20a-au" |
+              "samd51p20a-az" |
+              "samd51p20a-ct" =>
+            for Interrupt ("102") use "TCC3_MC0";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samd51j18a-af" |
+              "samd51j18a-au" |
+              "samd51j18a-az" |
+              "samd51j18a-mf" |
+              "samd51j18a-mu" |
+              "samd51j18a-mz" |
+              "samd51j19a-af" |
+              "samd51j19a-au" |
+              "samd51j19a-az" |
+              "samd51j19a-mf" |
+              "samd51j19a-mu" |
+              "samd51j19a-mz" |
+              "samd51j19a-un" |
+              "samd51j19a-uu" |
+              "samd51j20a-af" |
+              "samd51j20a-au" |
+              "samd51j20a-az" |
+              "samd51j20a-mf" |
+              "samd51j20a-mu" |
+              "samd51j20a-mz" |
+              "samd51j20a-un" |
+              "samd51j20a-uu" |
+              "samd51n19a-af" |
+              "samd51n19a-au" |
+              "samd51n19a-az" |
+              "samd51n20a-af" |
+              "samd51n20a-au" |
+              "samd51n20a-az" |
+              "samd51p19a-af" |
+              "samd51p19a-au" |
+              "samd51p19a-az" |
+              "samd51p19a-ct" |
+              "samd51p20a-af" |
+              "samd51p20a-au" |
+              "samd51p20a-az" |
+              "samd51p20a-ct" =>
+            for Interrupt ("103") use "TCC3_MC1";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samd51j18a-af" |
+              "samd51j18a-au" |
+              "samd51j18a-az" |
+              "samd51j18a-mf" |
+              "samd51j18a-mu" |
+              "samd51j18a-mz" |
+              "samd51j19a-af" |
+              "samd51j19a-au" |
+              "samd51j19a-az" |
+              "samd51j19a-mf" |
+              "samd51j19a-mu" |
+              "samd51j19a-mz" |
+              "samd51j19a-un" |
+              "samd51j19a-uu" |
+              "samd51j20a-af" |
+              "samd51j20a-au" |
+              "samd51j20a-az" |
+              "samd51j20a-mf" |
+              "samd51j20a-mu" |
+              "samd51j20a-mz" |
+              "samd51j20a-un" |
+              "samd51j20a-uu" |
+              "samd51n19a-af" |
+              "samd51n19a-au" |
+              "samd51n19a-az" |
+              "samd51n20a-af" |
+              "samd51n20a-au" |
+              "samd51n20a-az" |
+              "samd51p19a-af" |
+              "samd51p19a-au" |
+              "samd51p19a-az" |
+              "samd51p19a-ct" |
+              "samd51p20a-af" |
+              "samd51p20a-au" |
+              "samd51p20a-az" |
+              "samd51p20a-ct" =>
+            for Interrupt ("104") use "TCC4_OTHER";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samd51j18a-af" |
+              "samd51j18a-au" |
+              "samd51j18a-az" |
+              "samd51j18a-mf" |
+              "samd51j18a-mu" |
+              "samd51j18a-mz" |
+              "samd51j19a-af" |
+              "samd51j19a-au" |
+              "samd51j19a-az" |
+              "samd51j19a-mf" |
+              "samd51j19a-mu" |
+              "samd51j19a-mz" |
+              "samd51j19a-un" |
+              "samd51j19a-uu" |
+              "samd51j20a-af" |
+              "samd51j20a-au" |
+              "samd51j20a-az" |
+              "samd51j20a-mf" |
+              "samd51j20a-mu" |
+              "samd51j20a-mz" |
+              "samd51j20a-un" |
+              "samd51j20a-uu" |
+              "samd51n19a-af" |
+              "samd51n19a-au" |
+              "samd51n19a-az" |
+              "samd51n20a-af" |
+              "samd51n20a-au" |
+              "samd51n20a-az" |
+              "samd51p19a-af" |
+              "samd51p19a-au" |
+              "samd51p19a-az" |
+              "samd51p19a-ct" |
+              "samd51p20a-af" |
+              "samd51p20a-au" |
+              "samd51p20a-az" |
+              "samd51p20a-ct" =>
+            for Interrupt ("105") use "TCC4_MC0";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samd51j18a-af" |
+              "samd51j18a-au" |
+              "samd51j18a-az" |
+              "samd51j18a-mf" |
+              "samd51j18a-mu" |
+              "samd51j18a-mz" |
+              "samd51j19a-af" |
+              "samd51j19a-au" |
+              "samd51j19a-az" |
+              "samd51j19a-mf" |
+              "samd51j19a-mu" |
+              "samd51j19a-mz" |
+              "samd51j19a-un" |
+              "samd51j19a-uu" |
+              "samd51j20a-af" |
+              "samd51j20a-au" |
+              "samd51j20a-az" |
+              "samd51j20a-mf" |
+              "samd51j20a-mu" |
+              "samd51j20a-mz" |
+              "samd51j20a-un" |
+              "samd51j20a-uu" |
+              "samd51n19a-af" |
+              "samd51n19a-au" |
+              "samd51n19a-az" |
+              "samd51n20a-af" |
+              "samd51n20a-au" |
+              "samd51n20a-az" |
+              "samd51p19a-af" |
+              "samd51p19a-au" |
+              "samd51p19a-az" |
+              "samd51p19a-ct" |
+              "samd51p20a-af" |
+              "samd51p20a-au" |
+              "samd51p20a-az" |
+              "samd51p20a-ct" =>
+            for Interrupt ("106") use "TCC4_MC1";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samd51j18a-af" |
+              "samd51j18a-au" |
+              "samd51j18a-az" |
+              "samd51j18a-mf" |
+              "samd51j18a-mu" |
+              "samd51j18a-mz" |
+              "samd51j19a-af" |
+              "samd51j19a-au" |
+              "samd51j19a-az" |
+              "samd51j19a-mf" |
+              "samd51j19a-mu" |
+              "samd51j19a-mz" |
+              "samd51j19a-un" |
+              "samd51j19a-uu" |
+              "samd51j20a-af" |
+              "samd51j20a-au" |
+              "samd51j20a-az" |
+              "samd51j20a-mf" |
+              "samd51j20a-mu" |
+              "samd51j20a-mz" |
+              "samd51j20a-un" |
+              "samd51j20a-uu" |
+              "samd51n19a-af" |
+              "samd51n19a-au" |
+              "samd51n19a-az" |
+              "samd51n20a-af" |
+              "samd51n20a-au" |
+              "samd51n20a-az" |
+              "samd51p19a-af" |
+              "samd51p19a-au" |
+              "samd51p19a-az" |
+              "samd51p19a-ct" |
+              "samd51p20a-af" |
+              "samd51p20a-au" |
+              "samd51p20a-az" |
+              "samd51p20a-ct" =>
+            for Interrupt ("111") use "TC4";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samd51j18a-af" |
+              "samd51j18a-au" |
+              "samd51j18a-az" |
+              "samd51j18a-mf" |
+              "samd51j18a-mu" |
+              "samd51j18a-mz" |
+              "samd51j19a-af" |
+              "samd51j19a-au" |
+              "samd51j19a-az" |
+              "samd51j19a-mf" |
+              "samd51j19a-mu" |
+              "samd51j19a-mz" |
+              "samd51j19a-un" |
+              "samd51j19a-uu" |
+              "samd51j20a-af" |
+              "samd51j20a-au" |
+              "samd51j20a-az" |
+              "samd51j20a-mf" |
+              "samd51j20a-mu" |
+              "samd51j20a-mz" |
+              "samd51j20a-un" |
+              "samd51j20a-uu" |
+              "samd51n19a-af" |
+              "samd51n19a-au" |
+              "samd51n19a-az" |
+              "samd51n20a-af" |
+              "samd51n20a-au" |
+              "samd51n20a-az" |
+              "samd51p19a-af" |
+              "samd51p19a-au" |
+              "samd51p19a-az" |
+              "samd51p19a-ct" |
+              "samd51p20a-af" |
+              "samd51p20a-au" |
+              "samd51p20a-az" |
+              "samd51p20a-ct" =>
+            for Interrupt ("112") use "TC5";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samd51n19a-af" |
+              "samd51n19a-au" |
+              "samd51n19a-az" |
+              "samd51n20a-af" |
+              "samd51n20a-au" |
+              "samd51n20a-az" |
+              "samd51p19a-af" |
+              "samd51p19a-au" |
+              "samd51p19a-az" |
+              "samd51p19a-ct" |
+              "samd51p20a-af" |
+              "samd51p20a-au" |
+              "samd51p20a-az" |
+              "samd51p20a-ct" =>
+            for Interrupt ("113") use "TC6";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samd51n19a-af" |
+              "samd51n19a-au" |
+              "samd51n19a-az" |
+              "samd51n20a-af" |
+              "samd51n20a-au" |
+              "samd51n20a-az" |
+              "samd51p19a-af" |
+              "samd51p19a-au" |
+              "samd51p19a-az" |
+              "samd51p19a-ct" |
+              "samd51p20a-af" |
+              "samd51p20a-au" |
+              "samd51p20a-az" |
+              "samd51p20a-ct" =>
+            for Interrupt ("114") use "TC7";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samd51j18a-af" |
+              "samd51j18a-au" |
+              "samd51j18a-az" |
+              "samd51j18a-mf" |
+              "samd51j18a-mu" |
+              "samd51j18a-mz" |
+              "samd51j19a-af" |
+              "samd51j19a-au" |
+              "samd51j19a-az" |
+              "samd51j19a-mf" |
+              "samd51j19a-mu" |
+              "samd51j19a-mz" |
+              "samd51j19a-un" |
+              "samd51j19a-uu" |
+              "samd51j20a-af" |
+              "samd51j20a-au" |
+              "samd51j20a-az" |
+              "samd51j20a-mf" |
+              "samd51j20a-mu" |
+              "samd51j20a-mz" |
+              "samd51j20a-un" |
+              "samd51j20a-uu" |
+              "samd51n19a-af" |
+              "samd51n19a-au" |
+              "samd51n19a-az" |
+              "samd51n20a-af" |
+              "samd51n20a-au" |
+              "samd51n20a-az" |
+              "samd51p19a-af" |
+              "samd51p19a-au" |
+              "samd51p19a-az" |
+              "samd51p19a-ct" |
+              "samd51p20a-af" |
+              "samd51p20a-au" |
+              "samd51p20a-az" |
+              "samd51p20a-ct" =>
+            for Interrupt ("128") use "I2S";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samd51n19a-af" |
+              "samd51n19a-au" |
+              "samd51n19a-az" |
+              "samd51n20a-af" |
+              "samd51n20a-au" |
+              "samd51n20a-az" |
+              "samd51p19a-af" |
+              "samd51p19a-au" |
+              "samd51p19a-az" |
+              "samd51p19a-ct" |
+              "samd51p20a-af" |
+              "samd51p20a-au" |
+              "samd51p20a-az" |
+              "samd51p20a-ct" =>
+            for Interrupt ("136") use "SDHC1";
+         when others => null;
+      end case;
+
+      Mem_List := ();
+      Mem_List := Mem_List & ("extram");
+      for Mem_Kind ("extram") use "RAM";
+      for Address  ("extram") use "0x04000000";
+      for Size     ("extram") use "16777216";
+      Mem_List := Mem_List & ("lpram");
+      for Mem_Kind ("lpram") use "RAM";
+      for Address  ("lpram") use "0x47000000";
+      for Size     ("lpram") use "8192";
+      case Device_Name is
+         when "samd51g18a-mf" |
+              "samd51g18a-mu" |
+              "samd51g18a-mz" |
+              "samd51j18a-af" |
+              "samd51j18a-au" |
+              "samd51j18a-az" |
+              "samd51j18a-mf" |
+              "samd51j18a-mu" |
+              "samd51j18a-mz" =>
+            Mem_List := Mem_List & ("flash");
+            for Mem_Kind ("flash") use "ROM";
+            for Address  ("flash") use "0x00000000";
+            for Size     ("flash") use "262144";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samd51g19a-mf" |
+              "samd51g19a-mu" |
+              "samd51g19a-mz" |
+              "samd51j19a-af" |
+              "samd51j19a-au" |
+              "samd51j19a-az" |
+              "samd51j19a-mf" |
+              "samd51j19a-mu" |
+              "samd51j19a-mz" |
+              "samd51j19a-un" |
+              "samd51j19a-uu" |
+              "samd51n19a-af" |
+              "samd51n19a-au" |
+              "samd51n19a-az" |
+              "samd51p19a-af" |
+              "samd51p19a-au" |
+              "samd51p19a-az" |
+              "samd51p19a-ct" =>
+            Mem_List := Mem_List & ("flash");
+            for Mem_Kind ("flash") use "ROM";
+            for Address  ("flash") use "0x00000000";
+            for Size     ("flash") use "524288";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samd51j20a-af" |
+              "samd51j20a-au" |
+              "samd51j20a-az" |
+              "samd51j20a-mf" |
+              "samd51j20a-mu" |
+              "samd51j20a-mz" |
+              "samd51j20a-un" |
+              "samd51j20a-uu" |
+              "samd51n20a-af" |
+              "samd51n20a-au" |
+              "samd51n20a-az" |
+              "samd51p20a-af" |
+              "samd51p20a-au" |
+              "samd51p20a-az" |
+              "samd51p20a-ct" =>
+            Mem_List := Mem_List & ("flash");
+            for Mem_Kind ("flash") use "ROM";
+            for Address  ("flash") use "0x00000000";
+            for Size     ("flash") use "1048576";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samd51g18a-mf" |
+              "samd51g18a-mu" |
+              "samd51g18a-mz" |
+              "samd51j18a-af" |
+              "samd51j18a-au" |
+              "samd51j18a-az" |
+              "samd51j18a-mf" |
+              "samd51j18a-mu" |
+              "samd51j18a-mz" =>
+            Mem_List := Mem_List & ("ram");
+            for Mem_Kind ("ram") use "RAM";
+            for Address  ("ram") use "0x20000000";
+            for Size     ("ram") use "131072";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samd51g19a-mf" |
+              "samd51g19a-mu" |
+              "samd51g19a-mz" |
+              "samd51j19a-af" |
+              "samd51j19a-au" |
+              "samd51j19a-az" |
+              "samd51j19a-mf" |
+              "samd51j19a-mu" |
+              "samd51j19a-mz" |
+              "samd51j19a-un" |
+              "samd51j19a-uu" |
+              "samd51n19a-af" |
+              "samd51n19a-au" |
+              "samd51n19a-az" |
+              "samd51p19a-af" |
+              "samd51p19a-au" |
+              "samd51p19a-az" |
+              "samd51p19a-ct" =>
+            Mem_List := Mem_List & ("ram");
+            for Mem_Kind ("ram") use "RAM";
+            for Address  ("ram") use "0x20000000";
+            for Size     ("ram") use "196608";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samd51j20a-af" |
+              "samd51j20a-au" |
+              "samd51j20a-az" |
+              "samd51j20a-mf" |
+              "samd51j20a-mu" |
+              "samd51j20a-mz" |
+              "samd51j20a-un" |
+              "samd51j20a-uu" |
+              "samd51n20a-af" |
+              "samd51n20a-au" |
+              "samd51n20a-az" |
+              "samd51p20a-af" |
+              "samd51p20a-au" |
+              "samd51p20a-az" |
+              "samd51p20a-ct" =>
+            Mem_List := Mem_List & ("ram");
+            for Mem_Kind ("ram") use "RAM";
+            for Address  ("ram") use "0x20000000";
+            for Size     ("ram") use "262144";
+         when others => null;
+      end case;
+      for Memories use Mem_List;
+      for Boot_Memory use samd51_dc_Config.Boot_Memory;
+      for Main_Stack_Size use samd51_dc_Config.Stack_Size;
+
+   end Device_Configuration;
+end samd51_dc;

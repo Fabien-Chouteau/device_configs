@@ -1,0 +1,10 @@
+name = "stm32l0_51_52_53_62_63_dc"
+description = "Device configuration for stm32l0_51_52_53_62_63_dc micro-controllers"
+version = "0.1.0-dev"
+authors = ["a script"]
+maintainers = ["Fabien Chouteau <chouteau@adacore.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+[configuration.variables]
+Device = {type = "Enum", values = ["stm32l051c6t6", "stm32l051c6u6", "stm32l051c8t3", "stm32l051c8t6", "stm32l051c8t7", "stm32l051c8u3", "stm32l051c8u6", "stm32l051c8u7", "stm32l051k6t6", "stm32l051k6u6", "stm32l051k8t3", "stm32l051k8t6", "stm32l051k8t7", "stm32l051k8u3", "stm32l051k8u6", "stm32l051k8u7", "stm32l051r6h6", "stm32l051r6t6", "stm32l051r8h6", "stm32l051r8h7", "stm32l051r8t6", "stm32l051r8t7", "stm32l051t6y6", "stm32l051t8y3", "stm32l051t8y6", "stm32l051t8y7", "stm32l052c6t6", "stm32l052c6u6", "stm32l052c8t3", "stm32l052c8t6", "stm32l052c8t7", "stm32l052c8u3", "stm32l052c8u6", "stm32l052c8u7", "stm32l052k6t6", "stm32l052k6t7", "stm32l052k6u6", "stm32l052k6u7", "stm32l052k8t3", "stm32l052k8t6", "stm32l052k8t7", "stm32l052k8u3", "stm32l052k8u6", "stm32l052k8u7", "stm32l052r6h6", "stm32l052r6t6", "stm32l052r8h6", "stm32l052r8h7", "stm32l052r8t6", "stm32l052r8t7", "stm32l052t6y6", "stm32l052t6y7", "stm32l052t8f3", "stm32l052t8f6", "stm32l052t8f7", "stm32l052t8y3", "stm32l052t8y6", "stm32l052t8y7", "stm32l053c6t6", "stm32l053c6t7", "stm32l053c6u6", "stm32l053c6u7", "stm32l053c8t3", "stm32l053c8t6", "stm32l053c8t7", "stm32l053c8u3", "stm32l053c8u6", "stm32l053c8u7", "stm32l053r6h6", "stm32l053r6t6", "stm32l053r8h3", "stm32l053r8h6", "stm32l053r8h7", "stm32l053r8t3", "stm32l053r8t6", "stm32l053r8t7", "stm32l062c8u6", "stm32l062k8t6", "stm32l062k8u6", "stm32l063c8t6", "stm32l063c8u6", "stm32l063r8t6", "stm32l063r8t7"]}
+Boot_Memory = {type = "Enum", values = ["eeprom", "sram1", "flash"]}
+Stack_Size = {type = "Integer", first = 1, default = 1024}

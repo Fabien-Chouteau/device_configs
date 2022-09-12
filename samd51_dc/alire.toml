@@ -1,0 +1,10 @@
+name = "samd51_dc"
+description = "Device configuration for samd51_dc micro-controllers"
+version = "0.1.0-dev"
+authors = ["a script"]
+maintainers = ["Fabien Chouteau <chouteau@adacore.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+[configuration.variables]
+Device = {type = "Enum", values = ["samd51g18a-mf", "samd51g18a-mu", "samd51g18a-mz", "samd51g19a-mf", "samd51g19a-mu", "samd51g19a-mz", "samd51j18a-af", "samd51j18a-au", "samd51j18a-az", "samd51j18a-mf", "samd51j18a-mu", "samd51j18a-mz", "samd51j19a-af", "samd51j19a-au", "samd51j19a-az", "samd51j19a-mf", "samd51j19a-mu", "samd51j19a-mz", "samd51j19a-un", "samd51j19a-uu", "samd51j20a-af", "samd51j20a-au", "samd51j20a-az", "samd51j20a-mf", "samd51j20a-mu", "samd51j20a-mz", "samd51j20a-un", "samd51j20a-uu", "samd51n19a-af", "samd51n19a-au", "samd51n19a-az", "samd51n20a-af", "samd51n20a-au", "samd51n20a-az", "samd51p19a-af", "samd51p19a-au", "samd51p19a-az", "samd51p19a-ct", "samd51p20a-af", "samd51p20a-au", "samd51p20a-az", "samd51p20a-ct"]}
+Boot_Memory = {type = "Enum", values = ["flash", "eeprom", "ram", "extram", "lpram"]}
+Stack_Size = {type = "Integer", first = 1, default = 1024}

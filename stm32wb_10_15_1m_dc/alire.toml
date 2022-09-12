@@ -1,0 +1,10 @@
+name = "stm32wb_10_15_1m_dc"
+description = "Device configuration for stm32wb_10_15_1m_dc micro-controllers"
+version = "0.1.0-dev"
+authors = ["a script"]
+maintainers = ["Fabien Chouteau <chouteau@adacore.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+[configuration.variables]
+Device = {type = "Enum", values = ["stm32wb10ccu6", "stm32wb15ccu6", "stm32wb15ccu6e", "stm32wb15ccu7", "stm32wb15ccu7e", "stm32wb15ccy6", "stm32wb15ccy7", "stm32wb1mmch6"]}
+Boot_Memory = {type = "Enum", values = ["flash", "sram2", "sram1"]}
+Stack_Size = {type = "Integer", first = 1, default = 1024}

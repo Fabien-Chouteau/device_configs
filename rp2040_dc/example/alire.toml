@@ -1,0 +1,19 @@
+name = "example"
+description = "Shiny new project"
+version = "0.1.0-dev"
+
+authors = ["Fabien Chouteau"]
+maintainers = ["Fabien Chouteau <fabien.chouteau@gmail.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+
+executables = ["example"]
+[[depends-on]]
+rp2040_dc = "*"
+gnat_arm_elf = ">=12"
+
+[[pins]]
+rp2040_dc = { path = ".." }
+
+[configuration.values]
+rp2040_dc.Device = "rp2040"
+rp2040_dc.Boot_Memory = "flash"

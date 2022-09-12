@@ -1,0 +1,10 @@
+name = "stm32f1_01_f_g_dc"
+description = "Device configuration for stm32f1_01_f_g_dc micro-controllers"
+version = "0.1.0-dev"
+authors = ["a script"]
+maintainers = ["Fabien Chouteau <chouteau@adacore.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+[configuration.variables]
+Device = {type = "Enum", values = ["stm32f101rft6", "stm32f101rgt6", "stm32f101vft6", "stm32f101vgt6", "stm32f101zft6", "stm32f101zgt6"]}
+Boot_Memory = {type = "Enum", values = ["sram1", "flash"]}
+Stack_Size = {type = "Integer", first = 1, default = 1024}

@@ -1,0 +1,10 @@
+name = "stm32u5_75_85_dc"
+description = "Device configuration for stm32u5_75_85_dc micro-controllers"
+version = "0.1.0-dev"
+authors = ["a script"]
+maintainers = ["Fabien Chouteau <chouteau@adacore.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+[configuration.variables]
+Device = {type = "Enum", values = ["stm32u575agi6", "stm32u575agi6q", "stm32u575aii6", "stm32u575aii6q", "stm32u575cgt6", "stm32u575cgt6q", "stm32u575cgu6", "stm32u575cgu6q", "stm32u575cit6", "stm32u575cit6q", "stm32u575ciu6", "stm32u575ciu6q", "stm32u575ogy6q", "stm32u575oiy6q", "stm32u575qgi3", "stm32u575qgi3q", "stm32u575qgi6", "stm32u575qgi6q", "stm32u575qgi7", "stm32u575qgi7q", "stm32u575qii6", "stm32u575qii6q", "stm32u575rgt6", "stm32u575rgt6q", "stm32u575rit6", "stm32u575rit6q", "stm32u575vgt3", "stm32u575vgt3q", "stm32u575vgt6", "stm32u575vgt6q", "stm32u575vgt7", "stm32u575vgt7q", "stm32u575vit6", "stm32u575vit6q", "stm32u575zgt3", "stm32u575zgt3q", "stm32u575zgt6", "stm32u575zgt6q", "stm32u575zgt7", "stm32u575zgt7q", "stm32u575zit6", "stm32u575zit6q", "stm32u585aii6", "stm32u585aii6q", "stm32u585cit3", "stm32u585cit3q", "stm32u585cit6", "stm32u585cit6q", "stm32u585cit7", "stm32u585cit7q", "stm32u585ciu3", "stm32u585ciu3q", "stm32u585ciu6", "stm32u585ciu6q", "stm32u585ciu7", "stm32u585ciu7q", "stm32u585oiy6q", "stm32u585qii3", "stm32u585qii3q", "stm32u585qii6", "stm32u585qii6q", "stm32u585qii7", "stm32u585qii7q", "stm32u585rit6", "stm32u585rit6q", "stm32u585vit3", "stm32u585vit3q", "stm32u585vit6", "stm32u585vit6q", "stm32u585vit7", "stm32u585vit7q", "stm32u585zit6", "stm32u585zit6q"]}
+Boot_Memory = {type = "Enum", values = ["bkpsram", "sram1", "flash", "sram3", "sram4", "sram2"]}
+Stack_Size = {type = "Integer", first = 1, default = 1024}

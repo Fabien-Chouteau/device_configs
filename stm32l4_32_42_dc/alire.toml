@@ -1,0 +1,10 @@
+name = "stm32l4_32_42_dc"
+description = "Device configuration for stm32l4_32_42_dc micro-controllers"
+version = "0.1.0-dev"
+authors = ["a script"]
+maintainers = ["Fabien Chouteau <chouteau@adacore.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+[configuration.variables]
+Device = {type = "Enum", values = ["stm32l432kbu6", "stm32l432kcu6", "stm32l442kcu6"]}
+Boot_Memory = {type = "Enum", values = ["sram1", "flash", "ccm"]}
+Stack_Size = {type = "Integer", first = 1, default = 1024}

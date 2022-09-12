@@ -1,0 +1,10 @@
+name = "stm32h7_50_dc"
+description = "Device configuration for stm32h7_50_dc micro-controllers"
+version = "0.1.0-dev"
+authors = ["a script"]
+maintainers = ["Fabien Chouteau <chouteau@adacore.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+[configuration.variables]
+Device = {type = "Enum", values = ["stm32h750ibk6", "stm32h750ibt6", "stm32h750vbt6", "stm32h750xbh6", "stm32h750zbt6"]}
+Boot_Memory = {type = "Enum", values = ["flash", "itcm", "backup", "d2_sram1", "d2_sram2", "d1_sram", "d3_sram", "d2_sram3", "dtcm"]}
+Stack_Size = {type = "Integer", first = 1, default = 1024}

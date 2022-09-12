@@ -1,0 +1,10 @@
+name = "stm32f4_69_79_dc"
+description = "Device configuration for stm32f4_69_79_dc micro-controllers"
+version = "0.1.0-dev"
+authors = ["a script"]
+maintainers = ["Fabien Chouteau <chouteau@adacore.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+[configuration.variables]
+Device = {type = "Enum", values = ["stm32f469aeh6", "stm32f469aeh7", "stm32f469aey6", "stm32f469agh6", "stm32f469agy6", "stm32f469aih6", "stm32f469aiy6", "stm32f469bet6", "stm32f469bgt6", "stm32f469bit6", "stm32f469bit7", "stm32f469ieh6", "stm32f469iet6", "stm32f469igh6", "stm32f469igt6", "stm32f469iih6", "stm32f469iit6", "stm32f469neh6", "stm32f469ngh6", "stm32f469nih6", "stm32f469nih7", "stm32f469vet6", "stm32f469vgt6", "stm32f469vit6", "stm32f469zet6", "stm32f469zgt6", "stm32f469zit6", "stm32f479agh6", "stm32f479agy6", "stm32f479aih6", "stm32f479aiy6", "stm32f479bgt6", "stm32f479bit6", "stm32f479igh6", "stm32f479igt6", "stm32f479igt7", "stm32f479iih6", "stm32f479iih7", "stm32f479iit6", "stm32f479iit7", "stm32f479ngh6", "stm32f479nih6", "stm32f479vgt6", "stm32f479vit6", "stm32f479zgt6", "stm32f479zit6"]}
+Boot_Memory = {type = "Enum", values = ["ccm", "backup", "sram1", "flash", "sram3", "sram2"]}
+Stack_Size = {type = "Integer", first = 1, default = 1024}

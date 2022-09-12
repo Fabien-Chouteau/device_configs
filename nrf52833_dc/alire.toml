@@ -1,0 +1,10 @@
+name = "nrf52833_dc"
+description = "Device configuration for nrf52833_dc micro-controllers"
+version = "0.1.0-dev"
+authors = ["a script"]
+maintainers = ["Fabien Chouteau <chouteau@adacore.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+[configuration.variables]
+Device = {type = "Enum", values = ["nrf52833-xxaa"]}
+Boot_Memory = {type = "Enum", values = ["code_ram", "ram", "flash"]}
+Stack_Size = {type = "Integer", first = 1, default = 1024}

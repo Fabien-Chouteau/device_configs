@@ -1,0 +1,10 @@
+name = "stm32h7_42_dc"
+description = "Device configuration for stm32h7_42_dc micro-controllers"
+version = "0.1.0-dev"
+authors = ["a script"]
+maintainers = ["Fabien Chouteau <chouteau@adacore.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+[configuration.variables]
+Device = {type = "Enum", values = ["stm32h742agi6", "stm32h742aii6", "stm32h742bgt6", "stm32h742bit6", "stm32h742igk6", "stm32h742igt6", "stm32h742iik6", "stm32h742iit6", "stm32h742vgh6", "stm32h742vgt6", "stm32h742vih6", "stm32h742vit6", "stm32h742xgh6", "stm32h742xih6", "stm32h742zgt6", "stm32h742zit6"]}
+Boot_Memory = {type = "Enum", values = ["d1_sram", "d3_sram", "dtcm", "itcm", "d2_sram2", "d2_sram1", "flash", "backup"]}
+Stack_Size = {type = "Integer", first = 1, default = 1024}

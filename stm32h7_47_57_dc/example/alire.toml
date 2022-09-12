@@ -1,0 +1,19 @@
+name = "example"
+description = "Shiny new project"
+version = "0.1.0-dev"
+
+authors = ["Fabien Chouteau"]
+maintainers = ["Fabien Chouteau <fabien.chouteau@gmail.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+
+executables = ["example"]
+[[depends-on]]
+stm32h7_47_57_dc = "*"
+gnat_arm_elf = ">=12"
+
+[[pins]]
+stm32h7_47_57_dc = { path = ".." }
+
+[configuration.values]
+stm32h7_47_57_dc.Device = "stm32h747agi6@m4"
+stm32h7_47_57_dc.Boot_Memory = "itcm"

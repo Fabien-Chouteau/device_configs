@@ -1,0 +1,10 @@
+name = "stm32f4_46_dc"
+description = "Device configuration for stm32f4_46_dc micro-controllers"
+version = "0.1.0-dev"
+authors = ["a script"]
+maintainers = ["Fabien Chouteau <chouteau@adacore.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+[configuration.variables]
+Device = {type = "Enum", values = ["stm32f446mcy6", "stm32f446mey6", "stm32f446rct6", "stm32f446rct7", "stm32f446ret6", "stm32f446ret7", "stm32f446vct6", "stm32f446vct7", "stm32f446vet6", "stm32f446vet7", "stm32f446zch6", "stm32f446zch7", "stm32f446zcj6", "stm32f446zcj7", "stm32f446zct6", "stm32f446zct7", "stm32f446zeh6", "stm32f446zeh7", "stm32f446zej6", "stm32f446zej7", "stm32f446zet6", "stm32f446zet7"]}
+Boot_Memory = {type = "Enum", values = ["flash", "sram1"]}
+Stack_Size = {type = "Integer", first = 1, default = 1024}

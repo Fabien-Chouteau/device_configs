@@ -1,0 +1,10 @@
+name = "stm32f7_30_50_dc"
+description = "Device configuration for stm32f7_30_50_dc micro-controllers"
+version = "0.1.0-dev"
+authors = ["a script"]
+maintainers = ["Fabien Chouteau <chouteau@adacore.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+[configuration.variables]
+Device = {type = "Enum", values = ["stm32f730i8k6", "stm32f730i8k7", "stm32f730r8t6", "stm32f730r8t7", "stm32f730v8t6", "stm32f730v8t7", "stm32f730z8t6", "stm32f730z8t7", "stm32f750n8h6", "stm32f750n8h7", "stm32f750v8t6", "stm32f750v8t7", "stm32f750z8t6", "stm32f750z8t7"]}
+Boot_Memory = {type = "Enum", values = ["dtcm", "backup", "flash", "itcm", "sram2", "sram1"]}
+Stack_Size = {type = "Integer", first = 1, default = 1024}

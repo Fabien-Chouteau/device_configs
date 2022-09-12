@@ -1,0 +1,10 @@
+name = "stm32g4_71_dc"
+description = "Device configuration for stm32g4_71_dc micro-controllers"
+version = "0.1.0-dev"
+authors = ["a script"]
+maintainers = ["Fabien Chouteau <chouteau@adacore.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+[configuration.variables]
+Device = {type = "Enum", values = ["stm32g471cct6", "stm32g471ccu3", "stm32g471ccu6", "stm32g471ccu7", "stm32g471cet3", "stm32g471cet6", "stm32g471cet7", "stm32g471ceu3", "stm32g471ceu6", "stm32g471ceu7", "stm32g471mct6", "stm32g471met3", "stm32g471met6", "stm32g471met7", "stm32g471mey6", "stm32g471qct6", "stm32g471qet6", "stm32g471rct6", "stm32g471ret3", "stm32g471ret6", "stm32g471ret7", "stm32g471vch6", "stm32g471vci6", "stm32g471vct6", "stm32g471veh3", "stm32g471veh6", "stm32g471veh7", "stm32g471vei3", "stm32g471vei6", "stm32g471vei7", "stm32g471vet3", "stm32g471vet6", "stm32g471vet7"]}
+Boot_Memory = {type = "Enum", values = ["ccm", "sram2", "sram1", "flash"]}
+Stack_Size = {type = "Integer", first = 1, default = 1024}

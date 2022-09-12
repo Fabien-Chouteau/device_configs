@@ -1,0 +1,10 @@
+name = "samg55_dc"
+description = "Device configuration for samg55_dc micro-controllers"
+version = "0.1.0-dev"
+authors = ["a script"]
+maintainers = ["Fabien Chouteau <chouteau@adacore.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+[configuration.variables]
+Device = {type = "Enum", values = ["samg55g19a-uu", "samg55j19a-au", "samg55j19a-mu"]}
+Boot_Memory = {type = "Enum", values = ["flash", "ram"]}
+Stack_Size = {type = "Integer", first = 1, default = 1024}

@@ -1,0 +1,103 @@
+with "config/stm32f1_03_8_b_dc_config.gpr";
+abstract project stm32f1_03_8_b_dc is
+   for Target use "arm-elf";
+   for Runtime ("Ada") use "light-cortex-m3";
+   package Device_Configuration is
+      Device_Name := stm32f1_03_8_b_dc_Config.Device;
+      for CPU_Name use "cortex-m3";
+
+      for Interrupt ("0") use "WWDG";
+      for Interrupt ("1") use "PVD";
+      for Interrupt ("2") use "TAMPER";
+      for Interrupt ("3") use "RTC";
+      for Interrupt ("4") use "FLASH";
+      for Interrupt ("5") use "RCC";
+      for Interrupt ("6") use "EXTI0";
+      for Interrupt ("7") use "EXTI1";
+      for Interrupt ("8") use "EXTI2";
+      for Interrupt ("9") use "EXTI3";
+      for Interrupt ("10") use "EXTI4";
+      for Interrupt ("11") use "DMA1_Channel1";
+      for Interrupt ("12") use "DMA1_Channel2";
+      for Interrupt ("13") use "DMA1_Channel3";
+      for Interrupt ("14") use "DMA1_Channel4";
+      for Interrupt ("15") use "DMA1_Channel5";
+      for Interrupt ("16") use "DMA1_Channel6";
+      for Interrupt ("17") use "DMA1_Channel7";
+      for Interrupt ("18") use "ADC1_2";
+      for Interrupt ("19") use "USB_HP_CAN1_TX";
+      for Interrupt ("20") use "USB_LP_CAN1_RX0";
+      for Interrupt ("21") use "CAN1_RX1";
+      for Interrupt ("22") use "CAN1_SCE";
+      for Interrupt ("23") use "EXTI9_5";
+      for Interrupt ("24") use "TIM1_BRK";
+      for Interrupt ("25") use "TIM1_UP";
+      for Interrupt ("26") use "TIM1_TRG_COM";
+      for Interrupt ("27") use "TIM1_CC";
+      for Interrupt ("28") use "TIM2";
+      for Interrupt ("29") use "TIM3";
+      for Interrupt ("30") use "TIM4";
+      for Interrupt ("31") use "I2C1_EV";
+      for Interrupt ("32") use "I2C1_ER";
+      for Interrupt ("33") use "I2C2_EV";
+      for Interrupt ("34") use "I2C2_ER";
+      for Interrupt ("35") use "SPI1";
+      for Interrupt ("36") use "SPI2";
+      for Interrupt ("37") use "USART1";
+      for Interrupt ("38") use "USART2";
+      for Interrupt ("39") use "USART3";
+      for Interrupt ("40") use "EXTI15_10";
+      for Interrupt ("41") use "RTC_Alarm";
+      for Interrupt ("42") use "USBWakeUp";
+
+      Mem_List := ();
+      Mem_List := Mem_List & ("sram1");
+      for Mem_Kind ("sram1") use "RAM";
+      for Address  ("sram1") use "0x20000000";
+      for Size     ("sram1") use "20480";
+      case Device_Name is
+         when "stm32f103c8t6" |
+              "stm32f103c8t7" |
+              "stm32f103r8h6" |
+              "stm32f103r8h7" |
+              "stm32f103r8t6" |
+              "stm32f103r8t7" |
+              "stm32f103t8u6" |
+              "stm32f103t8u7" |
+              "stm32f103v8h6" |
+              "stm32f103v8t6" =>
+            Mem_List := Mem_List & ("flash");
+            for Mem_Kind ("flash") use "ROM";
+            for Address  ("flash") use "0x8000000";
+            for Size     ("flash") use "65536";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "stm32f103cbt6" |
+              "stm32f103cbt7" |
+              "stm32f103cbu6" |
+              "stm32f103cbu7" |
+              "stm32f103rbh6" |
+              "stm32f103rbh7" |
+              "stm32f103rbt6" |
+              "stm32f103rbt7" |
+              "stm32f103tbu6" |
+              "stm32f103tbu7" |
+              "stm32f103vbh6" |
+              "stm32f103vbh7" |
+              "stm32f103vbi6" |
+              "stm32f103vbi7" |
+              "stm32f103vbt6" |
+              "stm32f103vbt7" =>
+            Mem_List := Mem_List & ("flash");
+            for Mem_Kind ("flash") use "ROM";
+            for Address  ("flash") use "0x8000000";
+            for Size     ("flash") use "131072";
+         when others => null;
+      end case;
+      for Memories use Mem_List;
+      for Boot_Memory use stm32f1_03_8_b_dc_Config.Boot_Memory;
+      for Main_Stack_Size use stm32f1_03_8_b_dc_Config.Stack_Size;
+
+   end Device_Configuration;
+end stm32f1_03_8_b_dc;

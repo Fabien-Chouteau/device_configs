@@ -1,0 +1,10 @@
+name = "stm32wl_54_55_dc"
+description = "Device configuration for stm32wl_54_55_dc micro-controllers"
+version = "0.1.0-dev"
+authors = ["a script"]
+maintainers = ["Fabien Chouteau <chouteau@adacore.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+[configuration.variables]
+Device = {type = "Enum", values = ["stm32wl54ccu6@m0", "stm32wl54ccu6@m4", "stm32wl54ccu7@m0", "stm32wl54ccu7@m4", "stm32wl54jci6@m0", "stm32wl54jci6@m4", "stm32wl54jci7@m0", "stm32wl54jci7@m4", "stm32wl55ccu6@m0", "stm32wl55ccu6@m4", "stm32wl55ccu7@m0", "stm32wl55ccu7@m4", "stm32wl55jci6@m0", "stm32wl55jci6@m4", "stm32wl55jci7@m0", "stm32wl55jci7@m4"]}
+Boot_Memory = {type = "Enum", values = ["flash", "sram2", "sram1"]}
+Stack_Size = {type = "Integer", first = 1, default = 1024}

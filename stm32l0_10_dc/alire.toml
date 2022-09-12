@@ -1,0 +1,10 @@
+name = "stm32l0_10_dc"
+description = "Device configuration for stm32l0_10_dc micro-controllers"
+version = "0.1.0-dev"
+authors = ["a script"]
+maintainers = ["Fabien Chouteau <chouteau@adacore.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+[configuration.variables]
+Device = {type = "Enum", values = ["stm32l010c6t6", "stm32l010f4p6", "stm32l010k4t6", "stm32l010k8t6", "stm32l010r8t6", "stm32l010rbt6"]}
+Boot_Memory = {type = "Enum", values = ["eeprom", "sram1", "flash"]}
+Stack_Size = {type = "Integer", first = 1, default = 1024}

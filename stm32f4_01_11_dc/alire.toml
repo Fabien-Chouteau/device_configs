@@ -1,0 +1,10 @@
+name = "stm32f4_01_11_dc"
+description = "Device configuration for stm32f4_01_11_dc micro-controllers"
+version = "0.1.0-dev"
+authors = ["a script"]
+maintainers = ["Fabien Chouteau <chouteau@adacore.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+[configuration.variables]
+Device = {type = "Enum", values = ["stm32f401cbu3", "stm32f401cbu6", "stm32f401cbu7", "stm32f401cby6", "stm32f401ccf6", "stm32f401ccf7", "stm32f401ccu6", "stm32f401ccu7", "stm32f401ccy6", "stm32f401ccy7", "stm32f401cdu6", "stm32f401cdy6", "stm32f401ceu6", "stm32f401cey6", "stm32f401rbt6", "stm32f401rct6", "stm32f401rct7", "stm32f401rdt6", "stm32f401rdt7", "stm32f401ret6", "stm32f401ret7", "stm32f401vbh3", "stm32f401vbh6", "stm32f401vbh7", "stm32f401vbt3", "stm32f401vbt6", "stm32f401vbt7", "stm32f401vch6", "stm32f401vch7", "stm32f401vct6", "stm32f401vct7", "stm32f401vdh6", "stm32f401vdt6", "stm32f401veh6", "stm32f401veh7", "stm32f401vet6", "stm32f401vet7", "stm32f411ccu6", "stm32f411ccu7", "stm32f411ccy6", "stm32f411ccy7", "stm32f411ceu3", "stm32f411ceu6", "stm32f411ceu7", "stm32f411cey3", "stm32f411cey6", "stm32f411cey7", "stm32f411rct6", "stm32f411rct7", "stm32f411ret6", "stm32f411ret7", "stm32f411vch6", "stm32f411vct6", "stm32f411veh6", "stm32f411vet6"]}
+Boot_Memory = {type = "Enum", values = ["sram1", "flash"]}
+Stack_Size = {type = "Integer", first = 1, default = 1024}

@@ -1,0 +1,10 @@
+name = "stm32l4_12_22_dc"
+description = "Device configuration for stm32l4_12_22_dc micro-controllers"
+version = "0.1.0-dev"
+authors = ["a script"]
+maintainers = ["Fabien Chouteau <chouteau@adacore.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+[configuration.variables]
+Device = {type = "Enum", values = ["stm32l412c8t6", "stm32l412c8u6", "stm32l412cbt3", "stm32l412cbt3p", "stm32l412cbt6", "stm32l412cbt6p", "stm32l412cbt7", "stm32l412cbt7p", "stm32l412cbu3", "stm32l412cbu3p", "stm32l412cbu6", "stm32l412cbu6p", "stm32l412cbu7", "stm32l412cbu7p", "stm32l412k8t6", "stm32l412k8u6", "stm32l412kbt3", "stm32l412kbt6", "stm32l412kbt7", "stm32l412kbu3", "stm32l412kbu6", "stm32l412kbu7", "stm32l412r8i6", "stm32l412r8t6", "stm32l412rbi6", "stm32l412rbi6p", "stm32l412rbt6", "stm32l412rbt6p", "stm32l412t8y6", "stm32l412tby6", "stm32l412tby6p", "stm32l422cbt6", "stm32l422cbu6", "stm32l422kbt6", "stm32l422kbu6", "stm32l422rbi6", "stm32l422rbt6", "stm32l422tby6"]}
+Boot_Memory = {type = "Enum", values = ["ccm", "flash", "sram1"]}
+Stack_Size = {type = "Integer", first = 1, default = 1024}

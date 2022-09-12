@@ -1,0 +1,91 @@
+with "config/stm32f3_03_6_8_dc_config.gpr";
+abstract project stm32f3_03_6_8_dc is
+   for Target use "arm-elf";
+   for Runtime ("Ada") use "light-cortex-m4f";
+   package Device_Configuration is
+      Device_Name := stm32f3_03_6_8_dc_Config.Device;
+      for CPU_Name use "cortex-m4f";
+
+      for Interrupt ("0") use "WWDG";
+      for Interrupt ("1") use "PVD";
+      for Interrupt ("2") use "TAMP_STAMP";
+      for Interrupt ("3") use "RTC_WKUP";
+      for Interrupt ("4") use "FLASH";
+      for Interrupt ("5") use "RCC";
+      for Interrupt ("6") use "EXTI0";
+      for Interrupt ("7") use "EXTI1";
+      for Interrupt ("8") use "EXTI2_TSC";
+      for Interrupt ("9") use "EXTI3";
+      for Interrupt ("10") use "EXTI4";
+      for Interrupt ("11") use "DMA1_Channel1";
+      for Interrupt ("12") use "DMA1_Channel2";
+      for Interrupt ("13") use "DMA1_Channel3";
+      for Interrupt ("14") use "DMA1_Channel4";
+      for Interrupt ("15") use "DMA1_Channel5";
+      for Interrupt ("16") use "DMA1_Channel6";
+      for Interrupt ("17") use "DMA1_Channel7";
+      for Interrupt ("18") use "ADC1_2";
+      for Interrupt ("19") use "CAN_TX";
+      for Interrupt ("20") use "CAN_RX0";
+      for Interrupt ("21") use "CAN_RX1";
+      for Interrupt ("22") use "CAN_SCE";
+      for Interrupt ("23") use "EXTI9_5";
+      for Interrupt ("24") use "TIM1_BRK_TIM15";
+      for Interrupt ("25") use "TIM1_UP_TIM16";
+      for Interrupt ("26") use "TIM1_TRG_COM_TIM17";
+      for Interrupt ("27") use "TIM1_CC";
+      for Interrupt ("28") use "TIM2";
+      for Interrupt ("29") use "TIM3";
+      for Interrupt ("31") use "I2C1_EV";
+      for Interrupt ("32") use "I2C1_ER";
+      for Interrupt ("35") use "SPI1";
+      for Interrupt ("37") use "USART1";
+      for Interrupt ("38") use "USART2";
+      for Interrupt ("39") use "USART3";
+      for Interrupt ("40") use "EXTI15_10";
+      for Interrupt ("41") use "RTC_Alarm";
+      for Interrupt ("54") use "TIM6_DAC1";
+      for Interrupt ("55") use "TIM7_DAC2";
+      for Interrupt ("64") use "COMP2";
+      for Interrupt ("65") use "COMP4_6";
+      for Interrupt ("81") use "FPU";
+
+      Mem_List := ();
+      Mem_List := Mem_List & ("ccm");
+      for Mem_Kind ("ccm") use "RAM";
+      for Address  ("ccm") use "0x10000000";
+      for Size     ("ccm") use "4096";
+      Mem_List := Mem_List & ("sram1");
+      for Mem_Kind ("sram1") use "RAM";
+      for Address  ("sram1") use "0x20000000";
+      for Size     ("sram1") use "12288";
+      case Device_Name is
+         when "stm32f303c6t6" |
+              "stm32f303k6t6" |
+              "stm32f303k6u6" |
+              "stm32f303r6t6" =>
+            Mem_List := Mem_List & ("flash");
+            for Mem_Kind ("flash") use "ROM";
+            for Address  ("flash") use "0x8000000";
+            for Size     ("flash") use "32768";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "stm32f303c8t6" |
+              "stm32f303c8y6" |
+              "stm32f303k8t6" |
+              "stm32f303k8u6" |
+              "stm32f303r8t6" |
+              "stm32f303r8t7" =>
+            Mem_List := Mem_List & ("flash");
+            for Mem_Kind ("flash") use "ROM";
+            for Address  ("flash") use "0x8000000";
+            for Size     ("flash") use "65536";
+         when others => null;
+      end case;
+      for Memories use Mem_List;
+      for Boot_Memory use stm32f3_03_6_8_dc_Config.Boot_Memory;
+      for Main_Stack_Size use stm32f3_03_6_8_dc_Config.Stack_Size;
+
+   end Device_Configuration;
+end stm32f3_03_6_8_dc;

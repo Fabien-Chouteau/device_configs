@@ -1,0 +1,10 @@
+name = "stm32f4_27_29_37_39_dc"
+description = "Device configuration for stm32f4_27_29_37_39_dc micro-controllers"
+version = "0.1.0-dev"
+authors = ["a script"]
+maintainers = ["Fabien Chouteau <chouteau@adacore.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+[configuration.variables]
+Device = {type = "Enum", values = ["stm32f427agh6", "stm32f427aih6", "stm32f427igh6", "stm32f427igt6", "stm32f427iih6", "stm32f427iih7", "stm32f427iit6", "stm32f427iit7", "stm32f427vgt6", "stm32f427vit6", "stm32f427vit7", "stm32f427zgt6", "stm32f427zit6", "stm32f427zit7", "stm32f429agh6", "stm32f429aih6", "stm32f429bet6", "stm32f429bgt6", "stm32f429bit6", "stm32f429bit7", "stm32f429ieh6", "stm32f429iet6", "stm32f429igh6", "stm32f429igt6", "stm32f429iih6", "stm32f429iit6", "stm32f429neh6", "stm32f429ngh6", "stm32f429nih6", "stm32f429nih7", "stm32f429vet6", "stm32f429vgt6", "stm32f429vit6", "stm32f429zet6", "stm32f429zgt6", "stm32f429zgy6", "stm32f429zit6", "stm32f429zit7", "stm32f429ziy6", "stm32f429ziy7", "stm32f437aih6", "stm32f437igh6", "stm32f437igt6", "stm32f437iih6", "stm32f437iih7", "stm32f437iit6", "stm32f437iit7", "stm32f437vgt6", "stm32f437vgt7", "stm32f437vit6", "stm32f437vit7", "stm32f437zgt6", "stm32f437zit6", "stm32f437zit7", "stm32f439aih6", "stm32f439bgt6", "stm32f439bit6", "stm32f439bit7", "stm32f439igh6", "stm32f439igt6", "stm32f439iih6", "stm32f439iih7", "stm32f439iit6", "stm32f439iit7", "stm32f439ngh6", "stm32f439nih6", "stm32f439vgt6", "stm32f439vit6", "stm32f439zgt6", "stm32f439zgt7", "stm32f439zgy6", "stm32f439zgy7", "stm32f439zit6", "stm32f439ziy6"]}
+Boot_Memory = {type = "Enum", values = ["sram2", "flash", "ccm", "backup", "sram3", "sram1"]}
+Stack_Size = {type = "Integer", first = 1, default = 1024}

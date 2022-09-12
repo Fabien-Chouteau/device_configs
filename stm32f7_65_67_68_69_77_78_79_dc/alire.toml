@@ -1,0 +1,10 @@
+name = "stm32f7_65_67_68_69_77_78_79_dc"
+description = "Device configuration for stm32f7_65_67_68_69_77_78_79_dc micro-controllers"
+version = "0.1.0-dev"
+authors = ["a script"]
+maintainers = ["Fabien Chouteau <chouteau@adacore.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+[configuration.variables]
+Device = {type = "Enum", values = ["stm32f765bgt6", "stm32f765bit6", "stm32f765igk6", "stm32f765igt6", "stm32f765iik6", "stm32f765iik7", "stm32f765iit6", "stm32f765iit7", "stm32f765ngh6", "stm32f765ngh7", "stm32f765nih6", "stm32f765nih7", "stm32f765vgh6", "stm32f765vgh7", "stm32f765vgt6", "stm32f765vgt7", "stm32f765vih6", "stm32f765vit6", "stm32f765zgt6", "stm32f765zgt7", "stm32f765zit6", "stm32f765zit7", "stm32f767bgt6", "stm32f767bit6", "stm32f767igk6", "stm32f767igt6", "stm32f767iik6", "stm32f767iit6", "stm32f767ngh6", "stm32f767nih6", "stm32f767nih7", "stm32f767vgh6", "stm32f767vgh7", "stm32f767vgt6", "stm32f767vgt7", "stm32f767vih6", "stm32f767vih7", "stm32f767vit6", "stm32f767vit7", "stm32f767zgt6", "stm32f767zit6", "stm32f768aiy6", "stm32f769agy6", "stm32f769aiy6", "stm32f769bgt6", "stm32f769bit6", "stm32f769igt6", "stm32f769iit6", "stm32f769ngh6", "stm32f769nih6", "stm32f777bit6", "stm32f777iik6", "stm32f777iik7", "stm32f777iit6", "stm32f777iit7", "stm32f777nih6", "stm32f777nih7", "stm32f777vih6", "stm32f777vih7", "stm32f777vit6", "stm32f777vit7", "stm32f777zit6", "stm32f778aiy6", "stm32f779aiy6", "stm32f779bit6", "stm32f779iit6", "stm32f779nih6"]}
+Boot_Memory = {type = "Enum", values = ["itcm", "sram1", "flash", "sram2", "backup", "dtcm"]}
+Stack_Size = {type = "Integer", first = 1, default = 1024}

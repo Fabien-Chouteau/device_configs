@@ -1,0 +1,10 @@
+name = "stm32l1_51_52_6_8_b_dc"
+description = "Device configuration for stm32l1_51_52_6_8_b_dc micro-controllers"
+version = "0.1.0-dev"
+authors = ["a script"]
+maintainers = ["Fabien Chouteau <chouteau@adacore.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+[configuration.variables]
+Device = {type = "Enum", values = ["stm32l151c6t6", "stm32l151c6t6a", "stm32l151c6u6", "stm32l151c6u6a", "stm32l151c8t6", "stm32l151c8t6a", "stm32l151c8u6", "stm32l151c8u6a", "stm32l151cbt3", "stm32l151cbt6", "stm32l151cbt6a", "stm32l151cbt7", "stm32l151cbu3", "stm32l151cbu6", "stm32l151cbu6a", "stm32l151cbu7", "stm32l151r6h6", "stm32l151r6h6a", "stm32l151r6t6", "stm32l151r6t6a", "stm32l151r8h6", "stm32l151r8h6a", "stm32l151r8t6", "stm32l151r8t6a", "stm32l151rbh3", "stm32l151rbh6", "stm32l151rbh6a", "stm32l151rbh7", "stm32l151rbt3", "stm32l151rbt6", "stm32l151rbt6a", "stm32l151rbt7", "stm32l151v8h6", "stm32l151v8h6a", "stm32l151v8t6", "stm32l151v8t6a", "stm32l151vbh3", "stm32l151vbh6", "stm32l151vbh6a", "stm32l151vbh7", "stm32l151vbt3", "stm32l151vbt6", "stm32l151vbt6a", "stm32l151vbt7", "stm32l152c6t6", "stm32l152c6t6a", "stm32l152c6u6", "stm32l152c6u6a", "stm32l152c8t6", "stm32l152c8t6a", "stm32l152c8u6", "stm32l152c8u6a", "stm32l152cbt6", "stm32l152cbt6a", "stm32l152cbu6", "stm32l152cbu6a", "stm32l152r6h6", "stm32l152r6h6a", "stm32l152r6t6", "stm32l152r6t6a", "stm32l152r8h6", "stm32l152r8h6a", "stm32l152r8t6", "stm32l152r8t6a", "stm32l152rbh6", "stm32l152rbh6a", "stm32l152rbt6", "stm32l152rbt6a", "stm32l152v8h6", "stm32l152v8h6a", "stm32l152v8t6", "stm32l152v8t6a", "stm32l152vbh6", "stm32l152vbh6a", "stm32l152vbt6", "stm32l152vbt6a"]}
+Boot_Memory = {type = "Enum", values = ["flash", "sram1", "eeprom"]}
+Stack_Size = {type = "Integer", first = 1, default = 1024}

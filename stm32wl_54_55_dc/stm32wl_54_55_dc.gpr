@@ -1,0 +1,60 @@
+with "config/stm32wl_54_55_dc_config.gpr";
+abstract project stm32wl_54_55_dc is
+   for Target use "arm-elf";
+   for Runtime ("Ada") use "light-";
+   package Device_Configuration is
+      Device_Name := stm32wl_54_55_dc_Config.Device;
+      for CPU_Name use "";
+
+      for Interrupt ("0") use "TZIC_ILA";
+      for Interrupt ("1") use "PVD_PVM";
+      for Interrupt ("2") use "RTC_LSECSS";
+      for Interrupt ("3") use "RCC_FLASH_C1SEV";
+      for Interrupt ("4") use "EXTI1_0";
+      for Interrupt ("5") use "EXTI3_2";
+      for Interrupt ("6") use "EXTI15_4";
+      for Interrupt ("7") use "ADC_COMP_DAC";
+      for Interrupt ("8") use "DMA1_Channel1_2_3";
+      for Interrupt ("9") use "DMA1_Channel4_5_6_7";
+      for Interrupt ("10") use "DMA2_DMAMUX1_OVR";
+      for Interrupt ("11") use "LPTIM1";
+      for Interrupt ("12") use "LPTIM2";
+      for Interrupt ("13") use "LPTIM3";
+      for Interrupt ("14") use "TIM1";
+      for Interrupt ("15") use "TIM2";
+      for Interrupt ("16") use "TIM16";
+      for Interrupt ("17") use "TIM17";
+      for Interrupt ("18") use "IPCC_C2_RX_C2_TX";
+      for Interrupt ("19") use "HSEM";
+      for Interrupt ("20") use "RNG";
+      for Interrupt ("21") use "AES_PKA";
+      for Interrupt ("22") use "I2C1";
+      for Interrupt ("23") use "I2C2";
+      for Interrupt ("24") use "I2C3";
+      for Interrupt ("25") use "SPI1";
+      for Interrupt ("26") use "SPI2";
+      for Interrupt ("27") use "USART1";
+      for Interrupt ("28") use "USART2";
+      for Interrupt ("29") use "LPUART1";
+      for Interrupt ("30") use "SUBGHZSPI";
+      for Interrupt ("31") use "SUBGHZ_Radio";
+
+      Mem_List := ();
+      Mem_List := Mem_List & ("flash");
+      for Mem_Kind ("flash") use "ROM";
+      for Address  ("flash") use "0x8000000";
+      for Size     ("flash") use "262144";
+      Mem_List := Mem_List & ("sram1");
+      for Mem_Kind ("sram1") use "RAM";
+      for Address  ("sram1") use "0x20000000";
+      for Size     ("sram1") use "32768";
+      Mem_List := Mem_List & ("sram2");
+      for Mem_Kind ("sram2") use "RAM";
+      for Address  ("sram2") use "0x20008000";
+      for Size     ("sram2") use "32768";
+      for Memories use Mem_List;
+      for Boot_Memory use stm32wl_54_55_dc_Config.Boot_Memory;
+      for Main_Stack_Size use stm32wl_54_55_dc_Config.Stack_Size;
+
+   end Device_Configuration;
+end stm32wl_54_55_dc;

@@ -1,0 +1,10 @@
+name = "samv70_dc"
+description = "Device configuration for samv70_dc micro-controllers"
+version = "0.1.0-dev"
+authors = ["a script"]
+maintainers = ["Fabien Chouteau <chouteau@adacore.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+[configuration.variables]
+Device = {type = "Enum", values = ["samv70j19a-aa", "samv70j19b-aa", "samv70j20a-aa", "samv70j20b-aa", "samv70n19a-aa", "samv70n19a-cb", "samv70n19b-aa", "samv70n19b-cb", "samv70n20a-aa", "samv70n20a-cb", "samv70n20b-aa", "samv70n20b-cb", "samv70q19a-aa", "samv70q19a-cb", "samv70q19b-aa", "samv70q19b-cb", "samv70q20a-aa", "samv70q20a-cb", "samv70q20b-aa", "samv70q20b-cb"]}
+Boot_Memory = {type = "Enum", values = ["flash", "ram"]}
+Stack_Size = {type = "Integer", first = 1, default = 1024}

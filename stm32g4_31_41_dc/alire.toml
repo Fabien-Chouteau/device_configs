@@ -1,0 +1,10 @@
+name = "stm32g4_31_41_dc"
+description = "Device configuration for stm32g4_31_41_dc micro-controllers"
+version = "0.1.0-dev"
+authors = ["a script"]
+maintainers = ["Fabien Chouteau <chouteau@adacore.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+[configuration.variables]
+Device = {type = "Enum", values = ["stm32g431c6t6", "stm32g431c6u6", "stm32g431c8t3", "stm32g431c8t6", "stm32g431c8t7", "stm32g431c8u3", "stm32g431c8u6", "stm32g431c8u7", "stm32g431cbt3", "stm32g431cbt6", "stm32g431cbt7", "stm32g431cbu3", "stm32g431cbu6", "stm32g431cbu7", "stm32g431cby3", "stm32g431cby6", "stm32g431cby7", "stm32g431k6t3", "stm32g431k6t6", "stm32g431k6t7", "stm32g431k6u3", "stm32g431k6u6", "stm32g431k6u7", "stm32g431k8t3", "stm32g431k8t6", "stm32g431k8t7", "stm32g431k8u3", "stm32g431k8u6", "stm32g431k8u7", "stm32g431kbt3", "stm32g431kbt6", "stm32g431kbt7", "stm32g431kbu3", "stm32g431kbu6", "stm32g431kbu7", "stm32g431m6t6", "stm32g431m8t6", "stm32g431mbt3", "stm32g431mbt6", "stm32g431mbt7", "stm32g431r6i6", "stm32g431r6t6", "stm32g431r8i6", "stm32g431r8t6", "stm32g431rbi3", "stm32g431rbi6", "stm32g431rbi7", "stm32g431rbt3", "stm32g431rbt6", "stm32g431rbt7", "stm32g431v6t6", "stm32g431v8t6", "stm32g431vbt3", "stm32g431vbt6", "stm32g431vbt7", "stm32g441cbt3", "stm32g441cbt6", "stm32g441cbt7", "stm32g441cbu3", "stm32g441cbu6", "stm32g441cbu7", "stm32g441cby3", "stm32g441cby6", "stm32g441cby7", "stm32g441kbt3", "stm32g441kbt6", "stm32g441kbt7", "stm32g441kbu3", "stm32g441kbu6", "stm32g441kbu7", "stm32g441mbt6", "stm32g441rbi3", "stm32g441rbi6", "stm32g441rbi7", "stm32g441rbt3", "stm32g441rbt6", "stm32g441rbt7", "stm32g441vbt3", "stm32g441vbt6", "stm32g441vbt7"]}
+Boot_Memory = {type = "Enum", values = ["flash", "ccm", "sram2", "sram1"]}
+Stack_Size = {type = "Integer", first = 1, default = 1024}

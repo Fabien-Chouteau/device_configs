@@ -1,0 +1,10 @@
+name = "stm32wb_35_55_5m_dc"
+description = "Device configuration for stm32wb_35_55_5m_dc micro-controllers"
+version = "0.1.0-dev"
+authors = ["a script"]
+maintainers = ["Fabien Chouteau <chouteau@adacore.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+[configuration.variables]
+Device = {type = "Enum", values = ["stm32wb35ccu6a", "stm32wb35ceu6a", "stm32wb55ccu6", "stm32wb55ccu7", "stm32wb55ceu6", "stm32wb55ceu7", "stm32wb55cgu6", "stm32wb55cgu7", "stm32wb55rcv6", "stm32wb55rcv7", "stm32wb55rev6", "stm32wb55rev7", "stm32wb55rgv6", "stm32wb55rgv7", "stm32wb55vcq6", "stm32wb55vcq7", "stm32wb55vcy6", "stm32wb55vcy7", "stm32wb55veq6", "stm32wb55veq7", "stm32wb55vey6", "stm32wb55vey7", "stm32wb55vgq6", "stm32wb55vgq7", "stm32wb55vgy6", "stm32wb55vgy7", "stm32wb55vyy6", "stm32wb5mmgh6"]}
+Boot_Memory = {type = "Enum", values = ["sram1", "flash", "sram2"]}
+Stack_Size = {type = "Integer", first = 1, default = 1024}

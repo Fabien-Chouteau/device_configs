@@ -1,0 +1,58 @@
+with "config/rp2040_dc_config.gpr";
+abstract project rp2040_dc is
+   for Target use "arm-elf";
+   for Runtime ("Ada") use "light-cortex-m0p";
+   package Device_Configuration is
+      Device_Name := rp2040_dc_Config.Device;
+      for CPU_Name use "cortex-m0+";
+
+      for Interrupt ("0") use "TIMER_IRQ_0";
+      for Interrupt ("1") use "TIMER_IRQ_1";
+      for Interrupt ("2") use "TIMER_IRQ_2";
+      for Interrupt ("3") use "TIMER_IRQ_3";
+      for Interrupt ("4") use "PWM_IRQ_WRAP";
+      for Interrupt ("5") use "USBCTRL_IRQ";
+      for Interrupt ("6") use "XIP_IRQ";
+      for Interrupt ("7") use "PIO0_IRQ_0";
+      for Interrupt ("8") use "PIO0_IRQ_1";
+      for Interrupt ("9") use "PIO1_IRQ_0";
+      for Interrupt ("10") use "PIO1_IRQ_1";
+      for Interrupt ("11") use "DMA_IRQ_0";
+      for Interrupt ("12") use "DMA_IRQ_1";
+      for Interrupt ("13") use "IO_IRQ_BANK0";
+      for Interrupt ("14") use "IO_IRQ_QSPI";
+      for Interrupt ("15") use "SIO_IRQ_PROC0";
+      for Interrupt ("16") use "SIO_IRQ_PROC1";
+      for Interrupt ("17") use "CLOCKS_IRQ";
+      for Interrupt ("18") use "SPI0_IRQ";
+      for Interrupt ("19") use "SPI1_IRQ";
+      for Interrupt ("20") use "UART0_IRQ";
+      for Interrupt ("21") use "UART1_IRQ";
+      for Interrupt ("22") use "ADC_IRQ_FIFO";
+      for Interrupt ("23") use "I2C0_IRQ";
+      for Interrupt ("24") use "I2C1_IRQ";
+      for Interrupt ("25") use "RTC_IRQ";
+
+      Mem_List := ();
+      Mem_List := Mem_List & ("flash");
+      for Mem_Kind ("flash") use "ROM";
+      for Address  ("flash") use "0x10000000";
+      for Size     ("flash") use "2097152";
+      Mem_List := Mem_List & ("ram");
+      for Mem_Kind ("ram") use "RAM";
+      for Address  ("ram") use "0x20000000";
+      for Size     ("ram") use "262144";
+      Mem_List := Mem_List & ("core1");
+      for Mem_Kind ("core1") use "RAM";
+      for Address  ("core1") use "0x20040000";
+      for Size     ("core1") use "4096";
+      Mem_List := Mem_List & ("core0");
+      for Mem_Kind ("core0") use "RAM";
+      for Address  ("core0") use "0x20041000";
+      for Size     ("core0") use "4096";
+      for Memories use Mem_List;
+      for Boot_Memory use rp2040_dc_Config.Boot_Memory;
+      for Main_Stack_Size use rp2040_dc_Config.Stack_Size;
+
+   end Device_Configuration;
+end rp2040_dc;

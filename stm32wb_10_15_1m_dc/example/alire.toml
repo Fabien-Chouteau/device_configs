@@ -1,0 +1,19 @@
+name = "example"
+description = "Shiny new project"
+version = "0.1.0-dev"
+
+authors = ["Fabien Chouteau"]
+maintainers = ["Fabien Chouteau <fabien.chouteau@gmail.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+
+executables = ["example"]
+[[depends-on]]
+stm32wb_10_15_1m_dc = "*"
+gnat_arm_elf = ">=12"
+
+[[pins]]
+stm32wb_10_15_1m_dc = { path = ".." }
+
+[configuration.values]
+stm32wb_10_15_1m_dc.Device = "stm32wb10ccu6"
+stm32wb_10_15_1m_dc.Boot_Memory = "flash"

@@ -1,0 +1,10 @@
+name = "stm32wl_e4_e5_dc"
+description = "Device configuration for stm32wl_e4_e5_dc micro-controllers"
+version = "0.1.0-dev"
+authors = ["a script"]
+maintainers = ["Fabien Chouteau <chouteau@adacore.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+[configuration.variables]
+Device = {type = "Enum", values = ["stm32wle4c8u6", "stm32wle4cbu6", "stm32wle4ccu6", "stm32wle4ccu7", "stm32wle4j8i6", "stm32wle4jbi6", "stm32wle4jci6", "stm32wle4jci7", "stm32wle5c8u6", "stm32wle5cbu6", "stm32wle5ccu6", "stm32wle5ccu7", "stm32wle5j8i6", "stm32wle5jbi6", "stm32wle5jci6", "stm32wle5jci7"]}
+Boot_Memory = {type = "Enum", values = ["sram2", "flash", "sram1"]}
+Stack_Size = {type = "Integer", first = 1, default = 1024}

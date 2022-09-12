@@ -1,0 +1,219 @@
+with "config/stm32g4_73_83_dc_config.gpr";
+abstract project stm32g4_73_83_dc is
+   for Target use "arm-elf";
+   for Runtime ("Ada") use "light-cortex-m4f";
+   package Device_Configuration is
+      Device_Name := stm32g4_73_83_dc_Config.Device;
+      for CPU_Name use "cortex-m4f";
+
+      for Interrupt ("0") use "WWDG";
+      for Interrupt ("1") use "PVD_PVM";
+      for Interrupt ("2") use "RTC_TAMP_LSECSS";
+      for Interrupt ("3") use "RTC_WKUP";
+      for Interrupt ("4") use "FLASH";
+      for Interrupt ("5") use "RCC";
+      for Interrupt ("6") use "EXTI0";
+      for Interrupt ("7") use "EXTI1";
+      for Interrupt ("8") use "EXTI2";
+      for Interrupt ("9") use "EXTI3";
+      for Interrupt ("10") use "EXTI4";
+      for Interrupt ("11") use "DMA1_Channel1";
+      for Interrupt ("12") use "DMA1_Channel2";
+      for Interrupt ("13") use "DMA1_Channel3";
+      for Interrupt ("14") use "DMA1_Channel4";
+      for Interrupt ("15") use "DMA1_Channel5";
+      for Interrupt ("16") use "DMA1_Channel6";
+      for Interrupt ("17") use "DMA1_Channel7";
+      for Interrupt ("18") use "ADC1_2";
+      for Interrupt ("19") use "USB_HP";
+      for Interrupt ("20") use "USB_LP";
+      for Interrupt ("21") use "FDCAN1_IT0";
+      for Interrupt ("22") use "FDCAN1_IT1";
+      for Interrupt ("23") use "EXTI9_5";
+      for Interrupt ("24") use "TIM1_BRK_TIM15";
+      for Interrupt ("25") use "TIM1_UP_TIM16";
+      for Interrupt ("26") use "TIM1_TRG_COM_TIM17";
+      for Interrupt ("27") use "TIM1_CC";
+      for Interrupt ("28") use "TIM2";
+      for Interrupt ("29") use "TIM3";
+      for Interrupt ("30") use "TIM4";
+      for Interrupt ("31") use "I2C1_EV";
+      for Interrupt ("32") use "I2C1_ER";
+      for Interrupt ("33") use "I2C2_EV";
+      for Interrupt ("34") use "I2C2_ER";
+      for Interrupt ("35") use "SPI1";
+      for Interrupt ("36") use "SPI2";
+      for Interrupt ("37") use "USART1";
+      for Interrupt ("38") use "USART2";
+      for Interrupt ("39") use "USART3";
+      for Interrupt ("40") use "EXTI15_10";
+      for Interrupt ("41") use "RTC_Alarm";
+      for Interrupt ("42") use "USBWakeUp";
+      for Interrupt ("43") use "TIM8_BRK";
+      for Interrupt ("44") use "TIM8_UP";
+      for Interrupt ("45") use "TIM8_TRG_COM";
+      for Interrupt ("46") use "TIM8_CC";
+      for Interrupt ("47") use "ADC3";
+      for Interrupt ("48") use "FMC";
+      for Interrupt ("49") use "LPTIM1";
+      for Interrupt ("50") use "TIM5";
+      for Interrupt ("51") use "SPI3";
+      for Interrupt ("52") use "UART4";
+      for Interrupt ("53") use "UART5";
+      for Interrupt ("54") use "TIM6_DAC";
+      for Interrupt ("55") use "TIM7_DAC";
+      for Interrupt ("56") use "DMA2_Channel1";
+      for Interrupt ("57") use "DMA2_Channel2";
+      for Interrupt ("58") use "DMA2_Channel3";
+      for Interrupt ("59") use "DMA2_Channel4";
+      for Interrupt ("60") use "DMA2_Channel5";
+      for Interrupt ("61") use "ADC4";
+      for Interrupt ("62") use "ADC5";
+      for Interrupt ("63") use "UCPD1";
+      for Interrupt ("64") use "COMP1_2_3";
+      for Interrupt ("65") use "COMP4_5_6";
+      for Interrupt ("66") use "COMP7";
+      for Interrupt ("75") use "CRS";
+      for Interrupt ("76") use "SAI1";
+      for Interrupt ("77") use "TIM20_BRK";
+      for Interrupt ("78") use "TIM20_UP";
+      for Interrupt ("79") use "TIM20_TRG_COM";
+      for Interrupt ("80") use "TIM20_CC";
+      for Interrupt ("81") use "FPU";
+      for Interrupt ("82") use "I2C4_EV";
+      for Interrupt ("83") use "I2C4_ER";
+      for Interrupt ("84") use "SPI4";
+      for Interrupt ("86") use "FDCAN2_IT0";
+      for Interrupt ("87") use "FDCAN2_IT1";
+      for Interrupt ("88") use "FDCAN3_IT0";
+      for Interrupt ("89") use "FDCAN3_IT1";
+      for Interrupt ("90") use "RNG";
+      for Interrupt ("91") use "LPUART1";
+      for Interrupt ("92") use "I2C3_EV";
+      for Interrupt ("93") use "I2C3_ER";
+      for Interrupt ("94") use "DMAMUX_OVR";
+      for Interrupt ("95") use "QUADSPI";
+      for Interrupt ("96") use "DMA1_Channel8";
+      for Interrupt ("97") use "DMA2_Channel6";
+      for Interrupt ("98") use "DMA2_Channel7";
+      for Interrupt ("99") use "DMA2_Channel8";
+      for Interrupt ("100") use "CORDIC";
+      for Interrupt ("101") use "FMAC";
+      case Device_Name is
+         when "" =>
+            for Interrupt ("85") use "AES";
+         when others => null;
+      end case;
+
+      Mem_List := ();
+      Mem_List := Mem_List & ("ccm");
+      for Mem_Kind ("ccm") use "RAM";
+      for Address  ("ccm") use "0x10000000";
+      for Size     ("ccm") use "32768";
+      Mem_List := Mem_List & ("sram1");
+      for Mem_Kind ("sram1") use "RAM";
+      for Address  ("sram1") use "0x20000000";
+      for Size     ("sram1") use "81920";
+      Mem_List := Mem_List & ("sram2");
+      for Mem_Kind ("sram2") use "RAM";
+      for Address  ("sram2") use "0x20014000";
+      for Size     ("sram2") use "16384";
+      case Device_Name is
+         when "stm32g473cbt3" |
+              "stm32g473cbt6" |
+              "stm32g473cbt7" |
+              "stm32g473cbu3" |
+              "stm32g473cbu6" |
+              "stm32g473cbu7" |
+              "stm32g473mbt6" |
+              "stm32g473pbi6" |
+              "stm32g473qbt6" |
+              "stm32g473rbt6" |
+              "stm32g473vbh3" |
+              "stm32g473vbh6" |
+              "stm32g473vbh7" |
+              "stm32g473vbt3" |
+              "stm32g473vbt6" |
+              "stm32g473vbt7" =>
+            Mem_List := Mem_List & ("flash");
+            for Mem_Kind ("flash") use "ROM";
+            for Address  ("flash") use "0x8000000";
+            for Size     ("flash") use "131072";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "stm32g473cct3" |
+              "stm32g473cct6" |
+              "stm32g473cct7" |
+              "stm32g473ccu3" |
+              "stm32g473ccu6" |
+              "stm32g473ccu7" |
+              "stm32g473mct3" |
+              "stm32g473mct6" |
+              "stm32g473mct7" |
+              "stm32g473pci6" |
+              "stm32g473qct6" |
+              "stm32g473rct6" |
+              "stm32g473vch3" |
+              "stm32g473vch6" |
+              "stm32g473vch7" |
+              "stm32g473vct3" |
+              "stm32g473vct6" |
+              "stm32g473vct7" =>
+            Mem_List := Mem_List & ("flash");
+            for Mem_Kind ("flash") use "ROM";
+            for Address  ("flash") use "0x8000000";
+            for Size     ("flash") use "262144";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "stm32g473cet3" |
+              "stm32g473cet6" |
+              "stm32g473cet7" |
+              "stm32g473ceu3" |
+              "stm32g473ceu6" |
+              "stm32g473ceu7" |
+              "stm32g473met3" |
+              "stm32g473met6" |
+              "stm32g473met7" |
+              "stm32g473mey3" |
+              "stm32g473mey6" |
+              "stm32g473mey7" |
+              "stm32g473pei6" |
+              "stm32g473qet6" |
+              "stm32g473ret3" |
+              "stm32g473ret6" |
+              "stm32g473ret7" |
+              "stm32g473veh3" |
+              "stm32g473veh6" |
+              "stm32g473veh7" |
+              "stm32g473vet3" |
+              "stm32g473vet6" |
+              "stm32g473vet7" |
+              "stm32g483cet3" |
+              "stm32g483cet6" |
+              "stm32g483cet7" |
+              "stm32g483ceu3" |
+              "stm32g483ceu6" |
+              "stm32g483ceu7" |
+              "stm32g483met6" |
+              "stm32g483mey6" |
+              "stm32g483pei6" |
+              "stm32g483qet6" |
+              "stm32g483ret3" |
+              "stm32g483ret6" |
+              "stm32g483ret7" |
+              "stm32g483veh6" |
+              "stm32g483vet6" =>
+            Mem_List := Mem_List & ("flash");
+            for Mem_Kind ("flash") use "ROM";
+            for Address  ("flash") use "0x8000000";
+            for Size     ("flash") use "524288";
+         when others => null;
+      end case;
+      for Memories use Mem_List;
+      for Boot_Memory use stm32g4_73_83_dc_Config.Boot_Memory;
+      for Main_Stack_Size use stm32g4_73_83_dc_Config.Stack_Size;
+
+   end Device_Configuration;
+end stm32g4_73_83_dc;

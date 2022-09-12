@@ -1,0 +1,10 @@
+name = "stm32f0_31_dc"
+description = "Device configuration for stm32f0_31_dc micro-controllers"
+version = "0.1.0-dev"
+authors = ["a script"]
+maintainers = ["Fabien Chouteau <chouteau@adacore.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+[configuration.variables]
+Device = {type = "Enum", values = ["stm32f031c4t6", "stm32f031c6t6", "stm32f031c6t7", "stm32f031e6y6", "stm32f031f4p6", "stm32f031f4p7", "stm32f031f6p6", "stm32f031f6p7", "stm32f031g4u6", "stm32f031g4u7", "stm32f031g6u6", "stm32f031g6u7", "stm32f031k4u6", "stm32f031k6t6", "stm32f031k6t7", "stm32f031k6u6", "stm32f031k6u7"]}
+Boot_Memory = {type = "Enum", values = ["flash", "sram1"]}
+Stack_Size = {type = "Integer", first = 1, default = 1024}

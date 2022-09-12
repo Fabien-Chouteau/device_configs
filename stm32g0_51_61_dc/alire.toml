@@ -1,0 +1,10 @@
+name = "stm32g0_51_61_dc"
+description = "Device configuration for stm32g0_51_61_dc micro-controllers"
+version = "0.1.0-dev"
+authors = ["a script"]
+maintainers = ["Fabien Chouteau <chouteau@adacore.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+[configuration.variables]
+Device = {type = "Enum", values = ["stm32g051c6t6", "stm32g051c6u6", "stm32g051c8t6", "stm32g051c8u6", "stm32g051f6p6", "stm32g051f8p6", "stm32g051f8y6", "stm32g051g6u6", "stm32g051g8u3", "stm32g051g8u6", "stm32g051g8u7", "stm32g051k6t6", "stm32g051k6t7", "stm32g051k6u6", "stm32g051k6u7", "stm32g051k8t6", "stm32g051k8t7", "stm32g051k8u6", "stm32g051k8u7", "stm32g061c6t6", "stm32g061c6u6", "stm32g061c8t6", "stm32g061c8u6", "stm32g061f6p6", "stm32g061f8p6", "stm32g061f8y6", "stm32g061g6u6", "stm32g061g8u6", "stm32g061k6t6", "stm32g061k6u6", "stm32g061k8t6", "stm32g061k8u6"]}
+Boot_Memory = {type = "Enum", values = ["sram1", "flash"]}
+Stack_Size = {type = "Integer", first = 1, default = 1024}

@@ -1,0 +1,10 @@
+name = "stm32f0_58_dc"
+description = "Device configuration for stm32f0_58_dc micro-controllers"
+version = "0.1.0-dev"
+authors = ["a script"]
+maintainers = ["Fabien Chouteau <chouteau@adacore.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+[configuration.variables]
+Device = {type = "Enum", values = ["stm32f058c8u6", "stm32f058r8h6", "stm32f058r8h7", "stm32f058r8t6", "stm32f058r8t7", "stm32f058t8y6"]}
+Boot_Memory = {type = "Enum", values = ["sram1", "flash"]}
+Stack_Size = {type = "Integer", first = 1, default = 1024}

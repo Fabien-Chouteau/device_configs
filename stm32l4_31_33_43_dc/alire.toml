@@ -1,0 +1,10 @@
+name = "stm32l4_31_33_43_dc"
+description = "Device configuration for stm32l4_31_33_43_dc micro-controllers"
+version = "0.1.0-dev"
+authors = ["a script"]
+maintainers = ["Fabien Chouteau <chouteau@adacore.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+[configuration.variables]
+Device = {type = "Enum", values = ["stm32l431cbt6", "stm32l431cbt7", "stm32l431cbu6", "stm32l431cbu7", "stm32l431cby6", "stm32l431cby7", "stm32l431cct6", "stm32l431ccu6", "stm32l431ccy6", "stm32l431kbu6", "stm32l431kcu6", "stm32l431rbi3", "stm32l431rbi6", "stm32l431rbi7", "stm32l431rbt3", "stm32l431rbt6", "stm32l431rbt7", "stm32l431rby3", "stm32l431rby6", "stm32l431rby7", "stm32l431rci6", "stm32l431rct6", "stm32l431rcy6", "stm32l431vci3", "stm32l431vci6", "stm32l431vci7", "stm32l431vct3", "stm32l431vct6", "stm32l431vct7", "stm32l433cbt6", "stm32l433cbt7", "stm32l433cbu6", "stm32l433cbu7", "stm32l433cby6", "stm32l433cby7", "stm32l433cct3", "stm32l433cct6", "stm32l433cct7", "stm32l433ccu3", "stm32l433ccu6", "stm32l433ccu7", "stm32l433ccy3", "stm32l433ccy6", "stm32l433ccy7", "stm32l433rbi6", "stm32l433rbt6", "stm32l433rby6", "stm32l433rci3", "stm32l433rci6", "stm32l433rci7", "stm32l433rct3", "stm32l433rct3p", "stm32l433rct6", "stm32l433rct6p", "stm32l433rct7", "stm32l433rct7p", "stm32l433rcy3", "stm32l433rcy6", "stm32l433rcy7", "stm32l433vci3", "stm32l433vci6", "stm32l433vci7", "stm32l433vct3", "stm32l433vct6", "stm32l433vct7", "stm32l443ccf6", "stm32l443cct6", "stm32l443ccu6", "stm32l443ccy6", "stm32l443rci3", "stm32l443rci6", "stm32l443rci7", "stm32l443rct3", "stm32l443rct6", "stm32l443rct7", "stm32l443rcy3", "stm32l443rcy6", "stm32l443rcy7", "stm32l443vci6", "stm32l443vct6"]}
+Boot_Memory = {type = "Enum", values = ["sram1", "flash", "ccm"]}
+Stack_Size = {type = "Integer", first = 1, default = 1024}

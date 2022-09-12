@@ -1,0 +1,192 @@
+with "config/stm32l0_51_52_53_62_63_dc_config.gpr";
+abstract project stm32l0_51_52_53_62_63_dc is
+   for Target use "arm-elf";
+   for Runtime ("Ada") use "light-cortex-m0p";
+   package Device_Configuration is
+      Device_Name := stm32l0_51_52_53_62_63_dc_Config.Device;
+      for CPU_Name use "cortex-m0+";
+
+      for Interrupt ("0") use "WWDG";
+      for Interrupt ("1") use "PVD";
+      for Interrupt ("2") use "RTC";
+      for Interrupt ("3") use "FLASH";
+      for Interrupt ("5") use "EXTI0_1";
+      for Interrupt ("6") use "EXTI2_3";
+      for Interrupt ("7") use "EXTI4_15";
+      for Interrupt ("9") use "DMA1_Channel1";
+      for Interrupt ("10") use "DMA1_Channel2_3";
+      for Interrupt ("11") use "DMA1_Channel4_5_6_7";
+      for Interrupt ("12") use "ADC1_COMP";
+      for Interrupt ("13") use "LPTIM1";
+      for Interrupt ("15") use "TIM2";
+      for Interrupt ("20") use "TIM21";
+      for Interrupt ("22") use "TIM22";
+      for Interrupt ("23") use "I2C1";
+      for Interrupt ("24") use "I2C2";
+      for Interrupt ("25") use "SPI1";
+      for Interrupt ("26") use "SPI2";
+      for Interrupt ("27") use "USART1";
+      for Interrupt ("28") use "USART2";
+      case Device_Name is
+         when "" =>
+            for Interrupt ("4") use "RCC";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "" =>
+            for Interrupt ("4") use "RCC_CRS";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "" =>
+            for Interrupt ("8") use "TSC";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "" =>
+            for Interrupt ("17") use "TIM6";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "" =>
+            for Interrupt ("17") use "TIM6_DAC";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "" =>
+            for Interrupt ("29") use "AES_RNG_LPUART1";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "" =>
+            for Interrupt ("29") use "LPUART1";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "" =>
+            for Interrupt ("29") use "RNG_LPUART1";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "" =>
+            for Interrupt ("30") use "LCD";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "" =>
+            for Interrupt ("31") use "USB";
+         when others => null;
+      end case;
+
+      Mem_List := ();
+      Mem_List := Mem_List & ("eeprom");
+      for Mem_Kind ("eeprom") use "RAM";
+      for Address  ("eeprom") use "0x8080000";
+      for Size     ("eeprom") use "2048";
+      Mem_List := Mem_List & ("sram1");
+      for Mem_Kind ("sram1") use "RAM";
+      for Address  ("sram1") use "0x20000000";
+      for Size     ("sram1") use "8192";
+      case Device_Name is
+         when "stm32l051c6t6" |
+              "stm32l051c6u6" |
+              "stm32l051k6t6" |
+              "stm32l051k6u6" |
+              "stm32l051r6h6" |
+              "stm32l051r6t6" |
+              "stm32l051t6y6" |
+              "stm32l052c6t6" |
+              "stm32l052c6u6" |
+              "stm32l052k6t6" |
+              "stm32l052k6t7" |
+              "stm32l052k6u6" |
+              "stm32l052k6u7" |
+              "stm32l052r6h6" |
+              "stm32l052r6t6" |
+              "stm32l052t6y6" |
+              "stm32l052t6y7" |
+              "stm32l053c6t6" |
+              "stm32l053c6t7" |
+              "stm32l053c6u6" |
+              "stm32l053c6u7" |
+              "stm32l053r6h6" |
+              "stm32l053r6t6" =>
+            Mem_List := Mem_List & ("flash");
+            for Mem_Kind ("flash") use "ROM";
+            for Address  ("flash") use "0x8000000";
+            for Size     ("flash") use "32768";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "stm32l051c8t3" |
+              "stm32l051c8t6" |
+              "stm32l051c8t7" |
+              "stm32l051c8u3" |
+              "stm32l051c8u6" |
+              "stm32l051c8u7" |
+              "stm32l051k8t3" |
+              "stm32l051k8t6" |
+              "stm32l051k8t7" |
+              "stm32l051k8u3" |
+              "stm32l051k8u6" |
+              "stm32l051k8u7" |
+              "stm32l051r8h6" |
+              "stm32l051r8h7" |
+              "stm32l051r8t6" |
+              "stm32l051r8t7" |
+              "stm32l051t8y3" |
+              "stm32l051t8y6" |
+              "stm32l051t8y7" |
+              "stm32l052c8t3" |
+              "stm32l052c8t6" |
+              "stm32l052c8t7" |
+              "stm32l052c8u3" |
+              "stm32l052c8u6" |
+              "stm32l052c8u7" |
+              "stm32l052k8t3" |
+              "stm32l052k8t6" |
+              "stm32l052k8t7" |
+              "stm32l052k8u3" |
+              "stm32l052k8u6" |
+              "stm32l052k8u7" |
+              "stm32l052r8h6" |
+              "stm32l052r8h7" |
+              "stm32l052r8t6" |
+              "stm32l052r8t7" |
+              "stm32l052t8f3" |
+              "stm32l052t8f6" |
+              "stm32l052t8f7" |
+              "stm32l052t8y3" |
+              "stm32l052t8y6" |
+              "stm32l052t8y7" |
+              "stm32l053c8t3" |
+              "stm32l053c8t6" |
+              "stm32l053c8t7" |
+              "stm32l053c8u3" |
+              "stm32l053c8u6" |
+              "stm32l053c8u7" |
+              "stm32l053r8h3" |
+              "stm32l053r8h6" |
+              "stm32l053r8h7" |
+              "stm32l053r8t3" |
+              "stm32l053r8t6" |
+              "stm32l053r8t7" |
+              "stm32l062c8u6" |
+              "stm32l062k8t6" |
+              "stm32l062k8u6" |
+              "stm32l063c8t6" |
+              "stm32l063c8u6" |
+              "stm32l063r8t6" |
+              "stm32l063r8t7" =>
+            Mem_List := Mem_List & ("flash");
+            for Mem_Kind ("flash") use "ROM";
+            for Address  ("flash") use "0x8000000";
+            for Size     ("flash") use "65536";
+         when others => null;
+      end case;
+      for Memories use Mem_List;
+      for Boot_Memory use stm32l0_51_52_53_62_63_dc_Config.Boot_Memory;
+      for Main_Stack_Size use stm32l0_51_52_53_62_63_dc_Config.Stack_Size;
+
+   end Device_Configuration;
+end stm32l0_51_52_53_62_63_dc;

@@ -1,0 +1,10 @@
+name = "saml21_dc"
+description = "Device configuration for saml21_dc micro-controllers"
+version = "0.1.0-dev"
+authors = ["a script"]
+maintainers = ["Fabien Chouteau <chouteau@adacore.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+[configuration.variables]
+Device = {type = "Enum", values = ["saml21e15b-an", "saml21e15b-au", "saml21e15b-mn", "saml21e15b-mu", "saml21e16b-an", "saml21e16b-au", "saml21e16b-mn", "saml21e16b-mu", "saml21e17b-an", "saml21e17b-au", "saml21e17b-mn", "saml21e17b-mu", "saml21e18a-au", "saml21e18b-an", "saml21e18b-au", "saml21e18b-mn", "saml21e18b-mu", "saml21g16b-an", "saml21g16b-au", "saml21g16b-mn", "saml21g16b-mu", "saml21g17b-an", "saml21g17b-au", "saml21g17b-mn", "saml21g17b-mu", "saml21g18a-au", "saml21g18a-mu", "saml21g18b-an", "saml21g18b-au", "saml21g18b-mn", "saml21g18b-mu", "saml21j16b-an", "saml21j16b-au", "saml21j16b-mn", "saml21j16b-mu", "saml21j17b-an", "saml21j17b-au", "saml21j17b-mn", "saml21j17b-mu", "saml21j17b-uu", "saml21j18a-au", "saml21j18a-mu", "saml21j18b-an", "saml21j18b-au", "saml21j18b-mn", "saml21j18b-mu", "saml21j18b-uu"]}
+Boot_Memory = {type = "Enum", values = ["eeprom", "lpram", "flash", "ram"]}
+Stack_Size = {type = "Integer", first = 1, default = 1024}

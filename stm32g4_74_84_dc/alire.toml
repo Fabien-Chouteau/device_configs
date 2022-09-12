@@ -1,0 +1,10 @@
+name = "stm32g4_74_84_dc"
+description = "Device configuration for stm32g4_74_84_dc micro-controllers"
+version = "0.1.0-dev"
+authors = ["a script"]
+maintainers = ["Fabien Chouteau <chouteau@adacore.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+[configuration.variables]
+Device = {type = "Enum", values = ["stm32g474cbt3", "stm32g474cbt6", "stm32g474cbt7", "stm32g474cbu3", "stm32g474cbu6", "stm32g474cbu7", "stm32g474cct3", "stm32g474cct6", "stm32g474cct7", "stm32g474ccu3", "stm32g474ccu6", "stm32g474ccu7", "stm32g474cet3", "stm32g474cet6", "stm32g474cet7", "stm32g474ceu3", "stm32g474ceu6", "stm32g474ceu7", "stm32g474mbt6", "stm32g474mct3", "stm32g474mct6", "stm32g474mct7", "stm32g474met3", "stm32g474met6", "stm32g474met7", "stm32g474mey3", "stm32g474mey6", "stm32g474mey7", "stm32g474pbi6", "stm32g474pci6", "stm32g474pei6", "stm32g474qbt6", "stm32g474qct6", "stm32g474qet6", "stm32g474rbt3", "stm32g474rbt6", "stm32g474rbt7", "stm32g474rct3", "stm32g474rct6", "stm32g474rct7", "stm32g474ret3", "stm32g474ret6", "stm32g474ret7", "stm32g474vbh3", "stm32g474vbh6", "stm32g474vbh7", "stm32g474vbt3", "stm32g474vbt6", "stm32g474vbt7", "stm32g474vch6", "stm32g474vct6", "stm32g474veh3", "stm32g474veh6", "stm32g474veh7", "stm32g474vet3", "stm32g474vet6", "stm32g474vet7", "stm32g484cet3", "stm32g484cet6", "stm32g484cet7", "stm32g484ceu3", "stm32g484ceu6", "stm32g484ceu7", "stm32g484met3", "stm32g484met6", "stm32g484met7", "stm32g484mey3", "stm32g484mey6", "stm32g484mey7", "stm32g484pei6", "stm32g484qet3", "stm32g484qet6", "stm32g484qet7", "stm32g484ret3", "stm32g484ret6", "stm32g484ret7", "stm32g484veh6", "stm32g484vet6"]}
+Boot_Memory = {type = "Enum", values = ["sram2", "sram1", "flash", "ccm"]}
+Stack_Size = {type = "Integer", first = 1, default = 1024}

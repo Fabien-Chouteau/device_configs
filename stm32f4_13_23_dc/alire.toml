@@ -1,0 +1,10 @@
+name = "stm32f4_13_23_dc"
+description = "Device configuration for stm32f4_13_23_dc micro-controllers"
+version = "0.1.0-dev"
+authors = ["a script"]
+maintainers = ["Fabien Chouteau <chouteau@adacore.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+[configuration.variables]
+Device = {type = "Enum", values = ["stm32f413cgu3", "stm32f413cgu6", "stm32f413cgu7", "stm32f413chu3", "stm32f413chu6", "stm32f413chu7", "stm32f413mgy3", "stm32f413mgy6", "stm32f413mgy7", "stm32f413mhy3", "stm32f413mhy6", "stm32f413mhy7", "stm32f413rgt3", "stm32f413rgt6", "stm32f413rgt7", "stm32f413rht3", "stm32f413rht6", "stm32f413rht7", "stm32f413vgh3", "stm32f413vgh6", "stm32f413vgh7", "stm32f413vgt3", "stm32f413vgt6", "stm32f413vgt7", "stm32f413vhh3", "stm32f413vhh6", "stm32f413vhh7", "stm32f413vht3", "stm32f413vht6", "stm32f413vht7", "stm32f413zgj3", "stm32f413zgj6", "stm32f413zgj7", "stm32f413zgt3", "stm32f413zgt6", "stm32f413zgt7", "stm32f413zhj3", "stm32f413zhj6", "stm32f413zhj7", "stm32f413zht3", "stm32f413zht6", "stm32f413zht7", "stm32f423chu3", "stm32f423chu6", "stm32f423chu7", "stm32f423mhy3", "stm32f423mhy6", "stm32f423mhy7", "stm32f423rht3", "stm32f423rht6", "stm32f423rht7", "stm32f423vhh3", "stm32f423vhh6", "stm32f423vhh7", "stm32f423vht3", "stm32f423vht6", "stm32f423vht7", "stm32f423zhj3", "stm32f423zhj6", "stm32f423zhj7", "stm32f423zht3", "stm32f423zht6", "stm32f423zht7"]}
+Boot_Memory = {type = "Enum", values = ["ccm", "backup", "sram1", "flash"]}
+Stack_Size = {type = "Integer", first = 1, default = 1024}

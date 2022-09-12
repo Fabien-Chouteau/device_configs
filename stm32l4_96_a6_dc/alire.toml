@@ -1,0 +1,10 @@
+name = "stm32l4_96_a6_dc"
+description = "Device configuration for stm32l4_96_a6_dc micro-controllers"
+version = "0.1.0-dev"
+authors = ["a script"]
+maintainers = ["Fabien Chouteau <chouteau@adacore.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+[configuration.variables]
+Device = {type = "Enum", values = ["stm32l496aei6", "stm32l496agi3", "stm32l496agi3p", "stm32l496agi6", "stm32l496agi6p", "stm32l496agi7", "stm32l496agi7p", "stm32l496qei6", "stm32l496qgi3", "stm32l496qgi3p", "stm32l496qgi3s", "stm32l496qgi6", "stm32l496qgi6p", "stm32l496qgi6s", "stm32l496qgi7", "stm32l496qgi7p", "stm32l496qgi7s", "stm32l496ret6", "stm32l496rgt3", "stm32l496rgt3p", "stm32l496rgt6", "stm32l496rgt6p", "stm32l496rgt7", "stm32l496rgt7p", "stm32l496vet3", "stm32l496vet6", "stm32l496vet7", "stm32l496vgt3", "stm32l496vgt3p", "stm32l496vgt6", "stm32l496vgt6p", "stm32l496vgt7", "stm32l496vgt7p", "stm32l496vgy3", "stm32l496vgy3p", "stm32l496vgy6", "stm32l496vgy6p", "stm32l496vgy7", "stm32l496vgy7p", "stm32l496wgy6p", "stm32l496zet6", "stm32l496zgt3", "stm32l496zgt3p", "stm32l496zgt6", "stm32l496zgt6p", "stm32l496zgt7", "stm32l496zgt7p", "stm32l4a6agi6", "stm32l4a6agi6p", "stm32l4a6qgi6", "stm32l4a6qgi6p", "stm32l4a6rgt6", "stm32l4a6rgt6p", "stm32l4a6rgt7", "stm32l4a6rgt7p", "stm32l4a6vgt6", "stm32l4a6vgt6p", "stm32l4a6vgy6", "stm32l4a6vgy6p", "stm32l4a6zgt6", "stm32l4a6zgt6p"]}
+Boot_Memory = {type = "Enum", values = ["flash", "ccm", "sram1"]}
+Stack_Size = {type = "Integer", first = 1, default = 1024}

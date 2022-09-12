@@ -1,0 +1,10 @@
+name = "stm32g0_b1_c1_dc"
+description = "Device configuration for stm32g0_b1_c1_dc micro-controllers"
+version = "0.1.0-dev"
+authors = ["a script"]
+maintainers = ["Fabien Chouteau <chouteau@adacore.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+[configuration.variables]
+Device = {type = "Enum", values = ["stm32g0b1cbt3", "stm32g0b1cbt3n", "stm32g0b1cbt6", "stm32g0b1cbt6n", "stm32g0b1cbt7", "stm32g0b1cbt7n", "stm32g0b1cbu3", "stm32g0b1cbu3n", "stm32g0b1cbu6", "stm32g0b1cbu6n", "stm32g0b1cbu7", "stm32g0b1cbu7n", "stm32g0b1cct6", "stm32g0b1cct6n", "stm32g0b1ccu6", "stm32g0b1ccu6n", "stm32g0b1cet6", "stm32g0b1cet6n", "stm32g0b1ceu6", "stm32g0b1ceu6n", "stm32g0b1kbt3", "stm32g0b1kbt3n", "stm32g0b1kbt6", "stm32g0b1kbt6n", "stm32g0b1kbt7", "stm32g0b1kbt7n", "stm32g0b1kbu3", "stm32g0b1kbu3n", "stm32g0b1kbu6", "stm32g0b1kbu6n", "stm32g0b1kbu7", "stm32g0b1kbu7n", "stm32g0b1kct6", "stm32g0b1kct6n", "stm32g0b1kct7", "stm32g0b1kct7n", "stm32g0b1kcu6", "stm32g0b1kcu6n", "stm32g0b1kcu7", "stm32g0b1kcu7n", "stm32g0b1ket6", "stm32g0b1ket6n", "stm32g0b1keu6", "stm32g0b1keu6n", "stm32g0b1mbt6", "stm32g0b1mct6", "stm32g0b1met6", "stm32g0b1ney6", "stm32g0b1rbi6n", "stm32g0b1rbt6", "stm32g0b1rbt6n", "stm32g0b1rci6n", "stm32g0b1rci7n", "stm32g0b1rct6", "stm32g0b1rct6n", "stm32g0b1rct7", "stm32g0b1rct7n", "stm32g0b1rei6n", "stm32g0b1ret6", "stm32g0b1ret6n", "stm32g0b1vbi6", "stm32g0b1vbt6", "stm32g0b1vci6", "stm32g0b1vct6", "stm32g0b1vei6", "stm32g0b1vet6", "stm32g0c1cct6", "stm32g0c1cct6n", "stm32g0c1ccu6", "stm32g0c1ccu6n", "stm32g0c1cet6", "stm32g0c1cet6n", "stm32g0c1ceu6", "stm32g0c1ceu6n", "stm32g0c1kct6", "stm32g0c1kct6n", "stm32g0c1kcu6", "stm32g0c1kcu6n", "stm32g0c1ket6", "stm32g0c1ket6n", "stm32g0c1keu6", "stm32g0c1keu6n", "stm32g0c1mct6", "stm32g0c1met6", "stm32g0c1ney6", "stm32g0c1rci6n", "stm32g0c1rct6", "stm32g0c1rct6n", "stm32g0c1rei6n", "stm32g0c1ret6", "stm32g0c1ret6n", "stm32g0c1vci6", "stm32g0c1vct6", "stm32g0c1vei6", "stm32g0c1vet6"]}
+Boot_Memory = {type = "Enum", values = ["sram1", "flash"]}
+Stack_Size = {type = "Integer", first = 1, default = 1024}

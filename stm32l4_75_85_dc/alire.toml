@@ -1,0 +1,10 @@
+name = "stm32l4_75_85_dc"
+description = "Device configuration for stm32l4_75_85_dc micro-controllers"
+version = "0.1.0-dev"
+authors = ["a script"]
+maintainers = ["Fabien Chouteau <chouteau@adacore.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+[configuration.variables]
+Device = {type = "Enum", values = ["stm32l475rct3", "stm32l475rct6", "stm32l475rct7", "stm32l475ret6", "stm32l475rgt6", "stm32l475rgt7", "stm32l475vct6", "stm32l475vet6", "stm32l475vgt6", "stm32l485jcy6", "stm32l485jey6"]}
+Boot_Memory = {type = "Enum", values = ["sram1", "flash", "ccm"]}
+Stack_Size = {type = "Integer", first = 1, default = 1024}

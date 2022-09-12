@@ -1,0 +1,1391 @@
+with "config/samd21_dc_config.gpr";
+abstract project samd21_dc is
+   for Target use "arm-elf";
+   for Runtime ("Ada") use "light-cortex-m0p";
+   package Device_Configuration is
+      Device_Name := samd21_dc_Config.Device;
+      for CPU_Name use "cortex-m0+";
+
+      for Interrupt ("0") use "PM";
+      for Interrupt ("1") use "SYSCTRL";
+      for Interrupt ("2") use "WDT";
+      for Interrupt ("3") use "RTC";
+      for Interrupt ("4") use "EIC";
+      for Interrupt ("5") use "NVMCTRL";
+      for Interrupt ("6") use "DMAC";
+      for Interrupt ("8") use "EVSYS";
+      for Interrupt ("9") use "SERCOM0";
+      for Interrupt ("10") use "SERCOM1";
+      for Interrupt ("11") use "SERCOM2";
+      for Interrupt ("12") use "SERCOM3";
+      for Interrupt ("15") use "TCC0";
+      for Interrupt ("16") use "TCC1";
+      for Interrupt ("17") use "TCC2";
+      for Interrupt ("18") use "TC3";
+      for Interrupt ("19") use "TC4";
+      for Interrupt ("20") use "TC5";
+      for Interrupt ("23") use "ADC";
+      for Interrupt ("24") use "AC";
+      for Interrupt ("25") use "DAC";
+      case Device_Name is
+         when "samd21e15a-af" |
+              "samd21e15a-au" |
+              "samd21e15a-az" |
+              "samd21e15a-mf" |
+              "samd21e15a-mu" |
+              "samd21e15a-mz" |
+              "samd21e15b-af" |
+              "samd21e15b-au" |
+              "samd21e15b-az" |
+              "samd21e15b-mf" |
+              "samd21e15b-mu" |
+              "samd21e15b-mz" |
+              "samd21e15b-uf" |
+              "samd21e15b-uu" |
+              "samd21e15c-uf" |
+              "samd21e15c-uu" |
+              "samd21e16a-af" |
+              "samd21e16a-au" |
+              "samd21e16a-az" |
+              "samd21e16a-mf" |
+              "samd21e16a-mu" |
+              "samd21e16a-mz" |
+              "samd21e16b-af" |
+              "samd21e16b-au" |
+              "samd21e16b-az" |
+              "samd21e16b-mf" |
+              "samd21e16b-mu" |
+              "samd21e16b-mz" |
+              "samd21e16b-uf" |
+              "samd21e16b-uu" |
+              "samd21e16c-uf" |
+              "samd21e16c-uu" |
+              "samd21e17a-af" |
+              "samd21e17a-au" |
+              "samd21e17a-az" |
+              "samd21e17a-mf" |
+              "samd21e17a-mu" |
+              "samd21e17a-mz" |
+              "samd21e17d-af" |
+              "samd21e17d-au" |
+              "samd21e17d-az" |
+              "samd21e17d-mf" |
+              "samd21e17d-mu" |
+              "samd21e17d-mz" |
+              "samd21e17d-uu" |
+              "samd21e18a-af" |
+              "samd21e18a-au" |
+              "samd21e18a-az" |
+              "samd21e18a-mf" |
+              "samd21e18a-mu" |
+              "samd21e18a-mz" |
+              "samd21g15a-af" |
+              "samd21g15a-au" |
+              "samd21g15a-az" |
+              "samd21g15a-mf" |
+              "samd21g15a-mu" |
+              "samd21g15a-mz" |
+              "samd21g15b-af" |
+              "samd21g15b-au" |
+              "samd21g15b-az" |
+              "samd21g15b-mf" |
+              "samd21g15b-mu" |
+              "samd21g15b-mz" |
+              "samd21g16a-af" |
+              "samd21g16a-au" |
+              "samd21g16a-az" |
+              "samd21g16a-mf" |
+              "samd21g16a-mu" |
+              "samd21g16a-mz" |
+              "samd21g16b-af" |
+              "samd21g16b-au" |
+              "samd21g16b-az" |
+              "samd21g16b-mf" |
+              "samd21g16b-mu" |
+              "samd21g16b-mz" |
+              "samd21g17a-af" |
+              "samd21g17a-au" |
+              "samd21g17a-az" |
+              "samd21g17a-mf" |
+              "samd21g17a-mu" |
+              "samd21g17a-mz" |
+              "samd21g17a-uu" |
+              "samd21g17d-af" |
+              "samd21g17d-au" |
+              "samd21g17d-az" |
+              "samd21g17d-mf" |
+              "samd21g17d-mu" |
+              "samd21g17d-mz" |
+              "samd21g18a-af" |
+              "samd21g18a-au" |
+              "samd21g18a-az" |
+              "samd21g18a-mf" |
+              "samd21g18a-mu" |
+              "samd21g18a-mz" |
+              "samd21g18a-uu" |
+              "samd21j15a-af" |
+              "samd21j15a-au" |
+              "samd21j15a-az" |
+              "samd21j15a-mf" |
+              "samd21j15a-mu" |
+              "samd21j15a-mz" |
+              "samd21j15b-af" |
+              "samd21j15b-au" |
+              "samd21j15b-az" |
+              "samd21j15b-cf" |
+              "samd21j15b-cu" |
+              "samd21j15b-mf" |
+              "samd21j15b-mu" |
+              "samd21j15b-mz" |
+              "samd21j16a-af" |
+              "samd21j16a-au" |
+              "samd21j16a-az" |
+              "samd21j16a-cu" |
+              "samd21j16a-mf" |
+              "samd21j16a-mu" |
+              "samd21j16a-mz" |
+              "samd21j16b-af" |
+              "samd21j16b-au" |
+              "samd21j16b-az" |
+              "samd21j16b-cf" |
+              "samd21j16b-cu" |
+              "samd21j16b-mf" |
+              "samd21j16b-mu" |
+              "samd21j16b-mz" |
+              "samd21j17a-af" |
+              "samd21j17a-au" |
+              "samd21j17a-az" |
+              "samd21j17a-cu" |
+              "samd21j17a-mf" |
+              "samd21j17a-mu" |
+              "samd21j17a-mz" |
+              "samd21j17d-af" |
+              "samd21j17d-au" |
+              "samd21j17d-az" |
+              "samd21j17d-cf" |
+              "samd21j17d-cu" |
+              "samd21j17d-mf" |
+              "samd21j17d-mu" |
+              "samd21j17d-mz" |
+              "samd21j18a-af" |
+              "samd21j18a-au" |
+              "samd21j18a-az" |
+              "samd21j18a-cu" |
+              "samd21j18a-mf" |
+              "samd21j18a-mu" |
+              "samd21j18a-mz" =>
+            for Interrupt ("7") use "USB";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samd21g15a-af" |
+              "samd21g15a-au" |
+              "samd21g15a-az" |
+              "samd21g15a-mf" |
+              "samd21g15a-mu" |
+              "samd21g15a-mz" |
+              "samd21g15b-af" |
+              "samd21g15b-au" |
+              "samd21g15b-az" |
+              "samd21g15b-mf" |
+              "samd21g15b-mu" |
+              "samd21g15b-mz" |
+              "samd21g15l-mn" |
+              "samd21g15l-mu" |
+              "samd21g16a-af" |
+              "samd21g16a-au" |
+              "samd21g16a-az" |
+              "samd21g16a-mf" |
+              "samd21g16a-mu" |
+              "samd21g16a-mz" |
+              "samd21g16b-af" |
+              "samd21g16b-au" |
+              "samd21g16b-az" |
+              "samd21g16b-mf" |
+              "samd21g16b-mu" |
+              "samd21g16b-mz" |
+              "samd21g16l-mn" |
+              "samd21g16l-mu" |
+              "samd21g17a-af" |
+              "samd21g17a-au" |
+              "samd21g17a-az" |
+              "samd21g17a-mf" |
+              "samd21g17a-mu" |
+              "samd21g17a-mz" |
+              "samd21g17a-uu" |
+              "samd21g17d-af" |
+              "samd21g17d-au" |
+              "samd21g17d-az" |
+              "samd21g17d-mf" |
+              "samd21g17d-mu" |
+              "samd21g17d-mz" |
+              "samd21g17l-mf" |
+              "samd21g17l-mn" |
+              "samd21g17l-mu" |
+              "samd21g18a-af" |
+              "samd21g18a-au" |
+              "samd21g18a-az" |
+              "samd21g18a-mf" |
+              "samd21g18a-mu" |
+              "samd21g18a-mz" |
+              "samd21g18a-uu" |
+              "samd21j15a-af" |
+              "samd21j15a-au" |
+              "samd21j15a-az" |
+              "samd21j15a-mf" |
+              "samd21j15a-mu" |
+              "samd21j15a-mz" |
+              "samd21j15b-af" |
+              "samd21j15b-au" |
+              "samd21j15b-az" |
+              "samd21j15b-cf" |
+              "samd21j15b-cu" |
+              "samd21j15b-mf" |
+              "samd21j15b-mu" |
+              "samd21j15b-mz" |
+              "samd21j16a-af" |
+              "samd21j16a-au" |
+              "samd21j16a-az" |
+              "samd21j16a-cu" |
+              "samd21j16a-mf" |
+              "samd21j16a-mu" |
+              "samd21j16a-mz" |
+              "samd21j16b-af" |
+              "samd21j16b-au" |
+              "samd21j16b-az" |
+              "samd21j16b-cf" |
+              "samd21j16b-cu" |
+              "samd21j16b-mf" |
+              "samd21j16b-mu" |
+              "samd21j16b-mz" |
+              "samd21j17a-af" |
+              "samd21j17a-au" |
+              "samd21j17a-az" |
+              "samd21j17a-cu" |
+              "samd21j17a-mf" |
+              "samd21j17a-mu" |
+              "samd21j17a-mz" |
+              "samd21j17d-af" |
+              "samd21j17d-au" |
+              "samd21j17d-az" |
+              "samd21j17d-cf" |
+              "samd21j17d-cu" |
+              "samd21j17d-mf" |
+              "samd21j17d-mu" |
+              "samd21j17d-mz" |
+              "samd21j18a-af" |
+              "samd21j18a-au" |
+              "samd21j18a-az" |
+              "samd21j18a-cu" |
+              "samd21j18a-mf" |
+              "samd21j18a-mu" |
+              "samd21j18a-mz" =>
+            for Interrupt ("13") use "SERCOM4";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samd21g15a-af" |
+              "samd21g15a-au" |
+              "samd21g15a-az" |
+              "samd21g15a-mf" |
+              "samd21g15a-mu" |
+              "samd21g15a-mz" |
+              "samd21g15b-af" |
+              "samd21g15b-au" |
+              "samd21g15b-az" |
+              "samd21g15b-mf" |
+              "samd21g15b-mu" |
+              "samd21g15b-mz" |
+              "samd21g15l-mn" |
+              "samd21g15l-mu" |
+              "samd21g16a-af" |
+              "samd21g16a-au" |
+              "samd21g16a-az" |
+              "samd21g16a-mf" |
+              "samd21g16a-mu" |
+              "samd21g16a-mz" |
+              "samd21g16b-af" |
+              "samd21g16b-au" |
+              "samd21g16b-az" |
+              "samd21g16b-mf" |
+              "samd21g16b-mu" |
+              "samd21g16b-mz" |
+              "samd21g16l-mn" |
+              "samd21g16l-mu" |
+              "samd21g17a-af" |
+              "samd21g17a-au" |
+              "samd21g17a-az" |
+              "samd21g17a-mf" |
+              "samd21g17a-mu" |
+              "samd21g17a-mz" |
+              "samd21g17a-uu" |
+              "samd21g17d-af" |
+              "samd21g17d-au" |
+              "samd21g17d-az" |
+              "samd21g17d-mf" |
+              "samd21g17d-mu" |
+              "samd21g17d-mz" |
+              "samd21g17l-mf" |
+              "samd21g17l-mn" |
+              "samd21g17l-mu" |
+              "samd21g18a-af" |
+              "samd21g18a-au" |
+              "samd21g18a-az" |
+              "samd21g18a-mf" |
+              "samd21g18a-mu" |
+              "samd21g18a-mz" |
+              "samd21g18a-uu" |
+              "samd21j15a-af" |
+              "samd21j15a-au" |
+              "samd21j15a-az" |
+              "samd21j15a-mf" |
+              "samd21j15a-mu" |
+              "samd21j15a-mz" |
+              "samd21j15b-af" |
+              "samd21j15b-au" |
+              "samd21j15b-az" |
+              "samd21j15b-cf" |
+              "samd21j15b-cu" |
+              "samd21j15b-mf" |
+              "samd21j15b-mu" |
+              "samd21j15b-mz" |
+              "samd21j16a-af" |
+              "samd21j16a-au" |
+              "samd21j16a-az" |
+              "samd21j16a-cu" |
+              "samd21j16a-mf" |
+              "samd21j16a-mu" |
+              "samd21j16a-mz" |
+              "samd21j16b-af" |
+              "samd21j16b-au" |
+              "samd21j16b-az" |
+              "samd21j16b-cf" |
+              "samd21j16b-cu" |
+              "samd21j16b-mf" |
+              "samd21j16b-mu" |
+              "samd21j16b-mz" |
+              "samd21j17a-af" |
+              "samd21j17a-au" |
+              "samd21j17a-az" |
+              "samd21j17a-cu" |
+              "samd21j17a-mf" |
+              "samd21j17a-mu" |
+              "samd21j17a-mz" |
+              "samd21j17d-af" |
+              "samd21j17d-au" |
+              "samd21j17d-az" |
+              "samd21j17d-cf" |
+              "samd21j17d-cu" |
+              "samd21j17d-mf" |
+              "samd21j17d-mu" |
+              "samd21j17d-mz" |
+              "samd21j18a-af" |
+              "samd21j18a-au" |
+              "samd21j18a-az" |
+              "samd21j18a-cu" |
+              "samd21j18a-mf" |
+              "samd21j18a-mu" |
+              "samd21j18a-mz" =>
+            for Interrupt ("14") use "SERCOM5";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samd21g17a-uu" |
+              "samd21g18a-uu" =>
+            for Interrupt ("21") use "TC6";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samd21g15l-mn" |
+              "samd21g15l-mu" |
+              "samd21g16l-mn" |
+              "samd21g16l-mu" |
+              "samd21g17l-mf" |
+              "samd21g17l-mn" |
+              "samd21g17l-mu" =>
+            for Interrupt ("21") use "TC6";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samd21j15a-af" |
+              "samd21j15a-au" |
+              "samd21j15a-az" |
+              "samd21j15a-mf" |
+              "samd21j15a-mu" |
+              "samd21j15a-mz" |
+              "samd21j15b-af" |
+              "samd21j15b-au" |
+              "samd21j15b-az" |
+              "samd21j15b-cf" |
+              "samd21j15b-cu" |
+              "samd21j15b-mf" |
+              "samd21j15b-mu" |
+              "samd21j15b-mz" |
+              "samd21j16a-af" |
+              "samd21j16a-au" |
+              "samd21j16a-az" |
+              "samd21j16a-cu" |
+              "samd21j16a-mf" |
+              "samd21j16a-mu" |
+              "samd21j16a-mz" |
+              "samd21j16b-af" |
+              "samd21j16b-au" |
+              "samd21j16b-az" |
+              "samd21j16b-cf" |
+              "samd21j16b-cu" |
+              "samd21j16b-mf" |
+              "samd21j16b-mu" |
+              "samd21j16b-mz" |
+              "samd21j17a-af" |
+              "samd21j17a-au" |
+              "samd21j17a-az" |
+              "samd21j17a-cu" |
+              "samd21j17a-mf" |
+              "samd21j17a-mu" |
+              "samd21j17a-mz" |
+              "samd21j17d-af" |
+              "samd21j17d-au" |
+              "samd21j17d-az" |
+              "samd21j17d-cf" |
+              "samd21j17d-cu" |
+              "samd21j17d-mf" |
+              "samd21j17d-mu" |
+              "samd21j17d-mz" |
+              "samd21j18a-af" |
+              "samd21j18a-au" |
+              "samd21j18a-az" |
+              "samd21j18a-cu" |
+              "samd21j18a-mf" |
+              "samd21j18a-mu" |
+              "samd21j18a-mz" =>
+            for Interrupt ("21") use "TC6";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samd21g17a-uu" |
+              "samd21g18a-uu" =>
+            for Interrupt ("22") use "TC7";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samd21g15l-mn" |
+              "samd21g15l-mu" |
+              "samd21g16l-mn" |
+              "samd21g16l-mu" |
+              "samd21g17l-mf" |
+              "samd21g17l-mn" |
+              "samd21g17l-mu" =>
+            for Interrupt ("22") use "TC7";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samd21j15a-af" |
+              "samd21j15a-au" |
+              "samd21j15a-az" |
+              "samd21j15a-mf" |
+              "samd21j15a-mu" |
+              "samd21j15a-mz" |
+              "samd21j15b-af" |
+              "samd21j15b-au" |
+              "samd21j15b-az" |
+              "samd21j15b-cf" |
+              "samd21j15b-cu" |
+              "samd21j15b-mf" |
+              "samd21j15b-mu" |
+              "samd21j15b-mz" |
+              "samd21j16a-af" |
+              "samd21j16a-au" |
+              "samd21j16a-az" |
+              "samd21j16a-cu" |
+              "samd21j16a-mf" |
+              "samd21j16a-mu" |
+              "samd21j16a-mz" |
+              "samd21j16b-af" |
+              "samd21j16b-au" |
+              "samd21j16b-az" |
+              "samd21j16b-cf" |
+              "samd21j16b-cu" |
+              "samd21j16b-mf" |
+              "samd21j16b-mu" |
+              "samd21j16b-mz" |
+              "samd21j17a-af" |
+              "samd21j17a-au" |
+              "samd21j17a-az" |
+              "samd21j17a-cu" |
+              "samd21j17a-mf" |
+              "samd21j17a-mu" |
+              "samd21j17a-mz" |
+              "samd21j17d-af" |
+              "samd21j17d-au" |
+              "samd21j17d-az" |
+              "samd21j17d-cf" |
+              "samd21j17d-cu" |
+              "samd21j17d-mf" |
+              "samd21j17d-mu" |
+              "samd21j17d-mz" |
+              "samd21j18a-af" |
+              "samd21j18a-au" |
+              "samd21j18a-az" |
+              "samd21j18a-cu" |
+              "samd21j18a-mf" |
+              "samd21j18a-mu" |
+              "samd21j18a-mz" =>
+            for Interrupt ("22") use "TC7";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samd21e15a-af" |
+              "samd21e15a-au" |
+              "samd21e15a-az" |
+              "samd21e15a-mf" |
+              "samd21e15a-mu" |
+              "samd21e15a-mz" |
+              "samd21e15b-af" |
+              "samd21e15b-au" |
+              "samd21e15b-az" |
+              "samd21e15b-mf" |
+              "samd21e15b-mu" |
+              "samd21e15b-mz" |
+              "samd21e15b-uf" |
+              "samd21e15b-uu" |
+              "samd21e15c-uf" |
+              "samd21e15c-uu" |
+              "samd21e16a-af" |
+              "samd21e16a-au" |
+              "samd21e16a-az" |
+              "samd21e16a-mf" |
+              "samd21e16a-mu" |
+              "samd21e16a-mz" |
+              "samd21e16b-af" |
+              "samd21e16b-au" |
+              "samd21e16b-az" |
+              "samd21e16b-mf" |
+              "samd21e16b-mu" |
+              "samd21e16b-mz" |
+              "samd21e16b-uf" |
+              "samd21e16b-uu" |
+              "samd21e16c-uf" |
+              "samd21e16c-uu" |
+              "samd21e17a-af" |
+              "samd21e17a-au" |
+              "samd21e17a-az" |
+              "samd21e17a-mf" |
+              "samd21e17a-mu" |
+              "samd21e17a-mz" |
+              "samd21e17d-af" |
+              "samd21e17d-au" |
+              "samd21e17d-az" |
+              "samd21e17d-mf" |
+              "samd21e17d-mu" |
+              "samd21e17d-mz" |
+              "samd21e17d-uu" |
+              "samd21e18a-af" |
+              "samd21e18a-au" |
+              "samd21e18a-az" |
+              "samd21e18a-mf" |
+              "samd21e18a-mu" |
+              "samd21e18a-mz" |
+              "samd21g15a-af" |
+              "samd21g15a-au" |
+              "samd21g15a-az" |
+              "samd21g15a-mf" |
+              "samd21g15a-mu" |
+              "samd21g15a-mz" |
+              "samd21g15b-af" |
+              "samd21g15b-au" |
+              "samd21g15b-az" |
+              "samd21g15b-mf" |
+              "samd21g15b-mu" |
+              "samd21g15b-mz" |
+              "samd21g16a-af" |
+              "samd21g16a-au" |
+              "samd21g16a-az" |
+              "samd21g16a-mf" |
+              "samd21g16a-mu" |
+              "samd21g16a-mz" |
+              "samd21g16b-af" |
+              "samd21g16b-au" |
+              "samd21g16b-az" |
+              "samd21g16b-mf" |
+              "samd21g16b-mu" |
+              "samd21g16b-mz" |
+              "samd21g17a-af" |
+              "samd21g17a-au" |
+              "samd21g17a-az" |
+              "samd21g17a-mf" |
+              "samd21g17a-mu" |
+              "samd21g17a-mz" |
+              "samd21g17a-uu" |
+              "samd21g17d-af" |
+              "samd21g17d-au" |
+              "samd21g17d-az" |
+              "samd21g17d-mf" |
+              "samd21g17d-mu" |
+              "samd21g17d-mz" |
+              "samd21g18a-af" |
+              "samd21g18a-au" |
+              "samd21g18a-az" |
+              "samd21g18a-mf" |
+              "samd21g18a-mu" |
+              "samd21g18a-mz" |
+              "samd21g18a-uu" |
+              "samd21j15a-af" |
+              "samd21j15a-au" |
+              "samd21j15a-az" |
+              "samd21j15a-mf" |
+              "samd21j15a-mu" |
+              "samd21j15a-mz" |
+              "samd21j15b-af" |
+              "samd21j15b-au" |
+              "samd21j15b-az" |
+              "samd21j15b-cf" |
+              "samd21j15b-cu" |
+              "samd21j15b-mf" |
+              "samd21j15b-mu" |
+              "samd21j15b-mz" |
+              "samd21j16a-af" |
+              "samd21j16a-au" |
+              "samd21j16a-az" |
+              "samd21j16a-cu" |
+              "samd21j16a-mf" |
+              "samd21j16a-mu" |
+              "samd21j16a-mz" |
+              "samd21j16b-af" |
+              "samd21j16b-au" |
+              "samd21j16b-az" |
+              "samd21j16b-cf" |
+              "samd21j16b-cu" |
+              "samd21j16b-mf" |
+              "samd21j16b-mu" |
+              "samd21j16b-mz" |
+              "samd21j17a-af" |
+              "samd21j17a-au" |
+              "samd21j17a-az" |
+              "samd21j17a-cu" |
+              "samd21j17a-mf" |
+              "samd21j17a-mu" |
+              "samd21j17a-mz" |
+              "samd21j17d-af" |
+              "samd21j17d-au" |
+              "samd21j17d-az" |
+              "samd21j17d-cf" |
+              "samd21j17d-cu" |
+              "samd21j17d-mf" |
+              "samd21j17d-mu" |
+              "samd21j17d-mz" |
+              "samd21j18a-af" |
+              "samd21j18a-au" |
+              "samd21j18a-az" |
+              "samd21j18a-cu" |
+              "samd21j18a-mf" |
+              "samd21j18a-mu" |
+              "samd21j18a-mz" =>
+            for Interrupt ("26") use "PTC";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samd21e15a-af" |
+              "samd21e15a-au" |
+              "samd21e15a-az" |
+              "samd21e15a-mf" |
+              "samd21e15a-mu" |
+              "samd21e15a-mz" |
+              "samd21e15b-af" |
+              "samd21e15b-au" |
+              "samd21e15b-az" |
+              "samd21e15b-mf" |
+              "samd21e15b-mu" |
+              "samd21e15b-mz" |
+              "samd21e15b-uf" |
+              "samd21e15b-uu" |
+              "samd21e15c-uf" |
+              "samd21e15c-uu" |
+              "samd21e16a-af" |
+              "samd21e16a-au" |
+              "samd21e16a-az" |
+              "samd21e16a-mf" |
+              "samd21e16a-mu" |
+              "samd21e16a-mz" |
+              "samd21e16b-af" |
+              "samd21e16b-au" |
+              "samd21e16b-az" |
+              "samd21e16b-mf" |
+              "samd21e16b-mu" |
+              "samd21e16b-mz" |
+              "samd21e16b-uf" |
+              "samd21e16b-uu" |
+              "samd21e16c-uf" |
+              "samd21e16c-uu" |
+              "samd21e17a-af" |
+              "samd21e17a-au" |
+              "samd21e17a-az" |
+              "samd21e17a-mf" |
+              "samd21e17a-mu" |
+              "samd21e17a-mz" |
+              "samd21e17d-af" |
+              "samd21e17d-au" |
+              "samd21e17d-az" |
+              "samd21e17d-mf" |
+              "samd21e17d-mu" |
+              "samd21e17d-mz" |
+              "samd21e17d-uu" |
+              "samd21e18a-af" |
+              "samd21e18a-au" |
+              "samd21e18a-az" |
+              "samd21e18a-mf" |
+              "samd21e18a-mu" |
+              "samd21e18a-mz" |
+              "samd21g15a-af" |
+              "samd21g15a-au" |
+              "samd21g15a-az" |
+              "samd21g15a-mf" |
+              "samd21g15a-mu" |
+              "samd21g15a-mz" |
+              "samd21g15b-af" |
+              "samd21g15b-au" |
+              "samd21g15b-az" |
+              "samd21g15b-mf" |
+              "samd21g15b-mu" |
+              "samd21g15b-mz" |
+              "samd21g16a-af" |
+              "samd21g16a-au" |
+              "samd21g16a-az" |
+              "samd21g16a-mf" |
+              "samd21g16a-mu" |
+              "samd21g16a-mz" |
+              "samd21g16b-af" |
+              "samd21g16b-au" |
+              "samd21g16b-az" |
+              "samd21g16b-mf" |
+              "samd21g16b-mu" |
+              "samd21g16b-mz" |
+              "samd21g17a-af" |
+              "samd21g17a-au" |
+              "samd21g17a-az" |
+              "samd21g17a-mf" |
+              "samd21g17a-mu" |
+              "samd21g17a-mz" |
+              "samd21g17a-uu" |
+              "samd21g17d-af" |
+              "samd21g17d-au" |
+              "samd21g17d-az" |
+              "samd21g17d-mf" |
+              "samd21g17d-mu" |
+              "samd21g17d-mz" |
+              "samd21g18a-af" |
+              "samd21g18a-au" |
+              "samd21g18a-az" |
+              "samd21g18a-mf" |
+              "samd21g18a-mu" |
+              "samd21g18a-mz" |
+              "samd21g18a-uu" |
+              "samd21j15a-af" |
+              "samd21j15a-au" |
+              "samd21j15a-az" |
+              "samd21j15a-mf" |
+              "samd21j15a-mu" |
+              "samd21j15a-mz" |
+              "samd21j15b-af" |
+              "samd21j15b-au" |
+              "samd21j15b-az" |
+              "samd21j15b-cf" |
+              "samd21j15b-cu" |
+              "samd21j15b-mf" |
+              "samd21j15b-mu" |
+              "samd21j15b-mz" |
+              "samd21j16a-af" |
+              "samd21j16a-au" |
+              "samd21j16a-az" |
+              "samd21j16a-cu" |
+              "samd21j16a-mf" |
+              "samd21j16a-mu" |
+              "samd21j16a-mz" |
+              "samd21j16b-af" |
+              "samd21j16b-au" |
+              "samd21j16b-az" |
+              "samd21j16b-cf" |
+              "samd21j16b-cu" |
+              "samd21j16b-mf" |
+              "samd21j16b-mu" |
+              "samd21j16b-mz" |
+              "samd21j17a-af" |
+              "samd21j17a-au" |
+              "samd21j17a-az" |
+              "samd21j17a-cu" |
+              "samd21j17a-mf" |
+              "samd21j17a-mu" |
+              "samd21j17a-mz" |
+              "samd21j17d-af" |
+              "samd21j17d-au" |
+              "samd21j17d-az" |
+              "samd21j17d-cf" |
+              "samd21j17d-cu" |
+              "samd21j17d-mf" |
+              "samd21j17d-mu" |
+              "samd21j17d-mz" |
+              "samd21j18a-af" |
+              "samd21j18a-au" |
+              "samd21j18a-az" |
+              "samd21j18a-cu" |
+              "samd21j18a-mf" |
+              "samd21j18a-mu" |
+              "samd21j18a-mz" =>
+            for Interrupt ("27") use "I2S";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samd21e15l-af" |
+              "samd21e15l-an" |
+              "samd21e15l-mf" |
+              "samd21e15l-mn" |
+              "samd21e16l-af" |
+              "samd21e16l-an" |
+              "samd21e16l-mf" |
+              "samd21e16l-mn" |
+              "samd21e17l-af" |
+              "samd21e17l-an" |
+              "samd21e17l-mf" |
+              "samd21e17l-mn" |
+              "samd21e17l-sf" |
+              "samd21e17l-sn" |
+              "samd21g15l-mn" |
+              "samd21g15l-mu" |
+              "samd21g16l-mn" |
+              "samd21g16l-mu" |
+              "samd21g17l-mf" |
+              "samd21g17l-mn" |
+              "samd21g17l-mu" =>
+            for Interrupt ("28") use "AC1";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samd21e17d-af" |
+              "samd21e17d-au" |
+              "samd21e17d-az" |
+              "samd21e17d-mf" |
+              "samd21e17d-mu" |
+              "samd21e17d-mz" |
+              "samd21e17d-uu" |
+              "samd21e17l-af" |
+              "samd21e17l-an" |
+              "samd21e17l-mf" |
+              "samd21e17l-mn" |
+              "samd21e17l-sf" |
+              "samd21e17l-sn" |
+              "samd21g17d-af" |
+              "samd21g17d-au" |
+              "samd21g17d-az" |
+              "samd21g17d-mf" |
+              "samd21g17d-mu" |
+              "samd21g17d-mz" |
+              "samd21g17l-mf" |
+              "samd21g17l-mn" |
+              "samd21g17l-mu" |
+              "samd21j17d-af" |
+              "samd21j17d-au" |
+              "samd21j17d-az" |
+              "samd21j17d-cf" |
+              "samd21j17d-cu" |
+              "samd21j17d-mf" |
+              "samd21j17d-mu" |
+              "samd21j17d-mz" =>
+            for Interrupt ("29") use "TCC3";
+         when others => null;
+      end case;
+
+      Mem_List := ();
+      case Device_Name is
+         when "samd21e15a-af" |
+              "samd21e15a-au" |
+              "samd21e15a-az" |
+              "samd21e15a-mf" |
+              "samd21e15a-mu" |
+              "samd21e15a-mz" |
+              "samd21e15b-af" |
+              "samd21e15b-au" |
+              "samd21e15b-az" |
+              "samd21e15b-mf" |
+              "samd21e15b-mu" |
+              "samd21e15b-mz" |
+              "samd21e15b-uf" |
+              "samd21e15b-uu" |
+              "samd21e15c-uf" |
+              "samd21e15c-uu" |
+              "samd21e15l-af" |
+              "samd21e15l-an" |
+              "samd21e15l-mf" |
+              "samd21e15l-mn" |
+              "samd21g15a-af" |
+              "samd21g15a-au" |
+              "samd21g15a-az" |
+              "samd21g15a-mf" |
+              "samd21g15a-mu" |
+              "samd21g15a-mz" |
+              "samd21g15b-af" |
+              "samd21g15b-au" |
+              "samd21g15b-az" |
+              "samd21g15b-mf" |
+              "samd21g15b-mu" |
+              "samd21g15b-mz" |
+              "samd21g15l-mn" |
+              "samd21g15l-mu" |
+              "samd21j15a-af" |
+              "samd21j15a-au" |
+              "samd21j15a-az" |
+              "samd21j15a-mf" |
+              "samd21j15a-mu" |
+              "samd21j15a-mz" |
+              "samd21j15b-af" |
+              "samd21j15b-au" |
+              "samd21j15b-az" |
+              "samd21j15b-cf" |
+              "samd21j15b-cu" |
+              "samd21j15b-mf" |
+              "samd21j15b-mu" |
+              "samd21j15b-mz" =>
+            Mem_List := Mem_List & ("flash");
+            for Mem_Kind ("flash") use "ROM";
+            for Address  ("flash") use "0x00000000";
+            for Size     ("flash") use "32768";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samd21e16a-af" |
+              "samd21e16a-au" |
+              "samd21e16a-az" |
+              "samd21e16a-mf" |
+              "samd21e16a-mu" |
+              "samd21e16a-mz" |
+              "samd21e16b-af" |
+              "samd21e16b-au" |
+              "samd21e16b-az" |
+              "samd21e16b-mf" |
+              "samd21e16b-mu" |
+              "samd21e16b-mz" |
+              "samd21e16b-uf" |
+              "samd21e16b-uu" |
+              "samd21e16c-uf" |
+              "samd21e16c-uu" |
+              "samd21e16l-af" |
+              "samd21e16l-an" |
+              "samd21e16l-mf" |
+              "samd21e16l-mn" |
+              "samd21g16a-af" |
+              "samd21g16a-au" |
+              "samd21g16a-az" |
+              "samd21g16a-mf" |
+              "samd21g16a-mu" |
+              "samd21g16a-mz" |
+              "samd21g16b-af" |
+              "samd21g16b-au" |
+              "samd21g16b-az" |
+              "samd21g16b-mf" |
+              "samd21g16b-mu" |
+              "samd21g16b-mz" |
+              "samd21g16l-mn" |
+              "samd21g16l-mu" |
+              "samd21j16a-af" |
+              "samd21j16a-au" |
+              "samd21j16a-az" |
+              "samd21j16a-cu" |
+              "samd21j16a-mf" |
+              "samd21j16a-mu" |
+              "samd21j16a-mz" |
+              "samd21j16b-af" |
+              "samd21j16b-au" |
+              "samd21j16b-az" |
+              "samd21j16b-cf" |
+              "samd21j16b-cu" |
+              "samd21j16b-mf" |
+              "samd21j16b-mu" |
+              "samd21j16b-mz" =>
+            Mem_List := Mem_List & ("flash");
+            for Mem_Kind ("flash") use "ROM";
+            for Address  ("flash") use "0x00000000";
+            for Size     ("flash") use "65536";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samd21e17a-af" |
+              "samd21e17a-au" |
+              "samd21e17a-az" |
+              "samd21e17a-mf" |
+              "samd21e17a-mu" |
+              "samd21e17a-mz" |
+              "samd21e17d-af" |
+              "samd21e17d-au" |
+              "samd21e17d-az" |
+              "samd21e17d-mf" |
+              "samd21e17d-mu" |
+              "samd21e17d-mz" |
+              "samd21e17d-uu" |
+              "samd21e17l-af" |
+              "samd21e17l-an" |
+              "samd21e17l-mf" |
+              "samd21e17l-mn" |
+              "samd21e17l-sf" |
+              "samd21e17l-sn" |
+              "samd21g17a-af" |
+              "samd21g17a-au" |
+              "samd21g17a-az" |
+              "samd21g17a-mf" |
+              "samd21g17a-mu" |
+              "samd21g17a-mz" |
+              "samd21g17a-uu" |
+              "samd21g17d-af" |
+              "samd21g17d-au" |
+              "samd21g17d-az" |
+              "samd21g17d-mf" |
+              "samd21g17d-mu" |
+              "samd21g17d-mz" |
+              "samd21g17l-mf" |
+              "samd21g17l-mn" |
+              "samd21g17l-mu" |
+              "samd21j17a-af" |
+              "samd21j17a-au" |
+              "samd21j17a-az" |
+              "samd21j17a-cu" |
+              "samd21j17a-mf" |
+              "samd21j17a-mu" |
+              "samd21j17a-mz" |
+              "samd21j17d-af" |
+              "samd21j17d-au" |
+              "samd21j17d-az" |
+              "samd21j17d-cf" |
+              "samd21j17d-cu" |
+              "samd21j17d-mf" |
+              "samd21j17d-mu" |
+              "samd21j17d-mz" =>
+            Mem_List := Mem_List & ("flash");
+            for Mem_Kind ("flash") use "ROM";
+            for Address  ("flash") use "0x00000000";
+            for Size     ("flash") use "131072";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samd21e18a-af" |
+              "samd21e18a-au" |
+              "samd21e18a-az" |
+              "samd21e18a-mf" |
+              "samd21e18a-mu" |
+              "samd21e18a-mz" |
+              "samd21g18a-af" |
+              "samd21g18a-au" |
+              "samd21g18a-az" |
+              "samd21g18a-mf" |
+              "samd21g18a-mu" |
+              "samd21g18a-mz" |
+              "samd21g18a-uu" |
+              "samd21j18a-af" |
+              "samd21j18a-au" |
+              "samd21j18a-az" |
+              "samd21j18a-cu" |
+              "samd21j18a-mf" |
+              "samd21j18a-mu" |
+              "samd21j18a-mz" =>
+            Mem_List := Mem_List & ("flash");
+            for Mem_Kind ("flash") use "ROM";
+            for Address  ("flash") use "0x00000000";
+            for Size     ("flash") use "262144";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samd21e15b-af" |
+              "samd21e15b-au" |
+              "samd21e15b-az" |
+              "samd21e15b-mf" |
+              "samd21e15b-mu" |
+              "samd21e15b-mz" |
+              "samd21e15b-uf" |
+              "samd21e15b-uu" |
+              "samd21e15c-uf" |
+              "samd21e15c-uu" |
+              "samd21e15l-af" |
+              "samd21e15l-an" |
+              "samd21e15l-mf" |
+              "samd21e15l-mn" |
+              "samd21g15b-af" |
+              "samd21g15b-au" |
+              "samd21g15b-az" |
+              "samd21g15b-mf" |
+              "samd21g15b-mu" |
+              "samd21g15b-mz" |
+              "samd21g15l-mn" |
+              "samd21g15l-mu" |
+              "samd21j15b-af" |
+              "samd21j15b-au" |
+              "samd21j15b-az" |
+              "samd21j15b-cf" |
+              "samd21j15b-cu" |
+              "samd21j15b-mf" |
+              "samd21j15b-mu" |
+              "samd21j15b-mz" =>
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samd21e16b-af" |
+              "samd21e16b-au" |
+              "samd21e16b-az" |
+              "samd21e16b-mf" |
+              "samd21e16b-mu" |
+              "samd21e16b-mz" |
+              "samd21e16b-uf" |
+              "samd21e16b-uu" |
+              "samd21e16c-uf" |
+              "samd21e16c-uu" |
+              "samd21e16l-af" |
+              "samd21e16l-an" |
+              "samd21e16l-mf" |
+              "samd21e16l-mn" |
+              "samd21g16b-af" |
+              "samd21g16b-au" |
+              "samd21g16b-az" |
+              "samd21g16b-mf" |
+              "samd21g16b-mu" |
+              "samd21g16b-mz" |
+              "samd21g16l-mn" |
+              "samd21g16l-mu" |
+              "samd21j16b-af" |
+              "samd21j16b-au" |
+              "samd21j16b-az" |
+              "samd21j16b-cf" |
+              "samd21j16b-cu" |
+              "samd21j16b-mf" |
+              "samd21j16b-mu" |
+              "samd21j16b-mz" =>
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samd21e17d-af" |
+              "samd21e17d-au" |
+              "samd21e17d-az" |
+              "samd21e17d-mf" |
+              "samd21e17d-mu" |
+              "samd21e17d-mz" |
+              "samd21e17d-uu" |
+              "samd21e17l-af" |
+              "samd21e17l-an" |
+              "samd21e17l-mf" |
+              "samd21e17l-mn" |
+              "samd21e17l-sf" |
+              "samd21e17l-sn" |
+              "samd21g17d-af" |
+              "samd21g17d-au" |
+              "samd21g17d-az" |
+              "samd21g17d-mf" |
+              "samd21g17d-mu" |
+              "samd21g17d-mz" |
+              "samd21g17l-mf" |
+              "samd21g17l-mn" |
+              "samd21g17l-mu" |
+              "samd21j17d-af" |
+              "samd21j17d-au" |
+              "samd21j17d-az" |
+              "samd21j17d-cf" |
+              "samd21j17d-cu" |
+              "samd21j17d-mf" |
+              "samd21j17d-mu" |
+              "samd21j17d-mz" =>
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samd21e15a-af" |
+              "samd21e15a-au" |
+              "samd21e15a-az" |
+              "samd21e15a-mf" |
+              "samd21e15a-mu" |
+              "samd21e15a-mz" |
+              "samd21e15b-af" |
+              "samd21e15b-au" |
+              "samd21e15b-az" |
+              "samd21e15b-mf" |
+              "samd21e15b-mu" |
+              "samd21e15b-mz" |
+              "samd21e15b-uf" |
+              "samd21e15b-uu" |
+              "samd21e15c-uf" |
+              "samd21e15c-uu" |
+              "samd21e15l-af" |
+              "samd21e15l-an" |
+              "samd21e15l-mf" |
+              "samd21e15l-mn" |
+              "samd21g15a-af" |
+              "samd21g15a-au" |
+              "samd21g15a-az" |
+              "samd21g15a-mf" |
+              "samd21g15a-mu" |
+              "samd21g15a-mz" |
+              "samd21g15b-af" |
+              "samd21g15b-au" |
+              "samd21g15b-az" |
+              "samd21g15b-mf" |
+              "samd21g15b-mu" |
+              "samd21g15b-mz" |
+              "samd21g15l-mn" |
+              "samd21g15l-mu" |
+              "samd21j15a-af" |
+              "samd21j15a-au" |
+              "samd21j15a-az" |
+              "samd21j15a-mf" |
+              "samd21j15a-mu" |
+              "samd21j15a-mz" |
+              "samd21j15b-af" |
+              "samd21j15b-au" |
+              "samd21j15b-az" |
+              "samd21j15b-cf" |
+              "samd21j15b-cu" |
+              "samd21j15b-mf" |
+              "samd21j15b-mu" |
+              "samd21j15b-mz" =>
+            Mem_List := Mem_List & ("ram");
+            for Mem_Kind ("ram") use "RAM";
+            for Address  ("ram") use "0x20000000";
+            for Size     ("ram") use "4096";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samd21e16a-af" |
+              "samd21e16a-au" |
+              "samd21e16a-az" |
+              "samd21e16a-mf" |
+              "samd21e16a-mu" |
+              "samd21e16a-mz" |
+              "samd21e16b-af" |
+              "samd21e16b-au" |
+              "samd21e16b-az" |
+              "samd21e16b-mf" |
+              "samd21e16b-mu" |
+              "samd21e16b-mz" |
+              "samd21e16b-uf" |
+              "samd21e16b-uu" |
+              "samd21e16c-uf" |
+              "samd21e16c-uu" |
+              "samd21e16l-af" |
+              "samd21e16l-an" |
+              "samd21e16l-mf" |
+              "samd21e16l-mn" |
+              "samd21g16a-af" |
+              "samd21g16a-au" |
+              "samd21g16a-az" |
+              "samd21g16a-mf" |
+              "samd21g16a-mu" |
+              "samd21g16a-mz" |
+              "samd21g16b-af" |
+              "samd21g16b-au" |
+              "samd21g16b-az" |
+              "samd21g16b-mf" |
+              "samd21g16b-mu" |
+              "samd21g16b-mz" |
+              "samd21g16l-mn" |
+              "samd21g16l-mu" |
+              "samd21j16a-af" |
+              "samd21j16a-au" |
+              "samd21j16a-az" |
+              "samd21j16a-cu" |
+              "samd21j16a-mf" |
+              "samd21j16a-mu" |
+              "samd21j16a-mz" |
+              "samd21j16b-af" |
+              "samd21j16b-au" |
+              "samd21j16b-az" |
+              "samd21j16b-cf" |
+              "samd21j16b-cu" |
+              "samd21j16b-mf" |
+              "samd21j16b-mu" |
+              "samd21j16b-mz" =>
+            Mem_List := Mem_List & ("ram");
+            for Mem_Kind ("ram") use "RAM";
+            for Address  ("ram") use "0x20000000";
+            for Size     ("ram") use "8192";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samd21e17a-af" |
+              "samd21e17a-au" |
+              "samd21e17a-az" |
+              "samd21e17a-mf" |
+              "samd21e17a-mu" |
+              "samd21e17a-mz" |
+              "samd21e17d-af" |
+              "samd21e17d-au" |
+              "samd21e17d-az" |
+              "samd21e17d-mf" |
+              "samd21e17d-mu" |
+              "samd21e17d-mz" |
+              "samd21e17d-uu" |
+              "samd21e17l-af" |
+              "samd21e17l-an" |
+              "samd21e17l-mf" |
+              "samd21e17l-mn" |
+              "samd21e17l-sf" |
+              "samd21e17l-sn" |
+              "samd21g17a-af" |
+              "samd21g17a-au" |
+              "samd21g17a-az" |
+              "samd21g17a-mf" |
+              "samd21g17a-mu" |
+              "samd21g17a-mz" |
+              "samd21g17a-uu" |
+              "samd21g17d-af" |
+              "samd21g17d-au" |
+              "samd21g17d-az" |
+              "samd21g17d-mf" |
+              "samd21g17d-mu" |
+              "samd21g17d-mz" |
+              "samd21g17l-mf" |
+              "samd21g17l-mn" |
+              "samd21g17l-mu" |
+              "samd21j17a-af" |
+              "samd21j17a-au" |
+              "samd21j17a-az" |
+              "samd21j17a-cu" |
+              "samd21j17a-mf" |
+              "samd21j17a-mu" |
+              "samd21j17a-mz" |
+              "samd21j17d-af" |
+              "samd21j17d-au" |
+              "samd21j17d-az" |
+              "samd21j17d-cf" |
+              "samd21j17d-cu" |
+              "samd21j17d-mf" |
+              "samd21j17d-mu" |
+              "samd21j17d-mz" =>
+            Mem_List := Mem_List & ("ram");
+            for Mem_Kind ("ram") use "RAM";
+            for Address  ("ram") use "0x20000000";
+            for Size     ("ram") use "16384";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "samd21e18a-af" |
+              "samd21e18a-au" |
+              "samd21e18a-az" |
+              "samd21e18a-mf" |
+              "samd21e18a-mu" |
+              "samd21e18a-mz" |
+              "samd21g18a-af" |
+              "samd21g18a-au" |
+              "samd21g18a-az" |
+              "samd21g18a-mf" |
+              "samd21g18a-mu" |
+              "samd21g18a-mz" |
+              "samd21g18a-uu" |
+              "samd21j18a-af" |
+              "samd21j18a-au" |
+              "samd21j18a-az" |
+              "samd21j18a-cu" |
+              "samd21j18a-mf" |
+              "samd21j18a-mu" |
+              "samd21j18a-mz" =>
+            Mem_List := Mem_List & ("ram");
+            for Mem_Kind ("ram") use "RAM";
+            for Address  ("ram") use "0x20000000";
+            for Size     ("ram") use "32768";
+         when others => null;
+      end case;
+      for Memories use Mem_List;
+      for Boot_Memory use samd21_dc_Config.Boot_Memory;
+      for Main_Stack_Size use samd21_dc_Config.Stack_Size;
+
+   end Device_Configuration;
+end samd21_dc;

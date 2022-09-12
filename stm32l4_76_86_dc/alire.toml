@@ -1,0 +1,10 @@
+name = "stm32l4_76_86_dc"
+description = "Device configuration for stm32l4_76_86_dc micro-controllers"
+version = "0.1.0-dev"
+authors = ["a script"]
+maintainers = ["Fabien Chouteau <chouteau@adacore.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+[configuration.variables]
+Device = {type = "Enum", values = ["stm32l476jey6", "stm32l476jgy3", "stm32l476jgy3p", "stm32l476jgy6", "stm32l476jgy6p", "stm32l476jgy7", "stm32l476jgy7p", "stm32l476mey6", "stm32l476mgy3", "stm32l476mgy6", "stm32l476mgy7", "stm32l476qei6", "stm32l476qgi3", "stm32l476qgi3p", "stm32l476qgi6", "stm32l476qgi6p", "stm32l476qgi7", "stm32l476qgi7p", "stm32l476rct6", "stm32l476ret6", "stm32l476rgt3", "stm32l476rgt6", "stm32l476rgt7", "stm32l476vct6", "stm32l476vet6", "stm32l476vgt6", "stm32l476vgt7", "stm32l476vgy6p", "stm32l476zet6", "stm32l476zgj3", "stm32l476zgj6", "stm32l476zgj7", "stm32l476zgt3", "stm32l476zgt3p", "stm32l476zgt6", "stm32l476zgt6p", "stm32l476zgt7", "stm32l476zgt7p", "stm32l486jgy6", "stm32l486qgi6", "stm32l486rgt6", "stm32l486vgt3", "stm32l486vgt6", "stm32l486vgt7", "stm32l486zgt3", "stm32l486zgt6", "stm32l486zgt7"]}
+Boot_Memory = {type = "Enum", values = ["flash", "sram1", "ccm"]}
+Stack_Size = {type = "Integer", first = 1, default = 1024}

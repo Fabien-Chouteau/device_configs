@@ -1,0 +1,568 @@
+with "config/stm32l1_51_52_62_c_d_e_dc_config.gpr";
+abstract project stm32l1_51_52_62_c_d_e_dc is
+   for Target use "arm-elf";
+   for Runtime ("Ada") use "light-cortex-m3";
+   package Device_Configuration is
+      Device_Name := stm32l1_51_52_62_c_d_e_dc_Config.Device;
+      for CPU_Name use "cortex-m3";
+
+      for Interrupt ("0") use "WWDG";
+      for Interrupt ("1") use "PVD";
+      for Interrupt ("2") use "TAMPER_STAMP";
+      for Interrupt ("3") use "RTC_WKUP";
+      for Interrupt ("4") use "FLASH";
+      for Interrupt ("5") use "RCC";
+      for Interrupt ("6") use "EXTI0";
+      for Interrupt ("7") use "EXTI1";
+      for Interrupt ("8") use "EXTI2";
+      for Interrupt ("9") use "EXTI3";
+      for Interrupt ("10") use "EXTI4";
+      for Interrupt ("11") use "DMA1_Channel1";
+      for Interrupt ("12") use "DMA1_Channel2";
+      for Interrupt ("13") use "DMA1_Channel3";
+      for Interrupt ("14") use "DMA1_Channel4";
+      for Interrupt ("15") use "DMA1_Channel5";
+      for Interrupt ("16") use "DMA1_Channel6";
+      for Interrupt ("17") use "DMA1_Channel7";
+      for Interrupt ("18") use "ADC1";
+      for Interrupt ("19") use "USB_HP";
+      for Interrupt ("20") use "USB_LP";
+      for Interrupt ("21") use "DAC";
+      for Interrupt ("22") use "COMP";
+      for Interrupt ("23") use "EXTI9_5";
+      for Interrupt ("25") use "TIM9";
+      for Interrupt ("26") use "TIM10";
+      for Interrupt ("27") use "TIM11";
+      for Interrupt ("28") use "TIM2";
+      for Interrupt ("29") use "TIM3";
+      for Interrupt ("30") use "TIM4";
+      for Interrupt ("31") use "I2C1_EV";
+      for Interrupt ("32") use "I2C1_ER";
+      for Interrupt ("33") use "I2C2_EV";
+      for Interrupt ("34") use "I2C2_ER";
+      for Interrupt ("35") use "SPI1";
+      for Interrupt ("36") use "SPI2";
+      for Interrupt ("37") use "USART1";
+      for Interrupt ("38") use "USART2";
+      for Interrupt ("39") use "USART3";
+      for Interrupt ("40") use "EXTI15_10";
+      for Interrupt ("41") use "RTC_Alarm";
+      for Interrupt ("42") use "USB_FS_WKUP";
+      for Interrupt ("43") use "TIM6";
+      for Interrupt ("44") use "TIM7";
+      for Interrupt ("46") use "TIM5";
+      for Interrupt ("47") use "SPI3";
+      for Interrupt ("50") use "DMA2_Channel1";
+      for Interrupt ("51") use "DMA2_Channel2";
+      for Interrupt ("52") use "DMA2_Channel3";
+      for Interrupt ("53") use "DMA2_Channel4";
+      for Interrupt ("54") use "DMA2_Channel5";
+      for Interrupt ("56") use "COMP_ACQ";
+      case Device_Name is
+         when "" =>
+            for Interrupt ("24") use "LCD";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "stm32l151qdh6" |
+              "stm32l151rdt6" |
+              "stm32l151rdt7" |
+              "stm32l151rdy6" |
+              "stm32l151rdy7" |
+              "stm32l151vdt6" |
+              "stm32l151vdt6x" |
+              "stm32l151vdy6x" |
+              "stm32l151zdt6" |
+              "stm32l152qdh6" |
+              "stm32l152rdt6" |
+              "stm32l152rdy6" |
+              "stm32l152vdt6" |
+              "stm32l152vdt6x" |
+              "stm32l152zdt6" |
+              "stm32l162qdh3" |
+              "stm32l162qdh6" |
+              "stm32l162qdh7" |
+              "stm32l162rdt6" |
+              "stm32l162rdy6" |
+              "stm32l162vdt6" |
+              "stm32l162vdy6x" |
+              "stm32l162zdt6" =>
+            for Interrupt ("45") use "SDIO";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "stm32l151qdh6" |
+              "stm32l151qeh6" |
+              "stm32l151rdt6" |
+              "stm32l151rdt7" |
+              "stm32l151rdy6" |
+              "stm32l151rdy7" |
+              "stm32l151ret6" |
+              "stm32l151vdt6" |
+              "stm32l151vdt6x" |
+              "stm32l151vdy6x" |
+              "stm32l151vet3" |
+              "stm32l151vet6" |
+              "stm32l151vet7" |
+              "stm32l151vey3" |
+              "stm32l151vey6" |
+              "stm32l151vey7" |
+              "stm32l151zdt6" |
+              "stm32l151zet6" |
+              "stm32l152qdh6" |
+              "stm32l152qeh6" |
+              "stm32l152rdt6" |
+              "stm32l152rdy6" |
+              "stm32l152ret6" |
+              "stm32l152vdt6" |
+              "stm32l152vdt6x" |
+              "stm32l152vet3" |
+              "stm32l152vet6" |
+              "stm32l152vet7" |
+              "stm32l152vey3" |
+              "stm32l152vey6" |
+              "stm32l152vey7" |
+              "stm32l152zdt6" |
+              "stm32l152zet3" |
+              "stm32l152zet6" |
+              "stm32l152zet7" |
+              "stm32l162qdh3" |
+              "stm32l162qdh6" |
+              "stm32l162qdh7" |
+              "stm32l162rdt6" |
+              "stm32l162rdy6" |
+              "stm32l162ret6" |
+              "stm32l162vdt6" |
+              "stm32l162vdy6x" |
+              "stm32l162vet6" |
+              "stm32l162vey6" |
+              "stm32l162zdt6" |
+              "stm32l162zet6" =>
+            for Interrupt ("48") use "UART4";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "stm32l151qdh6" |
+              "stm32l151qeh6" |
+              "stm32l151rdt6" |
+              "stm32l151rdt7" |
+              "stm32l151rdy6" |
+              "stm32l151rdy7" |
+              "stm32l151ret6" |
+              "stm32l151vdt6" |
+              "stm32l151vdt6x" |
+              "stm32l151vdy6x" |
+              "stm32l151vet3" |
+              "stm32l151vet6" |
+              "stm32l151vet7" |
+              "stm32l151vey3" |
+              "stm32l151vey6" |
+              "stm32l151vey7" |
+              "stm32l151zdt6" |
+              "stm32l151zet6" |
+              "stm32l152qdh6" |
+              "stm32l152qeh6" |
+              "stm32l152rdt6" |
+              "stm32l152rdy6" |
+              "stm32l152ret6" |
+              "stm32l152vdt6" |
+              "stm32l152vdt6x" |
+              "stm32l152vet3" |
+              "stm32l152vet6" |
+              "stm32l152vet7" |
+              "stm32l152vey3" |
+              "stm32l152vey6" |
+              "stm32l152vey7" |
+              "stm32l152zdt6" |
+              "stm32l152zet3" |
+              "stm32l152zet6" |
+              "stm32l152zet7" |
+              "stm32l162qdh3" |
+              "stm32l162qdh6" |
+              "stm32l162qdh7" |
+              "stm32l162rdt6" |
+              "stm32l162rdy6" |
+              "stm32l162ret6" |
+              "stm32l162vdt6" |
+              "stm32l162vdy6x" |
+              "stm32l162vet6" |
+              "stm32l162vey6" |
+              "stm32l162zdt6" |
+              "stm32l162zet6" =>
+            for Interrupt ("49") use "UART5";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "" =>
+            for Interrupt ("55") use "AES";
+         when others => null;
+      end case;
+
+      Mem_List := ();
+      case Device_Name is
+         when "stm32l151cct6" |
+              "stm32l151cct7" |
+              "stm32l151ccu6" |
+              "stm32l151ccu7" |
+              "stm32l151qch6" |
+              "stm32l151rct6" |
+              "stm32l151rct6a" |
+              "stm32l151rcy6" |
+              "stm32l151ucy3" |
+              "stm32l151ucy6" |
+              "stm32l151ucy7" |
+              "stm32l151vch3" |
+              "stm32l151vch6" |
+              "stm32l151vch7" |
+              "stm32l151vct3" |
+              "stm32l151vct6" |
+              "stm32l151vct6a" |
+              "stm32l151vct7" |
+              "stm32l151zct6" |
+              "stm32l152cct3" |
+              "stm32l152cct6" |
+              "stm32l152cct7" |
+              "stm32l152ccu3" |
+              "stm32l152ccu6" |
+              "stm32l152ccu7" |
+              "stm32l152qch6" |
+              "stm32l152rct3" |
+              "stm32l152rct6" |
+              "stm32l152rct6a" |
+              "stm32l152rct7" |
+              "stm32l152ucy6" |
+              "stm32l152vch3" |
+              "stm32l152vch6" |
+              "stm32l152vch7" |
+              "stm32l152vct3" |
+              "stm32l152vct6" |
+              "stm32l152vct6a" |
+              "stm32l152vct7" |
+              "stm32l152zct6" |
+              "stm32l162qch6" |
+              "stm32l162rct6" |
+              "stm32l162rct6a" |
+              "stm32l162vch3" |
+              "stm32l162vch6" |
+              "stm32l162vch7" |
+              "stm32l162vct3" |
+              "stm32l162vct6" |
+              "stm32l162vct6a" |
+              "stm32l162vct7" |
+              "stm32l162zct6" =>
+            Mem_List := Mem_List & ("flash");
+            for Mem_Kind ("flash") use "ROM";
+            for Address  ("flash") use "0x8000000";
+            for Size     ("flash") use "262144";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "stm32l151qdh6" |
+              "stm32l151rdt6" |
+              "stm32l151rdt7" |
+              "stm32l151rdy6" |
+              "stm32l151rdy7" |
+              "stm32l151vdt6" |
+              "stm32l151vdt6x" |
+              "stm32l151vdy6x" |
+              "stm32l151zdt6" |
+              "stm32l152qdh6" |
+              "stm32l152rdt6" |
+              "stm32l152rdy6" |
+              "stm32l152vdt6" |
+              "stm32l152vdt6x" |
+              "stm32l152zdt6" |
+              "stm32l162qdh3" |
+              "stm32l162qdh6" |
+              "stm32l162qdh7" |
+              "stm32l162rdt6" |
+              "stm32l162rdy6" |
+              "stm32l162vdt6" |
+              "stm32l162vdy6x" |
+              "stm32l162zdt6" =>
+            Mem_List := Mem_List & ("flash");
+            for Mem_Kind ("flash") use "ROM";
+            for Address  ("flash") use "0x8000000";
+            for Size     ("flash") use "393216";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "stm32l151qeh6" |
+              "stm32l151ret6" |
+              "stm32l151vet3" |
+              "stm32l151vet6" |
+              "stm32l151vet7" |
+              "stm32l151vey3" |
+              "stm32l151vey6" |
+              "stm32l151vey7" |
+              "stm32l151zet6" |
+              "stm32l152qeh6" |
+              "stm32l152ret6" |
+              "stm32l152vet3" |
+              "stm32l152vet6" |
+              "stm32l152vet7" |
+              "stm32l152vey3" |
+              "stm32l152vey6" |
+              "stm32l152vey7" |
+              "stm32l152zet3" |
+              "stm32l152zet6" |
+              "stm32l152zet7" |
+              "stm32l162ret6" |
+              "stm32l162vet6" |
+              "stm32l162vey6" |
+              "stm32l162zet6" =>
+            Mem_List := Mem_List & ("flash");
+            for Mem_Kind ("flash") use "ROM";
+            for Address  ("flash") use "0x8000000";
+            for Size     ("flash") use "524288";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "stm32l151cct6" |
+              "stm32l151cct7" |
+              "stm32l151ccu6" |
+              "stm32l151ccu7" |
+              "stm32l151qch6" |
+              "stm32l151rct6" |
+              "stm32l151rct6a" |
+              "stm32l151rcy6" |
+              "stm32l151ucy3" |
+              "stm32l151ucy6" |
+              "stm32l151ucy7" |
+              "stm32l151vch3" |
+              "stm32l151vch6" |
+              "stm32l151vch7" |
+              "stm32l151vct3" |
+              "stm32l151vct6" |
+              "stm32l151vct6a" |
+              "stm32l151vct7" |
+              "stm32l151zct6" |
+              "stm32l152cct3" |
+              "stm32l152cct6" |
+              "stm32l152cct7" |
+              "stm32l152ccu3" |
+              "stm32l152ccu6" |
+              "stm32l152ccu7" |
+              "stm32l152qch6" |
+              "stm32l152rct3" |
+              "stm32l152rct6" |
+              "stm32l152rct6a" |
+              "stm32l152rct7" |
+              "stm32l152ucy6" |
+              "stm32l152vch3" |
+              "stm32l152vch6" |
+              "stm32l152vch7" |
+              "stm32l152vct3" |
+              "stm32l152vct6" |
+              "stm32l152vct6a" |
+              "stm32l152vct7" |
+              "stm32l152zct6" |
+              "stm32l162qch6" |
+              "stm32l162rct6" |
+              "stm32l162rct6a" |
+              "stm32l162vch3" |
+              "stm32l162vch6" |
+              "stm32l162vch7" |
+              "stm32l162vct3" |
+              "stm32l162vct6" |
+              "stm32l162vct6a" |
+              "stm32l162vct7" |
+              "stm32l162zct6" =>
+            Mem_List := Mem_List & ("eeprom");
+            for Mem_Kind ("eeprom") use "RAM";
+            for Address  ("eeprom") use "0x8080000";
+            for Size     ("eeprom") use "8192";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "stm32l151qdh6" |
+              "stm32l151rdt6" |
+              "stm32l151rdt7" |
+              "stm32l151rdy6" |
+              "stm32l151rdy7" |
+              "stm32l151vdt6" |
+              "stm32l151vdt6x" |
+              "stm32l151vdy6x" |
+              "stm32l151zdt6" |
+              "stm32l152qdh6" |
+              "stm32l152rdt6" |
+              "stm32l152rdy6" |
+              "stm32l152vdt6" |
+              "stm32l152vdt6x" |
+              "stm32l152zdt6" |
+              "stm32l162qdh3" |
+              "stm32l162qdh6" |
+              "stm32l162qdh7" |
+              "stm32l162rdt6" |
+              "stm32l162rdy6" |
+              "stm32l162vdt6" |
+              "stm32l162vdy6x" |
+              "stm32l162zdt6" =>
+            Mem_List := Mem_List & ("eeprom");
+            for Mem_Kind ("eeprom") use "RAM";
+            for Address  ("eeprom") use "0x8080000";
+            for Size     ("eeprom") use "12288";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "stm32l151qeh6" |
+              "stm32l151ret6" |
+              "stm32l151vet3" |
+              "stm32l151vet6" |
+              "stm32l151vet7" |
+              "stm32l151vey3" |
+              "stm32l151vey6" |
+              "stm32l151vey7" |
+              "stm32l151zet6" |
+              "stm32l152qeh6" |
+              "stm32l152ret6" |
+              "stm32l152vet3" |
+              "stm32l152vet6" |
+              "stm32l152vet7" |
+              "stm32l152vey3" |
+              "stm32l152vey6" |
+              "stm32l152vey7" |
+              "stm32l152zet3" |
+              "stm32l152zet6" |
+              "stm32l152zet7" |
+              "stm32l162ret6" |
+              "stm32l162vet6" |
+              "stm32l162vey6" |
+              "stm32l162zet6" =>
+            Mem_List := Mem_List & ("eeprom");
+            for Mem_Kind ("eeprom") use "RAM";
+            for Address  ("eeprom") use "0x8080000";
+            for Size     ("eeprom") use "16384";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "stm32l151cct6" |
+              "stm32l151cct7" |
+              "stm32l151ccu6" |
+              "stm32l151ccu7" |
+              "stm32l151qch6" |
+              "stm32l151rct6" |
+              "stm32l151rct6a" |
+              "stm32l151rcy6" |
+              "stm32l151ucy3" |
+              "stm32l151ucy6" |
+              "stm32l151ucy7" |
+              "stm32l151vch3" |
+              "stm32l151vch6" |
+              "stm32l151vch7" |
+              "stm32l151vct3" |
+              "stm32l151vct6" |
+              "stm32l151vct6a" |
+              "stm32l151vct7" |
+              "stm32l151zct6" |
+              "stm32l152cct3" |
+              "stm32l152cct6" |
+              "stm32l152cct7" |
+              "stm32l152ccu3" |
+              "stm32l152ccu6" |
+              "stm32l152ccu7" |
+              "stm32l152qch6" |
+              "stm32l152rct3" |
+              "stm32l152rct6" |
+              "stm32l152rct6a" |
+              "stm32l152rct7" |
+              "stm32l152ucy6" |
+              "stm32l152vch3" |
+              "stm32l152vch6" |
+              "stm32l152vch7" |
+              "stm32l152vct3" |
+              "stm32l152vct6" |
+              "stm32l152vct6a" |
+              "stm32l152vct7" |
+              "stm32l152zct6" |
+              "stm32l162qch6" |
+              "stm32l162rct6" |
+              "stm32l162rct6a" |
+              "stm32l162vch3" |
+              "stm32l162vch6" |
+              "stm32l162vch7" |
+              "stm32l162vct3" |
+              "stm32l162vct6" |
+              "stm32l162vct6a" |
+              "stm32l162vct7" |
+              "stm32l162zct6" =>
+            Mem_List := Mem_List & ("sram1");
+            for Mem_Kind ("sram1") use "RAM";
+            for Address  ("sram1") use "0x20000000";
+            for Size     ("sram1") use "32768";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "stm32l151qdh6" |
+              "stm32l151rdt6" |
+              "stm32l151rdt7" |
+              "stm32l151rdy6" |
+              "stm32l151rdy7" |
+              "stm32l151vdt6" |
+              "stm32l151zdt6" |
+              "stm32l152qdh6" |
+              "stm32l152rdt6" |
+              "stm32l152rdy6" |
+              "stm32l152vdt6" |
+              "stm32l152zdt6" |
+              "stm32l162qdh3" |
+              "stm32l162qdh6" |
+              "stm32l162qdh7" |
+              "stm32l162rdt6" |
+              "stm32l162rdy6" |
+              "stm32l162vdt6" |
+              "stm32l162zdt6" =>
+            Mem_List := Mem_List & ("sram1");
+            for Mem_Kind ("sram1") use "RAM";
+            for Address  ("sram1") use "0x20000000";
+            for Size     ("sram1") use "49152";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "stm32l151vdt6x" |
+              "stm32l151vdy6x" |
+              "stm32l152vdt6x" |
+              "stm32l162vdy6x" =>
+            Mem_List := Mem_List & ("sram1");
+            for Mem_Kind ("sram1") use "RAM";
+            for Address  ("sram1") use "0x20000000";
+            for Size     ("sram1") use "81920";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "stm32l151qeh6" |
+              "stm32l151ret6" |
+              "stm32l151vet3" |
+              "stm32l151vet6" |
+              "stm32l151vet7" |
+              "stm32l151vey3" |
+              "stm32l151vey6" |
+              "stm32l151vey7" |
+              "stm32l151zet6" |
+              "stm32l152qeh6" |
+              "stm32l152ret6" |
+              "stm32l152vet3" |
+              "stm32l152vet6" |
+              "stm32l152vet7" |
+              "stm32l152vey3" |
+              "stm32l152vey6" |
+              "stm32l152vey7" |
+              "stm32l152zet3" |
+              "stm32l152zet6" |
+              "stm32l152zet7" |
+              "stm32l162ret6" |
+              "stm32l162vet6" |
+              "stm32l162vey6" |
+              "stm32l162zet6" =>
+            Mem_List := Mem_List & ("sram1");
+            for Mem_Kind ("sram1") use "RAM";
+            for Address  ("sram1") use "0x20000000";
+            for Size     ("sram1") use "81920";
+         when others => null;
+      end case;
+      for Memories use Mem_List;
+      for Boot_Memory use stm32l1_51_52_62_c_d_e_dc_Config.Boot_Memory;
+      for Main_Stack_Size use stm32l1_51_52_62_c_d_e_dc_Config.Stack_Size;
+
+   end Device_Configuration;
+end stm32l1_51_52_62_c_d_e_dc;

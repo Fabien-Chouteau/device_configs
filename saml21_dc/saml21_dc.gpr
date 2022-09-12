@@ -1,0 +1,465 @@
+with "config/saml21_dc_config.gpr";
+abstract project saml21_dc is
+   for Target use "arm-elf";
+   for Runtime ("Ada") use "light-cortex-m0p";
+   package Device_Configuration is
+      Device_Name := saml21_dc_Config.Device;
+      for CPU_Name use "cortex-m0+";
+
+      for Interrupt ("0") use "SYSTEM";
+      for Interrupt ("1") use "WDT";
+      for Interrupt ("2") use "RTC";
+      for Interrupt ("3") use "EIC";
+      for Interrupt ("4") use "NVMCTRL";
+      for Interrupt ("5") use "DMAC";
+      for Interrupt ("6") use "USB";
+      for Interrupt ("7") use "EVSYS";
+      for Interrupt ("8") use "SERCOM0";
+      for Interrupt ("9") use "SERCOM1";
+      for Interrupt ("10") use "SERCOM2";
+      for Interrupt ("11") use "SERCOM3";
+      for Interrupt ("14") use "TCC0";
+      for Interrupt ("15") use "TCC1";
+      for Interrupt ("16") use "TCC2";
+      for Interrupt ("17") use "TC0";
+      for Interrupt ("18") use "TC1";
+      for Interrupt ("21") use "TC4";
+      for Interrupt ("22") use "ADC";
+      for Interrupt ("23") use "AC";
+      for Interrupt ("24") use "DAC";
+      for Interrupt ("25") use "PTC";
+      for Interrupt ("26") use "AES";
+      for Interrupt ("27") use "TRNG";
+      case Device_Name is
+         when "saml21e15b-an" |
+              "saml21e15b-au" |
+              "saml21e15b-mn" |
+              "saml21e15b-mu" |
+              "saml21e16b-an" |
+              "saml21e16b-au" |
+              "saml21e16b-mn" |
+              "saml21e16b-mu" |
+              "saml21e17b-an" |
+              "saml21e17b-au" |
+              "saml21e17b-mn" |
+              "saml21e17b-mu" |
+              "saml21e18b-an" |
+              "saml21e18b-au" |
+              "saml21e18b-mn" |
+              "saml21e18b-mu" |
+              "saml21g16b-an" |
+              "saml21g16b-au" |
+              "saml21g16b-mn" |
+              "saml21g16b-mu" |
+              "saml21g17b-an" |
+              "saml21g17b-au" |
+              "saml21g17b-mn" |
+              "saml21g17b-mu" |
+              "saml21g18b-an" |
+              "saml21g18b-au" |
+              "saml21g18b-mn" |
+              "saml21g18b-mu" |
+              "saml21j16b-an" |
+              "saml21j16b-au" |
+              "saml21j16b-mn" |
+              "saml21j16b-mu" |
+              "saml21j17b-an" |
+              "saml21j17b-au" |
+              "saml21j17b-mn" |
+              "saml21j17b-mu" |
+              "saml21j17b-uu" |
+              "saml21j18b-an" |
+              "saml21j18b-au" |
+              "saml21j18b-mn" |
+              "saml21j18b-mu" |
+              "saml21j18b-uu" =>
+            for Interrupt ("12") use "SERCOM4";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "saml21g18a-au" |
+              "saml21g18a-mu" |
+              "saml21j18a-au" |
+              "saml21j18a-mu" =>
+            for Interrupt ("12") use "SERCOM4";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "saml21e15b-an" |
+              "saml21e15b-au" |
+              "saml21e15b-mn" |
+              "saml21e15b-mu" |
+              "saml21e16b-an" |
+              "saml21e16b-au" |
+              "saml21e16b-mn" |
+              "saml21e16b-mu" |
+              "saml21e17b-an" |
+              "saml21e17b-au" |
+              "saml21e17b-mn" |
+              "saml21e17b-mu" |
+              "saml21e18b-an" |
+              "saml21e18b-au" |
+              "saml21e18b-mn" |
+              "saml21e18b-mu" |
+              "saml21g16b-an" |
+              "saml21g16b-au" |
+              "saml21g16b-mn" |
+              "saml21g16b-mu" |
+              "saml21g17b-an" |
+              "saml21g17b-au" |
+              "saml21g17b-mn" |
+              "saml21g17b-mu" |
+              "saml21g18b-an" |
+              "saml21g18b-au" |
+              "saml21g18b-mn" |
+              "saml21g18b-mu" |
+              "saml21j16b-an" |
+              "saml21j16b-au" |
+              "saml21j16b-mn" |
+              "saml21j16b-mu" |
+              "saml21j17b-an" |
+              "saml21j17b-au" |
+              "saml21j17b-mn" |
+              "saml21j17b-mu" |
+              "saml21j17b-uu" |
+              "saml21j18b-an" |
+              "saml21j18b-au" |
+              "saml21j18b-mn" |
+              "saml21j18b-mu" |
+              "saml21j18b-uu" =>
+            for Interrupt ("13") use "SERCOM5";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "saml21g18a-au" |
+              "saml21g18a-mu" |
+              "saml21j18a-au" |
+              "saml21j18a-mu" =>
+            for Interrupt ("13") use "SERCOM5";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "saml21j16b-an" |
+              "saml21j16b-au" |
+              "saml21j16b-mn" |
+              "saml21j16b-mu" |
+              "saml21j17b-an" |
+              "saml21j17b-au" |
+              "saml21j17b-mn" |
+              "saml21j17b-mu" |
+              "saml21j17b-uu" |
+              "saml21j18a-au" |
+              "saml21j18a-mu" |
+              "saml21j18b-an" |
+              "saml21j18b-au" |
+              "saml21j18b-mn" |
+              "saml21j18b-mu" |
+              "saml21j18b-uu" =>
+            for Interrupt ("19") use "TC2";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "saml21j16b-an" |
+              "saml21j16b-au" |
+              "saml21j16b-mn" |
+              "saml21j16b-mu" |
+              "saml21j17b-an" |
+              "saml21j17b-au" |
+              "saml21j17b-mn" |
+              "saml21j17b-mu" |
+              "saml21j17b-uu" |
+              "saml21j18a-au" |
+              "saml21j18a-mu" |
+              "saml21j18b-an" |
+              "saml21j18b-au" |
+              "saml21j18b-mn" |
+              "saml21j18b-mu" |
+              "saml21j18b-uu" =>
+            for Interrupt ("20") use "TC3";
+         when others => null;
+      end case;
+
+      Mem_List := ();
+      case Device_Name is
+         when "saml21e15b-an" |
+              "saml21e15b-au" |
+              "saml21e15b-mn" |
+              "saml21e15b-mu" =>
+            Mem_List := Mem_List & ("flash");
+            for Mem_Kind ("flash") use "ROM";
+            for Address  ("flash") use "0x00000000";
+            for Size     ("flash") use "32768";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "saml21e16b-an" |
+              "saml21e16b-au" |
+              "saml21e16b-mn" |
+              "saml21e16b-mu" |
+              "saml21g16b-an" |
+              "saml21g16b-au" |
+              "saml21g16b-mn" |
+              "saml21g16b-mu" |
+              "saml21j16b-an" |
+              "saml21j16b-au" |
+              "saml21j16b-mn" |
+              "saml21j16b-mu" =>
+            Mem_List := Mem_List & ("flash");
+            for Mem_Kind ("flash") use "ROM";
+            for Address  ("flash") use "0x00000000";
+            for Size     ("flash") use "65536";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "saml21e17b-an" |
+              "saml21e17b-au" |
+              "saml21e17b-mn" |
+              "saml21e17b-mu" |
+              "saml21g17b-an" |
+              "saml21g17b-au" |
+              "saml21g17b-mn" |
+              "saml21g17b-mu" |
+              "saml21j17b-an" |
+              "saml21j17b-au" |
+              "saml21j17b-mn" |
+              "saml21j17b-mu" |
+              "saml21j17b-uu" =>
+            Mem_List := Mem_List & ("flash");
+            for Mem_Kind ("flash") use "ROM";
+            for Address  ("flash") use "0x00000000";
+            for Size     ("flash") use "131072";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "saml21e18a-au" |
+              "saml21e18b-an" |
+              "saml21e18b-au" |
+              "saml21e18b-mn" |
+              "saml21e18b-mu" |
+              "saml21g18a-au" |
+              "saml21g18a-mu" |
+              "saml21g18b-an" |
+              "saml21g18b-au" |
+              "saml21g18b-mn" |
+              "saml21g18b-mu" |
+              "saml21j18a-au" |
+              "saml21j18a-mu" |
+              "saml21j18b-an" |
+              "saml21j18b-au" |
+              "saml21j18b-mn" |
+              "saml21j18b-mu" |
+              "saml21j18b-uu" =>
+            Mem_List := Mem_List & ("flash");
+            for Mem_Kind ("flash") use "ROM";
+            for Address  ("flash") use "0x00000000";
+            for Size     ("flash") use "262144";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "saml21e15b-an" |
+              "saml21e15b-au" |
+              "saml21e15b-mn" |
+              "saml21e15b-mu" =>
+         when others => null;
+      end case;
+      case Device_Name is
+         when "saml21e16b-an" |
+              "saml21e16b-au" |
+              "saml21e16b-mn" |
+              "saml21e16b-mu" |
+              "saml21g16b-an" |
+              "saml21g16b-au" |
+              "saml21g16b-mn" |
+              "saml21g16b-mu" |
+              "saml21j16b-an" |
+              "saml21j16b-au" |
+              "saml21j16b-mn" |
+              "saml21j16b-mu" =>
+         when others => null;
+      end case;
+      case Device_Name is
+         when "saml21e17b-an" |
+              "saml21e17b-au" |
+              "saml21e17b-mn" |
+              "saml21e17b-mu" |
+              "saml21g17b-an" |
+              "saml21g17b-au" |
+              "saml21g17b-mn" |
+              "saml21g17b-mu" |
+              "saml21j17b-an" |
+              "saml21j17b-au" |
+              "saml21j17b-mn" |
+              "saml21j17b-mu" |
+              "saml21j17b-uu" =>
+         when others => null;
+      end case;
+      case Device_Name is
+         when "saml21e18a-au" |
+              "saml21e18b-an" |
+              "saml21e18b-au" |
+              "saml21e18b-mn" |
+              "saml21e18b-mu" |
+              "saml21g18a-au" |
+              "saml21g18a-mu" |
+              "saml21g18b-an" |
+              "saml21g18b-au" |
+              "saml21g18b-mn" |
+              "saml21g18b-mu" |
+              "saml21j18a-au" |
+              "saml21j18a-mu" |
+              "saml21j18b-an" |
+              "saml21j18b-au" |
+              "saml21j18b-mn" |
+              "saml21j18b-mu" |
+              "saml21j18b-uu" =>
+         when others => null;
+      end case;
+      case Device_Name is
+         when "saml21e15b-an" |
+              "saml21e15b-au" |
+              "saml21e15b-mn" |
+              "saml21e15b-mu" =>
+            Mem_List := Mem_List & ("ram");
+            for Mem_Kind ("ram") use "RAM";
+            for Address  ("ram") use "0x20000000";
+            for Size     ("ram") use "4096";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "saml21e16b-an" |
+              "saml21e16b-au" |
+              "saml21e16b-mn" |
+              "saml21e16b-mu" |
+              "saml21g16b-an" |
+              "saml21g16b-au" |
+              "saml21g16b-mn" |
+              "saml21g16b-mu" |
+              "saml21j16b-an" |
+              "saml21j16b-au" |
+              "saml21j16b-mn" |
+              "saml21j16b-mu" =>
+            Mem_List := Mem_List & ("ram");
+            for Mem_Kind ("ram") use "RAM";
+            for Address  ("ram") use "0x20000000";
+            for Size     ("ram") use "8192";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "saml21e17b-an" |
+              "saml21e17b-au" |
+              "saml21e17b-mn" |
+              "saml21e17b-mu" |
+              "saml21g17b-an" |
+              "saml21g17b-au" |
+              "saml21g17b-mn" |
+              "saml21g17b-mu" |
+              "saml21j17b-an" |
+              "saml21j17b-au" |
+              "saml21j17b-mn" |
+              "saml21j17b-mu" |
+              "saml21j17b-uu" =>
+            Mem_List := Mem_List & ("ram");
+            for Mem_Kind ("ram") use "RAM";
+            for Address  ("ram") use "0x20000000";
+            for Size     ("ram") use "16384";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "saml21e18a-au" |
+              "saml21e18b-an" |
+              "saml21e18b-au" |
+              "saml21e18b-mn" |
+              "saml21e18b-mu" |
+              "saml21g18a-au" |
+              "saml21g18a-mu" |
+              "saml21g18b-an" |
+              "saml21g18b-au" |
+              "saml21g18b-mn" |
+              "saml21g18b-mu" |
+              "saml21j18a-au" |
+              "saml21j18a-mu" |
+              "saml21j18b-an" |
+              "saml21j18b-au" |
+              "saml21j18b-mn" |
+              "saml21j18b-mu" |
+              "saml21j18b-uu" =>
+            Mem_List := Mem_List & ("ram");
+            for Mem_Kind ("ram") use "RAM";
+            for Address  ("ram") use "0x20000000";
+            for Size     ("ram") use "32768";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "saml21e15b-an" |
+              "saml21e15b-au" |
+              "saml21e15b-mn" |
+              "saml21e15b-mu" =>
+            Mem_List := Mem_List & ("lpram");
+            for Mem_Kind ("lpram") use "RAM";
+            for Address  ("lpram") use "0x30000000";
+            for Size     ("lpram") use "2048";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "saml21e16b-an" |
+              "saml21e16b-au" |
+              "saml21e16b-mn" |
+              "saml21e16b-mu" |
+              "saml21g16b-an" |
+              "saml21g16b-au" |
+              "saml21g16b-mn" |
+              "saml21g16b-mu" |
+              "saml21j16b-an" |
+              "saml21j16b-au" |
+              "saml21j16b-mn" |
+              "saml21j16b-mu" =>
+            Mem_List := Mem_List & ("lpram");
+            for Mem_Kind ("lpram") use "RAM";
+            for Address  ("lpram") use "0x30000000";
+            for Size     ("lpram") use "4096";
+         when others => null;
+      end case;
+      case Device_Name is
+         when "saml21e17b-an" |
+              "saml21e17b-au" |
+              "saml21e17b-mn" |
+              "saml21e17b-mu" |
+              "saml21e18a-au" |
+              "saml21e18b-an" |
+              "saml21e18b-au" |
+              "saml21e18b-mn" |
+              "saml21e18b-mu" |
+              "saml21g17b-an" |
+              "saml21g17b-au" |
+              "saml21g17b-mn" |
+              "saml21g17b-mu" |
+              "saml21g18a-au" |
+              "saml21g18a-mu" |
+              "saml21g18b-an" |
+              "saml21g18b-au" |
+              "saml21g18b-mn" |
+              "saml21g18b-mu" |
+              "saml21j17b-an" |
+              "saml21j17b-au" |
+              "saml21j17b-mn" |
+              "saml21j17b-mu" |
+              "saml21j17b-uu" |
+              "saml21j18a-au" |
+              "saml21j18a-mu" |
+              "saml21j18b-an" |
+              "saml21j18b-au" |
+              "saml21j18b-mn" |
+              "saml21j18b-mu" |
+              "saml21j18b-uu" =>
+            Mem_List := Mem_List & ("lpram");
+            for Mem_Kind ("lpram") use "RAM";
+            for Address  ("lpram") use "0x30000000";
+            for Size     ("lpram") use "8192";
+         when others => null;
+      end case;
+      for Memories use Mem_List;
+      for Boot_Memory use saml21_dc_Config.Boot_Memory;
+      for Main_Stack_Size use saml21_dc_Config.Stack_Size;
+
+   end Device_Configuration;
+end saml21_dc;

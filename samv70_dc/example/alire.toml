@@ -1,0 +1,19 @@
+name = "example"
+description = "Shiny new project"
+version = "0.1.0-dev"
+
+authors = ["Fabien Chouteau"]
+maintainers = ["Fabien Chouteau <fabien.chouteau@gmail.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+
+executables = ["example"]
+[[depends-on]]
+samv70_dc = "*"
+gnat_arm_elf = ">=12"
+
+[[pins]]
+samv70_dc = { path = ".." }
+
+[configuration.values]
+samv70_dc.Device = "samv70j19a-aa"
+samv70_dc.Boot_Memory = "flash"

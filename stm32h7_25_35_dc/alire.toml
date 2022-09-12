@@ -1,0 +1,10 @@
+name = "stm32h7_25_35_dc"
+description = "Device configuration for stm32h7_25_35_dc micro-controllers"
+version = "0.1.0-dev"
+authors = ["a script"]
+maintainers = ["Fabien Chouteau <chouteau@adacore.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+[configuration.variables]
+Device = {type = "Enum", values = ["stm32h725aei6", "stm32h725agi3", "stm32h725agi6", "stm32h725agi7", "stm32h725iek6", "stm32h725iet6", "stm32h725igk3", "stm32h725igk6", "stm32h725igk7", "stm32h725igt3", "stm32h725igt6", "stm32h725igt7", "stm32h725rev6", "stm32h725rgv3", "stm32h725rgv6", "stm32h725rgv7", "stm32h725veh6", "stm32h725vet6", "stm32h725vgh3", "stm32h725vgh6", "stm32h725vgh7", "stm32h725vgt3", "stm32h725vgt6", "stm32h725vgt7", "stm32h725vgy3", "stm32h725vgy6", "stm32h725vgy7", "stm32h725zet6", "stm32h725zgt3", "stm32h725zgt6", "stm32h725zgt7", "stm32h735agi6", "stm32h735igk3", "stm32h735igk6", "stm32h735igk7", "stm32h735igt3", "stm32h735igt6", "stm32h735igt7", "stm32h735rgv6", "stm32h735vgh6", "stm32h735vgt6", "stm32h735vgy6", "stm32h735zgt6"]}
+Boot_Memory = {type = "Enum", values = ["d1_sram", "d3_sram", "itcm", "flash", "dtcm", "d2_sram2", "d2_sram1", "backup"]}
+Stack_Size = {type = "Integer", first = 1, default = 1024}

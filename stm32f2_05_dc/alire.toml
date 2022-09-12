@@ -1,0 +1,10 @@
+name = "stm32f2_05_dc"
+description = "Device configuration for stm32f2_05_dc micro-controllers"
+version = "0.1.0-dev"
+authors = ["a script"]
+maintainers = ["Fabien Chouteau <chouteau@adacore.com>"]
+maintainers-logins = ["Fabien-Chouteau"]
+[configuration.variables]
+Device = {type = "Enum", values = ["stm32f205rbt6", "stm32f205rbt7", "stm32f205rct6", "stm32f205rct7", "stm32f205ret6", "stm32f205ret7", "stm32f205rey6", "stm32f205rey7", "stm32f205rft6", "stm32f205rge6", "stm32f205rge7", "stm32f205rgt6", "stm32f205rgt7", "stm32f205rgy6", "stm32f205rgy7", "stm32f205vbt6", "stm32f205vct6", "stm32f205vct7", "stm32f205vet6", "stm32f205vet7", "stm32f205vft6", "stm32f205vgt6", "stm32f205vgt7", "stm32f205zct6", "stm32f205zct7", "stm32f205zet6", "stm32f205zet7", "stm32f205zft6", "stm32f205zgt6", "stm32f205zgt7"]}
+Boot_Memory = {type = "Enum", values = ["sram1", "sram2", "flash"]}
+Stack_Size = {type = "Integer", first = 1, default = 1024}
