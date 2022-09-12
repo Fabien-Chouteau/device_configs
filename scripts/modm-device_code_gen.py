@@ -64,6 +64,8 @@ def runtime_from_core_type(typ):
     prefix = "light-"
     if typ == "cortex-m7fd":
         return prefix + "cortex-m7df"
+    if typ == "cortex-m0+":
+        return prefix + "cortex-m0p"
     else:
         return prefix + typ
 
@@ -331,6 +333,12 @@ def gen_from_xml(xml):
     mkdirs(crate_name)
     write_file(os.path.join (crate_name, gpr_filename), gpr_out)
     write_file(os.path.join (crate_name, 'alire.toml'), alire_out)
+    write_file(os.path.join (crate_name, '.gitignore'), """
+/obj/
+/bin/
+/alire/
+/config/
+""")
 
     make_example(crate_name, valid_idents, core)
 
